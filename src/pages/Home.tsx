@@ -27,6 +27,55 @@ type ProductCardProps = {
   dark?: boolean;
 };
 
+type IconStatement = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+type SystemLayer = {
+  number: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+const heroSignals: { label: string; icon: LucideIcon }[] = [
+  { label: 'See', icon: Camera },
+  { label: 'Reason', icon: BrainCircuit },
+  { label: 'Verify', icon: ShieldCheck },
+];
+
+const disciplines: IconStatement[] = [
+  {
+    title: 'Artificial intelligence',
+    description: 'Agents, knowledge systems and decision engines designed around a useful outcome.',
+    icon: BrainCircuit,
+  },
+  {
+    title: 'Computer vision',
+    description: 'Edge-to-cloud systems that turn live video into events, evidence and action.',
+    icon: Camera,
+  },
+  {
+    title: 'Web3 and trust',
+    description: 'Wallet intelligence, payment workflows and transparent digital systems.',
+    icon: WalletCards,
+  },
+  {
+    title: 'Open engineering',
+    description: 'Reusable platforms, APIs, plugins and tools built for long-term ownership.',
+    icon: Code2,
+  },
+];
+
+const systemLayers: SystemLayer[] = [
+  { number: '01', title: 'Edge', description: 'Cameras, sensors and local compute', icon: Cpu },
+  { number: '02', title: 'Intelligence', description: 'Models, agents and decision logic', icon: BrainCircuit },
+  { number: '03', title: 'Platforms', description: 'Cloud, APIs, mobile and operations', icon: Network },
+  { number: '04', title: 'Trust', description: 'Blockchain and external ecosystems', icon: ShieldCheck },
+];
+
 const ProductCard = ({ category, title, description, to, icon: Icon, dark = false }: ProductCardProps) => (
   <Link
     to={to}
@@ -83,14 +132,10 @@ export const Home = () => (
               <span className="inline-flex items-center gap-2 text-xs text-white/52"><span className="h-2 w-2 rounded-full bg-emerald-400" /> Active</span>
             </div>
             <div className="mt-5 grid grid-cols-3 gap-3">
-              {[
-                ['See', Camera],
-                ['Reason', BrainCircuit],
-                ['Verify', ShieldCheck],
-              ].map(([label, Icon]) => (
-                <div key={String(label)} className="rounded-xl border border-white/10 bg-white/[.06] p-3">
+              {heroSignals.map(({ label, icon: Icon }) => (
+                <div key={label} className="rounded-xl border border-white/10 bg-white/[.06] p-3">
                   <Icon className="h-4 w-4 text-[#7dd3fc]" />
-                  <p className="mt-4 text-sm font-semibold">{String(label)}</p>
+                  <p className="mt-4 text-sm font-semibold">{label}</p>
                 </div>
               ))}
             </div>
@@ -131,17 +176,12 @@ export const Home = () => (
           />
         </Reveal>
         <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-4 xl:gap-0">
-          {[
-            ['Artificial intelligence', 'Agents, knowledge systems and decision engines designed around a useful outcome.', BrainCircuit],
-            ['Computer vision', 'Edge-to-cloud systems that turn live video into events, evidence and action.', Camera],
-            ['Web3 and trust', 'Wallet intelligence, payment workflows and transparent digital systems.', WalletCards],
-            ['Open engineering', 'Reusable platforms, APIs, plugins and tools built for long-term ownership.', Code2],
-          ].map(([title, copy, Icon], index) => (
-            <Reveal key={String(title)} delay={index * .05}>
+          {disciplines.map(({ title, description, icon: Icon }, index) => (
+            <Reveal key={title} delay={index * .05}>
               <div className={`h-full xl:px-8 ${index > 0 ? 'border-t border-black/10 pt-9 md:border-t-0 md:pt-0 xl:border-l' : ''}`}>
                 <Icon className="h-6 w-6 text-[#0b7dbd]" />
-                <h2 className="mt-7 text-2xl font-semibold tracking-[-.04em] text-[#07111f]">{String(title)}</h2>
-                <p className="mt-4 text-[15px] leading-7 text-[#5b6472]">{String(copy)}</p>
+                <h2 className="mt-7 text-2xl font-semibold tracking-[-.04em] text-[#07111f]">{title}</h2>
+                <p className="mt-4 text-[15px] leading-7 text-[#5b6472]">{description}</p>
               </div>
             </Reveal>
           ))}
@@ -181,19 +221,14 @@ export const Home = () => (
         </Reveal>
         <Reveal delay={.08}>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              ['01', 'Edge', 'Cameras, sensors and local compute', Cpu],
-              ['02', 'Intelligence', 'Models, agents and decision logic', BrainCircuit],
-              ['03', 'Platforms', 'Cloud, APIs, mobile and operations', Network],
-              ['04', 'Trust', 'Blockchain and external ecosystems', ShieldCheck],
-            ].map(([number, title, copy, Icon]) => (
-              <div key={String(number)} className="rounded-[1.4rem] border border-white/10 bg-white/[.055] p-5 backdrop-blur-sm">
+            {systemLayers.map(({ number, title, description, icon: Icon }) => (
+              <div key={number} className="rounded-[1.4rem] border border-white/10 bg-white/[.055] p-5 backdrop-blur-sm">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-white/28">{String(number)}</span>
+                  <span className="font-mono text-xs text-white/28">{number}</span>
                   <Icon className="h-4 w-4 text-[#7dd3fc]" />
                 </div>
-                <h3 className="mt-12 text-lg font-semibold text-white">{String(title)}</h3>
-                <p className="mt-3 text-xs leading-6 text-white/44">{String(copy)}</p>
+                <h3 className="mt-12 text-lg font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-xs leading-6 text-white/44">{description}</p>
               </div>
             ))}
           </div>
