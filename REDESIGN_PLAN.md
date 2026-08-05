@@ -2,14 +2,13 @@
 
 ## Goal
 
-Reposition Third Leap Labs from a generic blockchain/software consultancy into a product and engineering lab with a credible portfolio across:
+Position Third Leap Labs as a product and engineering lab with a clear portfolio across:
 
-- Artificial intelligence
-- Computer vision and edge AI
-- Web3 and digital trust
+- Crypto and Web3
+- Artificial intelligence and computer vision
 - Open-source platform engineering
 
-The design should feel current, technically ambitious and human—not like a stock agency template or a noisy crypto landing page.
+The design should feel current, technically credible and human—not like a stock agency template or a noisy crypto landing page.
 
 ## Existing stack preserved
 
@@ -26,9 +25,9 @@ The design should feel current, technically ambitious and human—not like a sto
 
 **Core idea:** We build intelligent systems for the real world.
 
-**Visual language:** Dark graphite surfaces, electric blue, cyan and violet accents, fine technical grids, focused motion and realistic product-interface mockups.
+**Visual language:** A bright, corporate hero with real software-team photography, supported by darker product sections, strong typography and restrained technical accents.
 
-**Tone:** Clear, practical, confident and conversational. Avoid buzzword-heavy claims and fabricated statistics.
+**Tone:** Clear, practical, confident and conversational. Avoid buzzword-heavy claims, invented screenshots and fabricated statistics.
 
 ## Information architecture
 
@@ -39,18 +38,26 @@ The design should feel current, technically ambitious and human—not like a sto
 - `/company` — Company story, principles and working style
 - `/contact` — Enquiry form and contact information
 - `/work/whalescanner` — WhaleScanner
+- `/work/gopaysol` — GoPaySol
 - `/work/visionx` — VisionX
-- `/work/flametrax` — FlameTrax
 - Existing legal routes remain available
 
 ## Portfolio structure
 
-- **WhaleScanner** — Web3 intelligence and community platform
-- **VisionX** — AI-powered video security and operations product
-- **FlameTrax** — Modular computer-vision and event-processing platform
+### Crypto and Web3
+
+- **WhaleScanner** — Crypto intelligence and community platform
+- **GoPaySol** — Non-custodial Solana payment request, verification and receipt workflow
+
+### AI and computer vision
+
+- **VisionX** — Edge-to-cloud video intelligence platform for monitoring, AI events, alerts, evidence and operational response
+
+### Open source
+
 - **Open-source engineering** — Reusable engines, APIs, plugins and developer tools
 
-Do not use “Indus Vision” anywhere.
+VisionX is the only public computer-vision product name used by Third Leap Labs.
 
 ## UX principles
 
@@ -58,8 +65,8 @@ Do not use “Indus Vision” anywhere.
 - Large, readable type with controlled line length
 - Strong keyboard focus states
 - Reduced-motion support
-- Fast CSS/SVG visuals instead of heavy 3D dependencies
-- Realistic UI mockups instead of stock photos
+- Real corporate photography where photography is useful
+- Editorial product-story visuals instead of invented application screenshots
 - Clear product classifications and ownership language
 - No fake clients, testimonials or metrics
 
