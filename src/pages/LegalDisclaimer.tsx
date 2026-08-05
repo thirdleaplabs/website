@@ -1,68 +1,30 @@
-import React from 'react';
-import { ModernPageHeader } from '../components/ui/ModernPageHeader';
-import { SEO } from '../components/layout/SEO';
 import { Layout } from '../components/layout/Layout';
+import { SEO } from '../components/layout/SEO';
+import { PageHero } from '../components/ui/Primitives';
 
-export const LegalDisclaimer = () => {
-  return (
-    <Layout>
-      <SEO 
-        title="Legal Disclaimer | Third Leap Labs LLC" 
-        description="Important legal information regarding Third Leap Labs LLC."
-      />
-      
-      <ModernPageHeader 
-        eyebrow="Legal"
-        title="Disclaimer"
-        subtitle="Important legal information regarding Third Leap Labs LLC."
-        theme="light"
-      />
+const sections = [
+  ['No Financial Advice', 'Nothing on this website should be interpreted as financial advice, investment advice, trading advice, legal advice, tax advice, or any recommendation to buy, sell, hold, or trade any asset.'],
+  ['Web3 Tools', 'Web3-related products, including WhaleScanner and GoPaySol, are provided as software tools. WhaleScanner is intended for informational wallet and on-chain activity visibility. It does not provide trading signals, price predictions, investment recommendations, or guarantees.'],
+  ['Non-Custodial Position', 'GoPaySol is intended to support payment workflows and verification. It is designed as a non-custodial tool and does not hold user funds or request private keys, seed phrases, or wallet recovery information.'],
+  ['User Responsibility', 'Users are responsible for their own decisions, wallet security, compliance obligations, and independent research.'],
+  ['No Guarantees', 'Third Leap Labs LLC does not guarantee uninterrupted service, error-free data, financial outcomes, business outcomes, or specific product availability.'],
+];
 
-      <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 pt-[72px] pb-[72px]">
-        <div className="bg-white p-8 md:p-12 rounded-2xl border border-[#E2E8F0] shadow-sm max-w-none space-y-12">
-          
-          <div>
-            <h2 className="text-[24px] font-bold text-[#0F172A] mb-4">No Financial Advice</h2>
-            <p className="text-[16px] text-[#475569] leading-relaxed">
-              Nothing on this website should be interpreted as financial advice, investment advice, trading advice, legal advice, 
-              tax advice, or any recommendation to buy, sell, hold, or trade any asset.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-[24px] font-bold text-[#0F172A] mb-4">Web3 Tools</h2>
-            <p className="text-[16px] text-[#475569] leading-relaxed">
-              Web3-related products, including WhaleScanner and GoPaySol, are provided as software tools. WhaleScanner is intended 
-              for informational wallet and on-chain activity visibility. It does not provide trading signals, price predictions, 
-              investment recommendations, or guarantees.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-[24px] font-bold text-[#0F172A] mb-4">Non-Custodial Position</h2>
-            <p className="text-[16px] text-[#475569] leading-relaxed">
-              GoPaySol is intended to support payment workflows and verification. It is designed as a non-custodial tool and does not 
-              hold user funds or request private keys, seed phrases, or wallet recovery information.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-[24px] font-bold text-[#0F172A] mb-4">User Responsibility</h2>
-            <p className="text-[16px] text-[#475569] leading-relaxed">
-              Users are responsible for their own decisions, wallet security, compliance obligations, and independent research.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-[24px] font-bold text-[#0F172A] mb-4">No Guarantees</h2>
-            <p className="text-[16px] text-[#475569] leading-relaxed">
-              Third Leap Labs LLC does not guarantee uninterrupted service, error-free data, financial outcomes, business outcomes, 
-              or specific product availability.
-            </p>
-          </div>
-          
+export const LegalDisclaimer = () => (
+  <Layout>
+    <SEO title="Legal Disclaimer | Third Leap Labs LLC" description="Important legal information regarding Third Leap Labs LLC." path="/legal-disclaimer" />
+    <PageHero eyebrow="Legal" title={<>Legal Disclaimer</>} description="Important legal information regarding Third Leap Labs LLC." />
+    <section className="pb-24 sm:pb-32">
+      <div className="page-shell">
+        <div className="max-w-3xl space-y-10 rounded-[1.8rem] border border-white/[.08] bg-white/[.025] p-7 sm:p-10">
+          {sections.map(([title, copy]) => (
+            <section key={title}>
+              <h2 className="text-2xl font-semibold tracking-[-.035em]">{title}</h2>
+              <p className="mt-4 text-[15px] leading-8 text-white/52">{copy}</p>
+            </section>
+          ))}
         </div>
       </div>
-    </Layout>
-  );
-};
+    </section>
+  </Layout>
+);
