@@ -15,8 +15,8 @@ const columns = [
     title: 'Products',
     links: [
       ['WhaleScanner', '/work/whalescanner'],
+      ['GoPaySol', '/work/gopaysol'],
       ['VisionX', '/work/visionx'],
-      ['FlameTrax', '/work/flametrax'],
     ],
   },
 ];
@@ -31,7 +31,7 @@ export const Footer = () => (
             <span className="text-lg font-semibold tracking-[-.025em]">Third Leap Labs</span>
           </Link>
           <p className="mt-5 max-w-md text-[15px] leading-7 text-white/52">
-            We build intelligent, visual and decentralized products—and the open foundations that help them keep evolving.
+            We build crypto products, AI and computer-vision systems, and open-source foundations for serious product engineering.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a
