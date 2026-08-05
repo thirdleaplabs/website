@@ -14,18 +14,8 @@ import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
-import {
-  CapabilityCard,
-  PrimaryLink,
-  Reveal,
-  SectionIntro,
-} from '../components/ui/Primitives';
-import {
-  FlameTraxVisual,
-  OpenSourceVisual,
-  VisionXVisual,
-  WhaleScannerVisual,
-} from '../components/ui/Visuals';
+import { CapabilityCard, PrimaryLink, Reveal, SectionIntro } from '../components/ui/Primitives';
+import { GoPaySolVisual, OpenSourceVisual, VisionXVisual, WhaleScannerVisual } from '../components/ui/Visuals';
 
 const capabilities = [
   {
@@ -46,13 +36,13 @@ const capabilities = [
     icon: ShieldCheck,
     number: '03',
     title: 'Web3 and digital trust',
-    description: 'Wallet-aware products and data pipelines that make decentralized activity easier to understand and verify.',
-    items: ['Wallet intelligence', 'On-chain data products', 'Transparent user workflows'],
+    description: 'Wallet-aware products and payment workflows that make decentralized activity easier to understand and verify.',
+    items: ['Wallet intelligence', 'On-chain data products', 'Non-custodial payments'],
   },
   {
     icon: Code2,
     number: '04',
-    title: 'Open platform engineering',
+    title: 'Open-source engineering',
     description: 'Reusable engines, APIs and plugin systems designed to be understood, extended and improved over time.',
     items: ['Open architecture', 'Plugin ecosystems', 'Developer infrastructure'],
   },
@@ -60,7 +50,7 @@ const capabilities = [
 
 const products = [
   {
-    eyebrow: 'Web3 intelligence',
+    eyebrow: 'Crypto · Web3 intelligence',
     title: 'WhaleScanner',
     copy: 'A crypto intelligence and community platform that brings wallet activity, market context, project discovery and risk awareness into one coherent experience.',
     tags: ['Web3', 'AI signals', 'Data engineering'],
@@ -69,25 +59,25 @@ const products = [
     glow: 'rgba(57,230,208,.20)',
   },
   {
-    eyebrow: 'Video operations',
+    eyebrow: 'Crypto · Payments',
+    title: 'GoPaySol',
+    copy: 'A non-custodial Solana payment workflow for creating payment requests, sharing QR flows, verifying settlement and keeping clear receipt records.',
+    tags: ['Solana', 'Payments', 'Verification'],
+    to: '/work/gopaysol',
+    visual: <GoPaySolVisual />,
+    glow: 'rgba(177,92,255,.20)',
+  },
+  {
+    eyebrow: 'AI & computer vision',
     title: 'VisionX',
-    copy: 'A focused security experience for live monitoring, AI events, investigation and incident response—powered by the FlameTrax engine.',
-    tags: ['Computer vision', 'Security UX', 'Cloud'],
+    copy: 'An edge-to-cloud video intelligence platform for live monitoring, AI event detection, alerts, investigation and operational response.',
+    tags: ['AI', 'Computer vision', 'Edge & cloud'],
     to: '/work/visionx',
     visual: <VisionXVisual />,
     glow: 'rgba(92,124,255,.22)',
   },
   {
-    eyebrow: 'Vision platform',
-    title: 'FlameTrax',
-    copy: 'A modular edge-to-cloud computer-vision platform that turns camera streams into detections, alerts, evidence and operational intelligence.',
-    tags: ['Edge AI', 'Real-time events', 'APIs'],
-    to: '/work/flametrax',
-    visual: <FlameTraxVisual />,
-    glow: 'rgba(177,92,255,.20)',
-  },
-  {
-    eyebrow: 'Open foundations',
+    eyebrow: 'Open source',
     title: 'Open-source engineering',
     copy: 'Reusable engines, plugins and developer tooling created from real product requirements—not isolated demonstration projects.',
     tags: ['Open source', 'Platforms', 'Developer tools'],
@@ -104,7 +94,7 @@ export const Home = () => (
   <Layout>
     <SEO
       title="Third Leap Labs | AI, Computer Vision, Web3 & Open Source"
-      description="Third Leap Labs builds production-grade products across artificial intelligence, computer vision, Web3 and open-source infrastructure."
+      description="Third Leap Labs builds WhaleScanner and GoPaySol for crypto, VisionX for AI and computer vision, and open-source technology foundations."
       path="/"
     />
 
@@ -140,7 +130,7 @@ export const Home = () => (
             transition={{ duration: .65, delay: .2 }}
             className="mt-8 max-w-2xl text-[18px] leading-8 text-slate-600 sm:text-[20px]"
           >
-            Third Leap Labs turns ambitious ideas into production-ready products across AI, computer vision, Web3 and open-source technology.
+            Third Leap Labs builds crypto products, AI and computer-vision systems, and open-source technology foundations.
           </motion.p>
 
           <motion.p
@@ -149,7 +139,7 @@ export const Home = () => (
             transition={{ duration: .65, delay: .28 }}
             className="mt-4 max-w-xl text-[15px] leading-7 text-slate-500 sm:text-base"
           >
-            We are hands-on builders. We care about the product people use, the systems behind it and the details that keep both reliable.
+            Our product portfolio includes WhaleScanner and GoPaySol in crypto, and VisionX in AI and computer vision.
           </motion.p>
 
           <motion.div
@@ -236,7 +226,7 @@ export const Home = () => (
           <SectionIntro
             eyebrow="What we bring together"
             title="Four disciplines. One product mindset."
-            description="The interesting work usually happens between categories. We combine specialised technology with strong product engineering so the result feels coherent from edge device to user interface."
+            description="The interesting work usually happens between categories. We combine specialised technology with strong product engineering so the result feels coherent from infrastructure to interface."
           />
         </Reveal>
         <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -256,7 +246,7 @@ export const Home = () => (
             <SectionIntro
               eyebrow="Selected work"
               title="Technology proven through products."
-              description="Our portfolio is where the disciplines meet: live data, real interfaces, edge intelligence and systems designed to keep growing."
+              description="Two crypto products, one AI and computer-vision platform, and open-source engineering foundations."
             />
             <Link to="/work" className="inline-flex items-center gap-2 text-sm font-semibold text-white/62 transition hover:text-white">
               See the complete portfolio <ArrowRight className="h-4 w-4" />
@@ -309,30 +299,28 @@ export const Home = () => (
             </div>
           </Reveal>
           <Reveal delay={.08}>
-            <SectionIntro
-              eyebrow="How we work"
-              title="Serious engineering, without the theatre."
-              description="We keep teams close to the problem, make decisions visible and ship in focused increments. The aim is not a beautiful presentation—it is a product that survives contact with the real world."
-            />
-          </Reveal>
-        </div>
-
-        <div className="mt-14 grid gap-px overflow-hidden rounded-[1.8rem] border border-white/[.075] bg-white/[.075] md:grid-cols-2 xl:grid-cols-4">
-          {[
-            ['01', 'Understand', 'We learn the workflow, the users and the uncomfortable constraints before proposing technology.', BrainCircuit],
-            ['02', 'Architect', 'We shape the product, data, infrastructure and deployment model as one connected system.', Blocks],
-            ['03', 'Build', 'We create the first serious version quickly, while protecting the foundations that matter later.', Workflow],
-            ['04', 'Evolve', 'We instrument what ships, listen to real usage and improve the system with evidence.', Sparkles],
-          ].map(([number, title, copy, Icon]) => (
-            <div key={String(number)} className="bg-[#0a0c12] p-7 sm:p-8">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-white/24">{String(number)}</span>
-                <Icon className="h-5 w-5 text-cyan/70" />
+            <div>
+              <SectionIntro
+                eyebrow="How we work"
+                title="Serious engineering, without the theatre."
+                description="We keep teams close to the problem, make decisions visible and ship in focused increments. The aim is not a beautiful presentation—it is a product that survives contact with the real world."
+              />
+              <div className="mt-9 grid gap-3 sm:grid-cols-2">
+                {[
+                  ['Understand', 'Users, workflow and constraints', BrainCircuit],
+                  ['Architect', 'Product, data and infrastructure', Blocks],
+                  ['Build', 'Focused, testable increments', Workflow],
+                  ['Evolve', 'Evidence from real usage', Sparkles],
+                ].map(([title, copy, Icon]) => (
+                  <div key={String(title)} className="rounded-2xl border border-white/[.08] bg-white/[.025] p-5">
+                    <Icon className="h-4 w-4 text-cyan" />
+                    <p className="mt-4 text-sm font-semibold">{String(title)}</p>
+                    <p className="mt-2 text-xs leading-6 text-white/42">{String(copy)}</p>
+                  </div>
+                ))}
               </div>
-              <h3 className="mt-10 text-2xl font-semibold tracking-[-.035em]">{String(title)}</h3>
-              <p className="mt-4 text-[14px] leading-7 text-white/47">{String(copy)}</p>
             </div>
-          ))}
+          </Reveal>
         </div>
       </div>
     </section>
@@ -350,7 +338,7 @@ export const Home = () => (
                   Building something technically ambitious?
                 </h2>
                 <p className="mt-6 max-w-2xl text-[16px] leading-8 text-white/55">
-                  Tell us what needs to see, think, verify or scale. We will help turn the idea into a product people can actually use.
+                  Tell us about the product, the users and the part that is difficult to get right. We will help turn it into working software.
                 </p>
               </div>
               <PrimaryLink to="/contact">Start a conversation</PrimaryLink>
