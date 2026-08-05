@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 export const Reveal = ({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 16 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, amount: .18 }}
-    transition={{ duration: .65, delay, ease: [0.22, 1, 0.36, 1] }}
+    viewport={{ once: true, amount: .15 }}
+    transition={{ duration: .5, delay, ease: [0.22, 1, 0.36, 1] }}
     className={className}
   >
     {children}
@@ -22,15 +22,15 @@ export const SectionIntro = ({
   description,
   align = 'left',
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description?: string;
   align?: 'left' | 'center';
 }) => (
   <div className={align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
-    <p className={`eyebrow ${align === 'center' ? 'justify-center' : ''}`}>{eyebrow}</p>
-    <h2 className="section-title mt-5">{title}</h2>
-    {description && <p className="mt-6 max-w-2xl text-[17px] leading-8 text-white/55 sm:text-lg">{description}</p>}
+    {eyebrow && <p className={`eyebrow ${align === 'center' ? 'justify-center' : ''}`}>{eyebrow}</p>}
+    <h2 className={`section-title text-slate-900 ${eyebrow ? 'mt-4' : ''}`}>{title}</h2>
+    {description && <p className="mt-5 max-w-2xl text-[17px] leading-8 text-slate-600 sm:text-lg">{description}</p>}
   </div>
 );
 
@@ -45,14 +45,12 @@ export const PageHero = ({
   description: string;
   children?: ReactNode;
 }) => (
-  <section className="relative overflow-hidden pb-20 pt-40 sm:pb-28 sm:pt-48">
-    <div className="absolute inset-0 section-grid opacity-70" />
-    <div className="absolute left-[8%] top-[22%] h-56 w-56 rounded-full bg-electric/15 blur-[100px]" />
-    <div className="absolute right-[7%] top-[8%] h-56 w-56 rounded-full bg-violet/12 blur-[100px]" />
+  <section className="relative overflow-hidden bg-slate-50 pb-20 pt-36 sm:pb-28 sm:pt-44 border-b border-slate-200">
+    <div className="absolute inset-0 section-grid opacity-40" />
     <div className="page-shell relative">
       <p className="eyebrow">{eyebrow}</p>
-      <h1 className="page-title mt-7 max-w-5xl">{title}</h1>
-      <p className="mt-7 max-w-2xl text-lg leading-8 text-white/58 sm:text-xl">{description}</p>
+      <h1 className="page-title mt-6 max-w-5xl text-slate-900">{title}</h1>
+      <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">{description}</p>
       {children}
     </div>
   </section>
@@ -67,7 +65,7 @@ export const PrimaryLink = ({
   children: ReactNode;
   external?: boolean;
 }) => {
-  const classes = 'inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-semibold text-[#090a0f] transition hover:-translate-y-0.5 hover:bg-[#dffdf8]';
+  const classes = 'inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700';
 
   if (external) {
     return (
@@ -87,9 +85,9 @@ export const PrimaryLink = ({
 export const SecondaryLink = ({ to, children }: { to: string; children: ReactNode }) => (
   <Link
     to={to}
-    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/12 bg-white/[.035] px-5 py-3.5 text-sm font-semibold text-white transition hover:border-white/22 hover:bg-white/[.07]"
+    className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-400 hover:bg-slate-50"
   >
-    {children} <ArrowUpRight className="h-4 w-4" />
+    {children} <ArrowRight className="h-4 w-4" />
   </Link>
 );
 
@@ -106,19 +104,19 @@ export const CapabilityCard = ({
   description: string;
   items: string[];
 }) => (
-  <article className="group rounded-[1.7rem] border border-white/[.085] bg-white/[.025] p-6 transition hover:border-white/15 hover:bg-white/[.04] sm:p-8">
+  <article className="group rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
     <div className="flex items-center justify-between">
-      <div className="grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/[.04] text-cyan">
+      <div className="grid h-12 w-12 place-items-center rounded-xl bg-slate-100 text-blue-600">
         <Icon className="h-5 w-5" />
       </div>
-      <span className="font-mono text-xs text-white/25">{number}</span>
+      <span className="font-mono text-xs font-medium text-slate-400">{number}</span>
     </div>
-    <h3 className="mt-8 text-2xl font-semibold tracking-[-.035em]">{title}</h3>
-    <p className="mt-4 text-[15px] leading-7 text-white/50">{description}</p>
-    <ul className="mt-7 space-y-3 border-t border-white/[.075] pt-6">
+    <h3 className="mt-6 text-xl font-semibold text-slate-900">{title}</h3>
+    <p className="mt-3 text-[15px] leading-relaxed text-slate-600">{description}</p>
+    <ul className="mt-6 space-y-2.5 border-t border-slate-100 pt-5">
       {items.map((item) => (
-        <li key={item} className="flex items-center gap-3 text-sm text-white/62">
-          <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan to-electric" />
+        <li key={item} className="flex items-center gap-3 text-sm text-slate-600">
+          <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
           {item}
         </li>
       ))}
@@ -127,8 +125,8 @@ export const CapabilityCard = ({
 );
 
 export const MetricChip = ({ label, value }: { label: string; value: string }) => (
-  <div className="rounded-xl border border-white/[.075] bg-black/20 px-4 py-3">
-    <p className="text-[10px] uppercase tracking-[.16em] text-white/30">{label}</p>
-    <p className="mt-1.5 text-sm font-semibold text-white/84">{value}</p>
+  <div className="rounded-xl border border-slate-200 bg-white px-4 py-3">
+    <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-500">{label}</p>
+    <p className="mt-1.5 text-sm font-semibold text-slate-900">{value}</p>
   </div>
 );
