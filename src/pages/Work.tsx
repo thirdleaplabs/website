@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
 import { PageHero, Reveal, SectionIntro } from '../components/ui/Primitives';
-import { FlameTraxVisual, OpenSourceVisual, VisionXVisual, WhaleScannerVisual } from '../components/ui/Visuals';
+import { GoPaySolVisual, OpenSourceVisual, VisionXVisual, WhaleScannerVisual } from '../components/ui/Visuals';
 
 const work = [
   {
     classification: 'Third Leap Labs product',
     title: 'WhaleScanner',
-    category: 'Web3 intelligence platform',
+    category: 'Crypto · Web3 intelligence',
     description: 'Wallet intelligence, market signals, project discovery, community participation and risk awareness in one connected crypto product.',
     to: '/work/whalescanner',
     visual: <WhaleScannerVisual />,
@@ -17,26 +17,26 @@ const work = [
   },
   {
     classification: 'Third Leap Labs product',
-    title: 'VisionX',
-    category: 'AI video security and operations',
-    description: 'A clear, focused experience for monitoring sites, understanding AI events and investigating the moments that need attention.',
-    to: '/work/visionx',
-    visual: <VisionXVisual />,
-    tags: ['Computer vision', 'Security operations', 'Cloud', 'UX'],
+    title: 'GoPaySol',
+    category: 'Crypto · Payment workflows',
+    description: 'Non-custodial Solana payment requests, QR flows, on-chain verification and receipt records for practical payment use cases.',
+    to: '/work/gopaysol',
+    visual: <GoPaySolVisual />,
+    tags: ['Solana', 'Payments', 'Non-custodial', 'Verification'],
   },
   {
-    classification: 'Core technology platform',
-    title: 'FlameTrax',
-    category: 'Edge-to-cloud vision engine',
-    description: 'A modular computer-vision platform that connects camera streams, inference, event processing, evidence, alerts and cloud workflows.',
-    to: '/work/flametrax',
-    visual: <FlameTraxVisual />,
-    tags: ['Edge AI', 'Real-time events', 'Plugins', 'APIs'],
+    classification: 'Third Leap Labs product',
+    title: 'VisionX',
+    category: 'AI & computer vision',
+    description: 'An edge-to-cloud video intelligence platform for monitoring, AI event detection, alerts, evidence and operational response.',
+    to: '/work/visionx',
+    visual: <VisionXVisual />,
+    tags: ['AI', 'Computer vision', 'Edge', 'Cloud'],
   },
   {
     classification: 'Open engineering',
-    title: 'Open foundations',
-    category: 'Reusable engines and tooling',
+    title: 'Open-source foundations',
+    category: 'Open source',
     description: 'Selected architecture patterns, plugins and developer infrastructure built from real product needs and designed for extension.',
     to: '/open-source',
     visual: <OpenSourceVisual />,
@@ -48,13 +48,13 @@ export const Work = () => (
   <Layout>
     <SEO
       title="Work | Third Leap Labs"
-      description="Explore Third Leap Labs products and engineering work across AI, computer vision, Web3 and open-source platforms."
+      description="Explore Third Leap Labs products across crypto, AI, computer vision and open-source engineering."
       path="/work"
     />
     <PageHero
       eyebrow="Selected work"
       title={<>Products built where <span className="text-gradient">disciplines overlap.</span></>}
-      description="Our portfolio connects intelligent software, visual perception, decentralized data and open infrastructure. Each product is a practical expression of that combination."
+      description="Our portfolio has two crypto products—WhaleScanner and GoPaySol—one AI and computer-vision platform, VisionX, and open-source engineering foundations."
     />
 
     <section className="pb-24 sm:pb-32">
@@ -90,14 +90,14 @@ export const Work = () => (
         <Reveal>
           <SectionIntro
             eyebrow="What counts as work"
-            title="Not every good system needs a glossy product name."
-            description="We also work on the foundations: architecture, edge runtimes, event pipelines, analytics engines, integrations and the interfaces that make complex technology manageable."
+            title="Products are only as strong as their foundations."
+            description="We also work on architecture, edge runtimes, event pipelines, analytics engines, integrations and the interfaces that make complex technology manageable."
           />
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-2">
           {[
             ['Product systems', 'End-to-end web and mobile products with the infrastructure behind them.', Layers3],
-            ['Platform foundations', 'Shared engines, APIs and plugin boundaries that support multiple products.', Code2],
+            ['Open foundations', 'Shared engines, APIs and plugin boundaries designed to support extension and reuse.', Code2],
           ].map(([title, copy, Icon]) => (
             <Reveal key={String(title)}>
               <div className="rounded-[1.6rem] border border-white/[.08] bg-white/[.025] p-7">
