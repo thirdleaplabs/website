@@ -1,13 +1,14 @@
 import {
   ArrowRight,
-  BellRing,
-  Blocks3,
   Camera,
   Code2,
   Eye,
   GitBranch,
   Github,
+  Link2,
   Network,
+  QrCode,
+  ReceiptText,
   ShieldCheck,
   Sparkles,
   WalletCards,
@@ -81,14 +82,12 @@ export const WhaleScannerVisual = () => (
     <div className="relative">
       <div className="flex items-start justify-between gap-5">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-cyan/65">Product story</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-cyan/65">Crypto product</p>
           <p className="mt-3 max-w-sm text-xl font-semibold leading-7 tracking-[-.035em] text-white sm:text-2xl">
             Make on-chain activity easier to follow and understand.
           </p>
         </div>
-        <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl border border-cyan/20 bg-cyan/[.07] text-2xl font-bold tracking-[-.08em] text-cyan">
-          WS
-        </div>
+        <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl border border-cyan/20 bg-cyan/[.07] text-2xl font-bold tracking-[-.08em] text-cyan">WS</div>
       </div>
 
       <div className="mt-8 grid gap-3 sm:grid-cols-3">
@@ -104,59 +103,55 @@ export const WhaleScannerVisual = () => (
   </div>
 );
 
+export const GoPaySolVisual = () => (
+  <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(145deg,#171329,#0b0e16_58%,#121724)] p-5 shadow-2xl shadow-black/25 sm:p-6">
+    <div className="absolute -right-16 -top-20 h-56 w-56 rounded-full bg-violet/18 blur-[80px]" />
+    <div className="relative">
+      <div className="flex items-start justify-between gap-5">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-violet/75">Crypto product</p>
+          <p className="mt-3 max-w-sm text-xl font-semibold leading-7 tracking-[-.035em] text-white sm:text-2xl">
+            Make Solana payments easier to request, verify and record.
+          </p>
+        </div>
+        <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl border border-violet/22 bg-violet/[.08] text-2xl font-bold tracking-[-.08em] text-[#cd9dff]">GP</div>
+      </div>
+
+      <div className="mt-8 grid gap-3 sm:grid-cols-3">
+        <ProductStep icon={Link2} label="Request" detail="Clear payment links and details" />
+        <ProductStep icon={QrCode} label="Pay" detail="Simple wallet and QR flow" />
+        <ProductStep icon={ReceiptText} label="Verify" detail="On-chain status and receipts" />
+      </div>
+
+      <div className="mt-6 flex items-center gap-3 border-t border-white/[.07] pt-5 text-[10px] font-semibold uppercase tracking-[.16em] text-white/30">
+        Request <ArrowRight className="h-3.5 w-3.5 text-violet/70" /> Settlement <ArrowRight className="h-3.5 w-3.5 text-violet/70" /> Record
+      </div>
+    </div>
+  </div>
+);
+
 export const VisionXVisual = () => (
   <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(145deg,#12152a,#0b0e17_58%,#101823)] p-5 shadow-2xl shadow-black/25 sm:p-6">
     <div className="absolute -right-16 -top-20 h-56 w-56 rounded-full bg-electric/18 blur-[80px]" />
     <div className="relative">
       <div className="flex items-start justify-between gap-5">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-electric/72">Product story</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-electric/72">AI & computer vision</p>
           <p className="mt-3 max-w-sm text-xl font-semibold leading-7 tracking-[-.035em] text-white sm:text-2xl">
             Help teams see important events and respond with confidence.
           </p>
         </div>
-        <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl border border-electric/22 bg-electric/[.08] text-2xl font-bold tracking-[-.08em] text-[#91a4ff]">
-          VX
-        </div>
+        <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl border border-electric/22 bg-electric/[.08] text-2xl font-bold tracking-[-.08em] text-[#91a4ff]">VX</div>
       </div>
 
       <div className="mt-8 grid gap-3 sm:grid-cols-3">
         <ProductStep icon={Camera} label="Monitor" detail="Sites, zones and live activity" />
-        <ProductStep icon={Eye} label="Investigate" detail="Events, context and evidence" />
-        <ProductStep icon={ShieldCheck} label="Respond" detail="Clear actions and ownership" />
+        <ProductStep icon={Eye} label="Understand" detail="AI events, context and evidence" />
+        <ProductStep icon={ShieldCheck} label="Respond" detail="Alerts, ownership and action" />
       </div>
 
       <div className="mt-6 flex items-center gap-3 border-t border-white/[.07] pt-5 text-[10px] font-semibold uppercase tracking-[.16em] text-white/30">
         Observe <ArrowRight className="h-3.5 w-3.5 text-electric/70" /> Understand <ArrowRight className="h-3.5 w-3.5 text-electric/70" /> Act
-      </div>
-    </div>
-  </div>
-);
-
-export const FlameTraxVisual = () => (
-  <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(145deg,#181124,#0b0e16_58%,#15101c)] p-5 shadow-2xl shadow-black/25 sm:p-6">
-    <div className="absolute -right-16 -top-20 h-56 w-56 rounded-full bg-violet/18 blur-[80px]" />
-    <div className="relative">
-      <div className="flex items-start justify-between gap-5">
-        <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-violet/75">Platform story</p>
-          <p className="mt-3 max-w-sm text-xl font-semibold leading-7 tracking-[-.035em] text-white sm:text-2xl">
-            Turn existing cameras into an operational safety network.
-          </p>
-        </div>
-        <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl border border-violet/22 bg-violet/[.08] text-2xl font-bold tracking-[-.08em] text-[#cd9dff]">
-          FT
-        </div>
-      </div>
-
-      <div className="mt-8 grid gap-3 sm:grid-cols-3">
-        <ProductStep icon={Camera} label="Detect" detail="Visual events at the edge" />
-        <ProductStep icon={Blocks3} label="Verify" detail="Context, rules and severity" />
-        <ProductStep icon={BellRing} label="Coordinate" detail="Alerts, evidence and response" />
-      </div>
-
-      <div className="mt-6 flex items-center gap-3 border-t border-white/[.07] pt-5 text-[10px] font-semibold uppercase tracking-[.16em] text-white/30">
-        Camera <ArrowRight className="h-3.5 w-3.5 text-violet/70" /> Edge intelligence <ArrowRight className="h-3.5 w-3.5 text-violet/70" /> Coordinated response
       </div>
     </div>
   </div>
@@ -168,7 +163,7 @@ export const OpenSourceVisual = () => (
     <div className="relative">
       <div className="flex items-start justify-between gap-5">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-coral/72">Engineering approach</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-coral/72">Open source</p>
           <p className="mt-3 max-w-sm text-xl font-semibold leading-7 tracking-[-.035em] text-white sm:text-2xl">
             Build foundations that other engineers can understand and extend.
           </p>
