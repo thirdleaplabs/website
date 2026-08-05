@@ -1,131 +1,187 @@
-import { ArrowDown, ArrowRight } from 'lucide-react';
+import {
+  ArrowRight,
+  BrainCircuit,
+  Camera,
+  Code2,
+  Cpu,
+  Network,
+  ShieldCheck,
+  WalletCards,
+  Zap,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
-import { Reveal } from '../components/ui/Primitives';
+import { PrimaryLink, Reveal, SecondaryLink, SectionIntro } from '../components/ui/Primitives';
 
 const heroPhoto =
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2200&q=88';
-const processPhoto =
-  'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=2200&q=88';
+  'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=90';
 
-const ProductLink = ({
-  to,
-  children,
-  inverse = false,
-}: {
+type ProductCardProps = {
+  category: string;
+  title: string;
+  description: string;
   to: string;
-  children: string;
-  inverse?: boolean;
-}) => (
+  icon: LucideIcon;
+  dark?: boolean;
+};
+
+type IconStatement = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+type SystemLayer = {
+  number: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+const heroSignals: { label: string; icon: LucideIcon }[] = [
+  { label: 'See', icon: Camera },
+  { label: 'Reason', icon: BrainCircuit },
+  { label: 'Verify', icon: ShieldCheck },
+];
+
+const disciplines: IconStatement[] = [
+  {
+    title: 'Artificial intelligence',
+    description: 'Agents, knowledge systems and decision engines designed around a useful outcome.',
+    icon: BrainCircuit,
+  },
+  {
+    title: 'Computer vision',
+    description: 'Edge-to-cloud systems that turn live video into events, evidence and action.',
+    icon: Camera,
+  },
+  {
+    title: 'Web3 and trust',
+    description: 'Wallet intelligence, payment workflows and transparent digital systems.',
+    icon: WalletCards,
+  },
+  {
+    title: 'Open engineering',
+    description: 'Reusable platforms, APIs, plugins and tools built for long-term ownership.',
+    icon: Code2,
+  },
+];
+
+const systemLayers: SystemLayer[] = [
+  { number: '01', title: 'Edge', description: 'Cameras, sensors and local compute', icon: Cpu },
+  { number: '02', title: 'Intelligence', description: 'Models, agents and decision logic', icon: BrainCircuit },
+  { number: '03', title: 'Platforms', description: 'Cloud, APIs, mobile and operations', icon: Network },
+  { number: '04', title: 'Trust', description: 'Blockchain and external ecosystems', icon: ShieldCheck },
+];
+
+const ProductCard = ({ category, title, description, to, icon: Icon, dark = false }: ProductCardProps) => (
   <Link
     to={to}
-    className={`inline-flex items-center gap-2 text-sm font-semibold transition hover:gap-3 ${
-      inverse ? 'text-white hover:text-[#8fd3ff]' : 'text-[#1177b8] hover:text-black'
+    className={`group relative min-h-[390px] overflow-hidden rounded-[2rem] border p-7 transition duration-300 hover:-translate-y-1 sm:p-9 ${
+      dark
+        ? 'border-white/10 bg-[#07111f] text-white shadow-[0_26px_80px_rgba(7,17,31,.22)]'
+        : 'border-black/10 bg-white text-[#07111f] shadow-[0_22px_65px_rgba(7,17,31,.08)]'
     }`}
   >
-    {children}
-    <ArrowRight className="h-4 w-4" />
+    <div className={`absolute inset-0 ${dark ? 'tech-grid opacity-25' : 'light-grid opacity-65'}`} />
+    <div className={`absolute -right-12 -top-12 h-56 w-56 rounded-full blur-[80px] ${dark ? 'bg-[#1d9bf0]/22' : 'bg-[#1d9bf0]/12'}`} />
+    <div className="relative flex h-full flex-col">
+      <div className={`grid h-12 w-12 place-items-center rounded-2xl ${dark ? 'border border-white/10 bg-white/10 text-[#7dd3fc]' : 'bg-[#e8f5fd] text-[#0b7dbd]'}`}>
+        <Icon className="h-5 w-5" />
+      </div>
+      <p className={`mt-12 text-xs font-semibold uppercase tracking-[.15em] ${dark ? 'text-white/42' : 'text-[#6b7280]'}`}>{category}</p>
+      <h3 className="mt-4 text-4xl font-semibold tracking-[-.055em] sm:text-5xl">{title}</h3>
+      <p className={`mt-6 max-w-lg text-[16px] leading-8 ${dark ? 'text-white/58' : 'text-[#5b6472]'}`}>{description}</p>
+      <span className={`mt-auto inline-flex items-center gap-2 pt-10 text-sm font-semibold transition group-hover:gap-3 ${dark ? 'text-[#7dd3fc]' : 'text-[#0b7dbd]'}`}>
+        Explore product <ArrowRight className="h-4 w-4" />
+      </span>
+    </div>
   </Link>
-);
-
-const Statement = ({ title, copy, inverse = false }: { title: string; copy: string; inverse?: boolean }) => (
-  <div className={`border-t py-6 ${inverse ? 'border-white/20' : 'border-black/15'}`}>
-    <h4 className={`text-base font-semibold ${inverse ? 'text-white' : 'text-black'}`}>{title}</h4>
-    <p className={`mt-2 max-w-xl text-[15px] leading-7 ${inverse ? 'text-white/68' : 'text-black/62'}`}>{copy}</p>
-  </div>
 );
 
 export const Home = () => (
   <Layout>
     <SEO
       title="Third Leap Labs | AI, Computer Vision, Web3 and Open Engineering"
-      description="Third Leap Labs builds practical products across AI, computer vision, crypto, Web3 and open-source engineering."
+      description="Third Leap Labs builds applied AI, computer vision and Web3 products, together with reusable open engineering foundations."
       path="/"
     />
 
-    <section className="relative overflow-hidden bg-[#efeeec] text-black lg:min-h-[100svh]">
-      <div className="relative h-[48svh] min-h-[340px] lg:absolute lg:inset-y-0 lg:left-0 lg:h-auto lg:min-h-0 lg:w-[58%]">
-        <img
-          src={heroPhoto}
-          alt="Software product team collaborating in a bright modern workspace"
-          className="h-full w-full object-cover object-center"
-          loading="eager"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#efeeec] lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-[#efeeec]" />
-      </div>
+    <section className="relative overflow-hidden bg-[#f4f5f7] pt-24 lg:min-h-[100svh] lg:pt-0">
+      <div className="grid lg:min-h-[100svh] lg:grid-cols-[1.08fr_.92fr]">
+        <div className="relative min-h-[52svh] overflow-hidden lg:min-h-full">
+          <img
+            src={heroPhoto}
+            alt="Close-up of advanced computing hardware and electronic circuits"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/80 via-[#030712]/20 to-[#030712]/25 lg:bg-gradient-to-r lg:from-[#030712]/20 lg:via-transparent lg:to-[#030712]/40" />
+          <div className="absolute inset-0 tech-grid opacity-20" />
 
-      <div className="page-shell relative z-10 grid pb-16 pt-8 lg:min-h-[100svh] lg:grid-cols-2 lg:items-center lg:pb-20 lg:pt-28">
-        <div className="hidden lg:block" />
-        <div className="flex flex-col items-center text-center lg:pl-10">
-          <img src="/logo.svg" alt="" className="h-20 w-20 sm:h-24 sm:w-24" />
-          <p className="mt-5 text-[13px] font-medium uppercase tracking-[0.24em] text-black/55">Third Leap Labs</p>
-          <h1 className="mt-7 max-w-xl text-[clamp(2.75rem,5vw,5.25rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-black">
-            Intelligent products for the real world.
-          </h1>
-          <p className="mt-6 max-w-lg text-base leading-7 text-black/62 sm:text-lg sm:leading-8">
-            We build AI, computer-vision and Web3 products—from edge systems and data platforms to the software people use every day.
-          </p>
-          <div className="mt-9 flex w-full max-w-sm flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row">
-            <Link
-              to="/work"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#1d9bf0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-black"
-            >
-              Explore our products
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 bg-white/45 px-7 py-3 text-sm font-semibold text-black transition hover:border-black hover:bg-white"
-            >
-              Start a conversation
-            </Link>
+          <div className="absolute left-5 top-5 rounded-full border border-white/20 bg-black/28 px-4 py-2 text-[10px] font-semibold uppercase tracking-[.16em] text-white/72 backdrop-blur-md sm:left-8 sm:top-8 lg:left-12 lg:top-32">
+            Edge · AI · Cloud · Chain
           </div>
-          <Link to="#products" className="mt-6 text-sm text-black/45 transition hover:text-black">
-            Learn more
-          </Link>
+
+          <div className="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/15 bg-[#07111f]/72 p-5 text-white backdrop-blur-xl sm:inset-x-8 sm:bottom-8 sm:p-6 lg:bottom-12 lg:left-12 lg:right-auto lg:w-[430px]">
+            <div className="flex items-center justify-between">
+              <p className="text-xs font-semibold uppercase tracking-[.14em] text-white/44">Applied system</p>
+              <span className="inline-flex items-center gap-2 text-xs text-white/52"><span className="h-2 w-2 rounded-full bg-emerald-400" /> Active</span>
+            </div>
+            <div className="mt-5 grid grid-cols-3 gap-3">
+              {heroSignals.map(({ label, icon: Icon }) => (
+                <div key={label} className="rounded-xl border border-white/10 bg-white/[.06] p-3">
+                  <Icon className="h-4 w-4 text-[#7dd3fc]" />
+                  <p className="mt-4 text-sm font-semibold">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="relative flex items-center bg-[#f4f5f7] px-[var(--page-x)] py-16 sm:py-20 lg:px-14 lg:pb-20 lg:pt-32 xl:px-20">
+          <div className="absolute inset-0 light-grid opacity-55" />
+          <div className="relative max-w-2xl">
+            <p className="eyebrow">Third Leap Labs</p>
+            <h1 className="mt-7 text-[clamp(3.2rem,6.2vw,6.6rem)] font-semibold leading-[.94] tracking-[-.067em] text-[#07111f]">
+              Intelligent products for the real world.
+            </h1>
+            <p className="mt-7 max-w-xl text-lg leading-8 text-[#5b6472] sm:text-xl sm:leading-9">
+              We build applied AI, computer-vision and Web3 products—from edge systems and data platforms to the software people use every day.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <PrimaryLink to="/work">Explore our work</PrimaryLink>
+              <SecondaryLink to="/contact">Start a conversation</SecondaryLink>
+            </div>
+            <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-5 border-t border-black/10 pt-7 text-sm sm:grid-cols-4">
+              {['AI', 'Computer vision', 'Web3', 'Open source'].map((item) => (
+                <span key={item} className="font-semibold text-[#4b5563]">{item}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-
-      <a
-        href="#focus"
-        aria-label="Scroll to what Third Leap Labs builds"
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 text-black/45 transition hover:text-black lg:block"
-      >
-        <ArrowDown className="h-7 w-7" strokeWidth={1.5} />
-      </a>
     </section>
 
-    <section id="focus" className="border-y border-black/10 bg-white py-20 sm:py-28">
+    <section className="section-space border-y border-black/10 bg-white">
       <div className="page-shell">
         <Reveal>
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-medium text-[#1177b8]">What we build</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-black sm:text-6xl">
-              Three areas. One engineering mindset.
-            </h2>
-          </div>
+          <SectionIntro
+            eyebrow="What we build"
+            title="Specialised technology. Complete products."
+            description="We connect difficult engineering to a clear user workflow, an operable system and a product people can actually adopt."
+          />
         </Reveal>
-
-        <div className="mt-16 grid gap-10 md:grid-cols-3 md:gap-0">
-          {[
-            [
-              'AI and computer vision',
-              'Systems that interpret information, understand visual events and help teams make better operational decisions.',
-            ],
-            [
-              'Crypto and Web3',
-              'Products that make wallet activity, market context and non-custodial payment workflows easier to understand and use.',
-            ],
-            [
-              'Open engineering',
-              'Reusable foundations, APIs and extension points designed for long-term ownership and continuous improvement.',
-            ],
-          ].map(([title, copy], index) => (
-            <Reveal key={title} delay={index * 0.06}>
-              <div className={`h-full md:px-10 ${index > 0 ? 'border-t border-black/10 pt-10 md:border-l md:border-t-0 md:pt-0' : ''}`}>
-                <p className="text-2xl font-semibold tracking-[-0.035em] text-black">{title}</p>
-                <p className="mt-5 text-[16px] leading-8 text-black/58">{copy}</p>
+        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-4 xl:gap-0">
+          {disciplines.map(({ title, description, icon: Icon }, index) => (
+            <Reveal key={title} delay={index * .05}>
+              <div className={`h-full xl:px-8 ${index > 0 ? 'border-t border-black/10 pt-9 md:border-t-0 md:pt-0 xl:border-l' : ''}`}>
+                <Icon className="h-6 w-6 text-[#0b7dbd]" />
+                <h2 className="mt-7 text-2xl font-semibold tracking-[-.04em] text-[#07111f]">{title}</h2>
+                <p className="mt-4 text-[15px] leading-7 text-[#5b6472]">{description}</p>
               </div>
             </Reveal>
           ))}
@@ -133,226 +189,93 @@ export const Home = () => (
       </div>
     </section>
 
-    <section id="products" className="bg-[#efeeec] py-20 sm:py-28">
+    <section className="section-space bg-[#edf2f6]">
       <div className="page-shell">
         <Reveal>
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <div>
-              <p className="text-sm font-medium text-[#1177b8]">Selected products</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-black sm:text-6xl">
-                Technology with a clear job to do.
-              </h2>
-            </div>
-            <p className="max-w-2xl text-lg leading-8 text-black/60 lg:justify-self-end">
-              Each product starts with a real problem: something people struggle to understand, verify, monitor or complete.
+          <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+            <SectionIntro eyebrow="Selected work" title="Products with a clear job to do." />
+            <p className="max-w-2xl text-lg leading-8 text-[#5b6472] lg:justify-self-end">
+              Each product starts with a real operational problem—not a technology category looking for a use case.
             </p>
           </div>
         </Reveal>
-
-        <div className="mt-16 border-t border-black/20">
-          <Reveal>
-            <article className="grid border-b border-black/20 py-12 sm:py-16 lg:grid-cols-[0.42fr_0.58fr] lg:gap-16">
-              <div>
-                <p className="text-sm font-medium text-[#1177b8]">Crypto intelligence and community</p>
-                <h3 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-black sm:text-5xl">WhaleScanner</h3>
-                <p className="mt-6 max-w-lg text-lg leading-8 text-black/60">
-                  One connected place for wallet activity, market context, project discovery, signals and crypto communities.
-                </p>
-                <div className="mt-8">
-                  <ProductLink to="/work/whalescanner">Explore WhaleScanner</ProductLink>
-                </div>
-              </div>
-              <div className="mt-10 lg:mt-0">
-                <Statement
-                  title="The problem"
-                  copy="Crypto users jump between explorers, market dashboards, project pages and social channels just to understand what is happening."
-                />
-                <Statement
-                  title="How WhaleScanner helps"
-                  copy="It brings those signals together so users can discover activity, understand context and participate with better information."
-                />
-                <p className="border-t border-black/15 pt-6 text-sm leading-7 text-black/52">
-                  Wallet intelligence · Market context · Project discovery · Signals and risk awareness · Community participation
-                </p>
-              </div>
-            </article>
-          </Reveal>
-
-          <Reveal>
-            <article className="grid border-b border-black/20 py-12 sm:py-16 lg:grid-cols-[0.42fr_0.58fr] lg:gap-16">
-              <div>
-                <p className="text-sm font-medium text-[#1177b8]">Solana payment workflows</p>
-                <h3 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-black sm:text-5xl">GoPaySol</h3>
-                <p className="mt-6 max-w-lg text-lg leading-8 text-black/60">
-                  A non-custodial way to create payment requests, share links or QR codes, verify settlement and keep a clear record.
-                </p>
-                <div className="mt-8">
-                  <ProductLink to="/work/gopaysol">Explore GoPaySol</ProductLink>
-                </div>
-              </div>
-              <div className="mt-10 lg:mt-0">
-                <Statement
-                  title="The problem"
-                  copy="A wallet address alone does not explain the amount, purpose or status of a payment, and verification often becomes a manual task."
-                />
-                <Statement
-                  title="How GoPaySol helps"
-                  copy="It creates a clear path from payment request to wallet approval, on-chain verification and receipt record—without taking custody of funds."
-                />
-                <p className="border-t border-black/15 pt-6 text-sm leading-7 text-black/52">
-                  Payment links · QR requests · Non-custodial wallet flows · On-chain verification · Payment records
-                </p>
-              </div>
-            </article>
-          </Reveal>
+        <div className="mt-16 grid gap-5 lg:grid-cols-2">
+          <Reveal><ProductCard category="Crypto intelligence" title="WhaleScanner" description="Wallet activity, market context, project discovery, signals and community in one connected crypto platform." to="/work/whalescanner" icon={WalletCards} dark /></Reveal>
+          <Reveal delay={.05}><ProductCard category="AI video operations" title="VisionX" description="A calmer operational experience for live monitoring, AI events, alerts, investigation and evidence." to="/work/visionx" icon={Camera} /></Reveal>
+          <Reveal><ProductCard category="Computer-vision platform" title="FlameTrax" description="The reusable edge-to-cloud engine behind visual detection, event processing, integrations and deployment." to="/work/flametrax" icon={Cpu} /></Reveal>
+          <Reveal delay={.05}><ProductCard category="Non-custodial payments" title="GoPaySol" description="Create Solana payment requests, share links or QR codes, verify settlement and keep a readable record." to="/work/gopaysol" icon={Zap} dark /></Reveal>
         </div>
       </div>
     </section>
 
-    <section className="bg-black py-20 text-white sm:py-28">
-      <div className="page-shell">
+    <section className="dark-panel section-space relative overflow-hidden">
+      <div className="absolute inset-0 tech-grid opacity-30" />
+      <div className="page-shell relative grid gap-14 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-20">
         <Reveal>
-          <div className="grid gap-14 lg:grid-cols-[0.4fr_0.6fr] lg:gap-20">
-            <div>
-              <p className="text-sm font-medium text-[#72c7ff]">AI and computer vision</p>
-              <h2 className="mt-4 text-5xl font-semibold tracking-[-0.055em] sm:text-7xl">VisionX</h2>
-              <p className="mt-7 max-w-lg text-lg leading-8 text-white/62">
-                An edge-to-cloud video intelligence platform helping teams detect important events, understand what happened and respond faster.
-              </p>
-              <div className="mt-9">
-                <ProductLink to="/work/visionx" inverse>Explore VisionX</ProductLink>
-              </div>
-            </div>
-
-            <div className="grid gap-10 md:grid-cols-2">
-              <div>
-                <p className="text-lg font-semibold">The operational problem</p>
-                <Statement
-                  inverse
-                  title="Continuous monitoring does not scale"
-                  copy="Operators cannot maintain full attention across many cameras, sites and shifts."
-                />
-                <Statement
-                  inverse
-                  title="Detections lack useful context"
-                  copy="An alert needs location, time, severity and evidence before it becomes operationally meaningful."
-                />
-                <Statement
-                  inverse
-                  title="Investigation is fragmented"
-                  copy="Live feeds, recorded footage, alerts and incident evidence are often spread across separate systems."
-                />
-              </div>
-              <div>
-                <p className="text-lg font-semibold">How VisionX helps</p>
-                <Statement
-                  inverse
-                  title="Focused monitoring"
-                  copy="Organise cameras, sites and events around what requires attention instead of presenting another wall of video."
-                />
-                <Statement
-                  inverse
-                  title="AI events with context"
-                  copy="Transform detections into meaningful events with severity, supporting evidence and history."
-                />
-                <Statement
-                  inverse
-                  title="Connected response"
-                  copy="Bring monitoring, alerts, investigation and evidence into one operational workflow."
-                />
-              </div>
-            </div>
-          </div>
+          <SectionIntro
+            eyebrow="System thinking"
+            title="From edge to cloud to chain."
+            description="A strong interface cannot rescue an unreliable pipeline. We design models, devices, data, infrastructure and user workflows as one system."
+            tone="dark"
+          />
         </Reveal>
-      </div>
-    </section>
-
-    <section className="bg-white py-20 sm:py-28">
-      <div className="page-shell grid gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-20">
-        <Reveal>
-          <div>
-            <p className="text-sm font-medium text-[#1177b8]">Open engineering</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-black sm:text-6xl">
-              Foundations built to be understood and extended.
-            </h2>
-            <div className="mt-8">
-              <ProductLink to="/open-source">Explore open source</ProductLink>
-            </div>
-          </div>
-        </Reveal>
-        <Reveal delay={0.06}>
-          <div>
-            <Statement
-              title="The problem"
-              copy="Teams repeatedly rebuild common infrastructure, while closed or poorly documented systems become expensive to extend and hand over."
-            />
-            <Statement
-              title="How we help"
-              copy="We create reusable engines, clear extension points, APIs and developer tools designed for long-term engineering ownership."
-            />
-            <p className="border-t border-black/15 pt-6 text-sm leading-7 text-black/52">
-              Reusable components · Plugin-ready architecture · APIs and SDKs · Developer tooling · Documentation and stewardship
-            </p>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-
-    <section className="relative min-h-[70svh] overflow-hidden bg-black text-white">
-      <img
-        src={processPhoto}
-        alt="Software engineers reviewing a product together"
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 bg-black/62" />
-      <div className="page-shell relative z-10 flex min-h-[70svh] items-center py-20">
-        <Reveal>
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium text-[#72c7ff]">How we work</p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.05em] sm:text-6xl">
-              Serious engineering, without the theatre.
-            </h2>
-            <p className="mt-7 text-lg leading-8 text-white/72">
-              We keep the people shaping the architecture close to the product and its users. Difficult assumptions are tested early, decisions stay visible and working software is delivered in focused increments.
-            </p>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2">
-              {[
-                ['01', 'Understand', 'Learn the users, workflow, constraints and existing system.'],
-                ['02', 'Architect', 'Shape the product, data, infrastructure and deployment model together.'],
-                ['03', 'Build', 'Deliver a serious first version without unnecessary complexity.'],
-                ['04', 'Evolve', 'Use real feedback and operational evidence to improve what ships.'],
-              ].map(([number, title, copy]) => (
-                <div key={number} className="border-t border-white/35 pt-4">
-                  <p className="text-xs text-[#72c7ff]">{number}</p>
-                  <p className="mt-2 text-lg font-semibold">{title}</p>
-                  <p className="mt-2 text-sm leading-6 text-white/62">{copy}</p>
+        <Reveal delay={.08}>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {systemLayers.map(({ number, title, description, icon: Icon }) => (
+              <div key={number} className="rounded-[1.4rem] border border-white/10 bg-white/[.055] p-5 backdrop-blur-sm">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs text-white/28">{number}</span>
+                  <Icon className="h-4 w-4 text-[#7dd3fc]" />
                 </div>
-              ))}
-            </div>
+                <h3 className="mt-12 text-lg font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-xs leading-6 text-white/44">{description}</p>
+              </div>
+            ))}
           </div>
         </Reveal>
       </div>
     </section>
 
-    <section className="bg-[#1d9bf0] py-20 text-white sm:py-24">
-      <div className="page-shell grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+    <section className="section-space bg-white">
+      <div className="page-shell grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20">
         <Reveal>
-          <div>
-            <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.05em] sm:text-6xl">
-              Building something technically ambitious?
-            </h2>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">
-              Tell us about the product, the users and the part that is difficult to get right. We will help turn it into working software.
-            </p>
+          <div className="surface-card relative min-h-[420px] overflow-hidden rounded-[2rem] p-8">
+            <div className="absolute inset-0 light-grid opacity-70" />
+            <div className="relative flex h-full min-h-[350px] flex-col justify-between rounded-[1.5rem] bg-[#07111f] p-7 text-white">
+              <div className="flex items-center justify-between">
+                <Code2 className="h-6 w-6 text-[#7dd3fc]" />
+                <span className="text-[10px] font-semibold uppercase tracking-[.16em] text-white/38">Open engineering</span>
+              </div>
+              <div>
+                <p className="text-5xl font-semibold tracking-[-.06em]">Inspect.<br />Extend.<br />Own.</p>
+                <p className="mt-6 max-w-sm text-sm leading-7 text-white/52">Reusable foundations should make future engineering easier—not create another black box.</p>
+              </div>
+            </div>
           </div>
         </Reveal>
-        <Link
-          to="/contact"
-          className="inline-flex min-h-12 items-center justify-center rounded-full bg-black px-7 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-black"
-        >
-          Start a conversation
-        </Link>
+        <Reveal delay={.08}>
+          <SectionIntro
+            eyebrow="Open source"
+            title="Foundations built to be understood and extended."
+            description="We publish and maintain reusable engines, APIs, plugin boundaries and developer tools where openness improves trust, learning and long-term ownership."
+          />
+          <div className="mt-9">
+            <PrimaryLink to="/open-source">Explore open engineering</PrimaryLink>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+
+    <section className="border-t border-black/10 bg-[#edf2f6] py-20 sm:py-24">
+      <div className="page-shell flex flex-col gap-9 lg:flex-row lg:items-end lg:justify-between">
+        <Reveal>
+          <div>
+            <p className="eyebrow">Build with us</p>
+            <h2 className="section-title mt-5 max-w-4xl text-[#07111f]">Bring the difficult part—not a perfect specification.</h2>
+            <p className="mt-6 max-w-2xl text-[17px] leading-8 text-[#5b6472]">We can help clarify the problem, choose the architecture and build the first serious version.</p>
+          </div>
+        </Reveal>
+        <PrimaryLink to="/contact">Start a conversation</PrimaryLink>
       </div>
     </section>
   </Layout>
