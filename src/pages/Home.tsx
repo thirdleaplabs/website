@@ -1,212 +1,282 @@
-import React from 'react';
-import { ArchitectureStackVisual } from '../components/ui/ArchitectureStackVisual';
-import { SectionHeading } from '../components/ui/SectionHeading';
-import { ProductCard } from '../components/ui/ProductCard';
-import { FeatureCard } from '../components/ui/FeatureCard';
-import { CTASection } from '../components/ui/CTASection';
+import {
+  ArrowRight,
+  BrainCircuit,
+  Camera,
+  Code2,
+  Cpu,
+  Network,
+  ShieldCheck,
+  WalletCards,
+  Zap,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
-import { Code, Database, Globe, Network, ShieldCheck, Zap, Lock, Lightbulb, Blocks, CheckCircle2, RefreshCw, Activity, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { PrimaryLink, Reveal, SecondaryLink, SectionIntro } from '../components/ui/Primitives';
 
-export const Home = () => {
-  return (
-    <Layout>
-      <SEO 
-        title="Third Leap Labs LLC | Software Solutions for the Next Digital Leap" 
-        description="Third Leap Labs LLC builds software solutions around blockchain, payments, SaaS, automation, and digital platforms."
-      />
-      
-      {/* 1. Hero Section (Light-First with Navy Right Card) */}
-      <div className="pt-[64px] pb-[88px] overflow-hidden relative bg-[#F8FAFC]">
-        <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16 items-center justify-between">
-            
-            <div className="w-full lg:w-[50%]">
-              <p className="eyebrow mb-4">
-                Blockchain-aware software engineering
-              </p>
-              <h1 className="hero-title font-bold text-[#0F172A] mb-6">
-                Software Solutions <br />
-                for the <span className="text-blue-600">Next Digital Leap</span>
-              </h1>
-              <p className="text-[18px] text-[#475569] leading-relaxed mb-8">
-                Third Leap Labs LLC designs and builds blockchain-enabled platforms, payment workflows, SaaS systems, automation tools, and Web3 utilities for modern digital ecosystems.
-              </p>
-              <p className="text-[16px] text-[#475569] leading-relaxed mb-8">
-                We help ideas move from concept to working software through product thinking, architecture, blockchain engineering, and practical implementation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/solutions" className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors shadow-sm">
-                  Explore Solutions <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-                <Link to="/contact" className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-white text-[#0F172A] border border-[#E2E8F0] font-semibold hover:bg-slate-50 transition-colors shadow-sm">
-                  Contact Third Leap Labs
-                </Link>
-              </div>
+const heroPhoto =
+  'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=90';
+
+type ProductCardProps = {
+  category: string;
+  title: string;
+  description: string;
+  to: string;
+  icon: LucideIcon;
+  dark?: boolean;
+};
+
+type IconStatement = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+type SystemLayer = {
+  number: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+const heroSignals: { label: string; icon: LucideIcon }[] = [
+  { label: 'See', icon: Camera },
+  { label: 'Reason', icon: BrainCircuit },
+  { label: 'Verify', icon: ShieldCheck },
+];
+
+const disciplines: IconStatement[] = [
+  {
+    title: 'Artificial intelligence',
+    description: 'Agents, knowledge systems and decision engines designed around a useful outcome.',
+    icon: BrainCircuit,
+  },
+  {
+    title: 'Computer vision',
+    description: 'Edge-to-cloud systems that turn live video into events, evidence and action.',
+    icon: Camera,
+  },
+  {
+    title: 'Web3 and trust',
+    description: 'Wallet intelligence, payment workflows and transparent digital systems.',
+    icon: WalletCards,
+  },
+  {
+    title: 'Open engineering',
+    description: 'Reusable platforms, APIs, plugins and tools built for long-term ownership.',
+    icon: Code2,
+  },
+];
+
+const systemLayers: SystemLayer[] = [
+  { number: '01', title: 'Edge', description: 'Cameras, sensors and local compute', icon: Cpu },
+  { number: '02', title: 'Intelligence', description: 'Models, agents and decision logic', icon: BrainCircuit },
+  { number: '03', title: 'Platforms', description: 'Cloud, APIs, mobile and operations', icon: Network },
+  { number: '04', title: 'Trust', description: 'Blockchain and external ecosystems', icon: ShieldCheck },
+];
+
+const ProductCard = ({ category, title, description, to, icon: Icon, dark = false }: ProductCardProps) => (
+  <Link
+    to={to}
+    className={`group relative min-h-[390px] overflow-hidden rounded-[2rem] border p-7 transition duration-300 hover:-translate-y-1 sm:p-9 ${
+      dark
+        ? 'border-white/10 bg-[#07111f] text-white shadow-[0_26px_80px_rgba(7,17,31,.22)]'
+        : 'border-black/10 bg-white text-[#07111f] shadow-[0_22px_65px_rgba(7,17,31,.08)]'
+    }`}
+  >
+    <div className={`absolute inset-0 ${dark ? 'tech-grid opacity-25' : 'light-grid opacity-65'}`} />
+    <div className={`absolute -right-12 -top-12 h-56 w-56 rounded-full blur-[80px] ${dark ? 'bg-[#1d9bf0]/22' : 'bg-[#1d9bf0]/12'}`} />
+    <div className="relative flex h-full flex-col">
+      <div className={`grid h-12 w-12 place-items-center rounded-2xl ${dark ? 'border border-white/10 bg-white/10 text-[#7dd3fc]' : 'bg-[#e8f5fd] text-[#0b7dbd]'}`}>
+        <Icon className="h-5 w-5" />
+      </div>
+      <p className={`mt-12 text-xs font-semibold uppercase tracking-[.15em] ${dark ? 'text-white/42' : 'text-[#6b7280]'}`}>{category}</p>
+      <h3 className="mt-4 text-4xl font-semibold tracking-[-.055em] sm:text-5xl">{title}</h3>
+      <p className={`mt-6 max-w-lg text-[16px] leading-8 ${dark ? 'text-white/58' : 'text-[#5b6472]'}`}>{description}</p>
+      <span className={`mt-auto inline-flex items-center gap-2 pt-10 text-sm font-semibold transition group-hover:gap-3 ${dark ? 'text-[#7dd3fc]' : 'text-[#0b7dbd]'}`}>
+        Explore product <ArrowRight className="h-4 w-4" />
+      </span>
+    </div>
+  </Link>
+);
+
+export const Home = () => (
+  <Layout>
+    <SEO
+      title="Third Leap Labs | AI, Computer Vision, Web3 and Open Engineering"
+      description="Third Leap Labs builds applied AI, computer vision and Web3 products, together with reusable open engineering foundations."
+      path="/"
+    />
+
+    <section className="relative overflow-hidden bg-[#f4f5f7] pt-24 lg:min-h-[100svh] lg:pt-0">
+      <div className="grid lg:min-h-[100svh] lg:grid-cols-[1.08fr_.92fr]">
+        <div className="relative min-h-[52svh] overflow-hidden lg:min-h-full">
+          <img
+            src={heroPhoto}
+            alt="Close-up of advanced computing hardware and electronic circuits"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/80 via-[#030712]/20 to-[#030712]/25 lg:bg-gradient-to-r lg:from-[#030712]/20 lg:via-transparent lg:to-[#030712]/40" />
+          <div className="absolute inset-0 tech-grid opacity-20" />
+
+          <div className="absolute left-5 top-5 rounded-full border border-white/20 bg-black/28 px-4 py-2 text-[10px] font-semibold uppercase tracking-[.16em] text-white/72 backdrop-blur-md sm:left-8 sm:top-8 lg:left-12 lg:top-32">
+            Edge · AI · Cloud · Chain
+          </div>
+
+          <div className="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/15 bg-[#07111f]/72 p-5 text-white backdrop-blur-xl sm:inset-x-8 sm:bottom-8 sm:p-6 lg:bottom-12 lg:left-12 lg:right-auto lg:w-[430px]">
+            <div className="flex items-center justify-between">
+              <p className="text-xs font-semibold uppercase tracking-[.14em] text-white/44">Applied system</p>
+              <span className="inline-flex items-center gap-2 text-xs text-white/52"><span className="h-2 w-2 rounded-full bg-emerald-400" /> Active</span>
             </div>
-
-            <div className="w-full lg:w-[42%] shrink-0">
-              <div className="bg-[#0B1220] rounded-2xl p-8 shadow-[0_20px_50px_rgba(11,18,32,0.15)] relative overflow-hidden border border-slate-800">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full blur-[80px] opacity-20 pointer-events-none translate-x-1/2 -translate-y-1/2" />
-                
-                <h3 className="text-white/90 font-semibold text-[16px] mb-6 relative z-10 tracking-wide">System Architecture</h3>
-                <div className="relative z-10">
-                  <ArchitectureStackVisual />
+            <div className="mt-5 grid grid-cols-3 gap-3">
+              {heroSignals.map(({ label, icon: Icon }) => (
+                <div key={label} className="rounded-xl border border-white/10 bg-white/[.06] p-3">
+                  <Icon className="h-4 w-4 text-[#7dd3fc]" />
+                  <p className="mt-4 text-sm font-semibold">{label}</p>
                 </div>
-              </div>
+              ))}
             </div>
+          </div>
+        </div>
 
+        <div className="relative flex items-center bg-[#f4f5f7] px-[var(--page-x)] py-16 sm:py-20 lg:px-14 lg:pb-20 lg:pt-32 xl:px-20">
+          <div className="absolute inset-0 light-grid opacity-55" />
+          <div className="relative max-w-2xl">
+            <p className="eyebrow">Third Leap Labs</p>
+            <h1 className="mt-7 text-[clamp(3.2rem,6.2vw,6.6rem)] font-semibold leading-[.94] tracking-[-.067em] text-[#07111f]">
+              Intelligent products for the real world.
+            </h1>
+            <p className="mt-7 max-w-xl text-lg leading-8 text-[#5b6472] sm:text-xl sm:leading-9">
+              We build applied AI, computer-vision and Web3 products—from edge systems and data platforms to the software people use every day.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <PrimaryLink to="/work">Explore our work</PrimaryLink>
+              <SecondaryLink to="/contact">Start a conversation</SecondaryLink>
+            </div>
+            <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-5 border-t border-black/10 pt-7 text-sm sm:grid-cols-4">
+              {['AI', 'Computer vision', 'Web3', 'Open source'].map((item) => (
+                <span key={item} className="font-semibold text-[#4b5563]">{item}</span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      {/* 2. Trust Strip (What We Build) */}
-      <section className="border-y border-[#E2E8F0] bg-white">
-        <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 text-[#475569] font-medium text-[15px] text-center">
-            <span className="flex items-center gap-2 justify-center"><Globe className="w-4 h-4 text-blue-500"/> SaaS Platforms</span>
-            <span className="flex items-center gap-2 justify-center"><Database className="w-4 h-4 text-cyan-500"/> Blockchain Engineering</span>
-            <span className="flex items-center gap-2 justify-center"><Zap className="w-4 h-4 text-indigo-500"/> Payment Systems</span>
-            <span className="flex items-center gap-2 justify-center"><Code className="w-4 h-4 text-slate-500"/> Automation</span>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Solution Areas */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-[1120px] mx-auto">
-        <div className="max-w-3xl mb-16">
-          <SectionHeading 
-            title="Solutions around blockchain, payments, SaaS, and automation" 
-            subtitle="We help ideas move from concept to working software by combining product thinking, software architecture, blockchain engineering, and practical implementation."
+    <section className="section-space border-y border-black/10 bg-white">
+      <div className="page-shell">
+        <Reveal>
+          <SectionIntro
+            eyebrow="What we build"
+            title="Specialised technology. Complete products."
+            description="We connect difficult engineering to a clear user workflow, an operable system and a product people can actually adopt."
           />
+        </Reveal>
+        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-4 xl:gap-0">
+          {disciplines.map(({ title, description, icon: Icon }, index) => (
+            <Reveal key={title} delay={index * .05}>
+              <div className={`h-full xl:px-8 ${index > 0 ? 'border-t border-black/10 pt-9 md:border-t-0 md:pt-0 xl:border-l' : ''}`}>
+                <Icon className="h-6 w-6 text-[#0b7dbd]" />
+                <h2 className="mt-7 text-2xl font-semibold tracking-[-.04em] text-[#07111f]">{title}</h2>
+                <p className="mt-4 text-[15px] leading-7 text-[#5b6472]">{description}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <FeatureCard title="Blockchain Platforms" description="We design and build blockchain-aware software systems that support visibility, verification, wallet-aware workflows, and Web3 integrations without unnecessary hype." icon={<Database className="w-6 h-6 text-cyan-600" />} />
-          <FeatureCard title="Web3 Utilities" description="We build practical utilities for communities, builders, and digital ecosystems, including wallet intelligence, safety workflows, and on-chain visibility tools." icon={<Globe className="w-6 h-6 text-indigo-600" />} />
-          <FeatureCard title="Payment Systems" description="We create payment request flows, QR payments, receipt records, and non-custodial payment workflow software for blockchain-based payment use cases." icon={<Zap className="w-6 h-6 text-blue-600" />} />
-          <FeatureCard title="SaaS Platforms" description="We build dashboards, portals, admin systems, workflow platforms, and cloud-based applications for businesses and product teams." icon={<Network className="w-6 h-6 text-cyan-600" />} />
-          <FeatureCard title="Automation Systems" description="We help reduce manual work by connecting tools, data, and workflows into reliable software systems." icon={<Code className="w-6 h-6 text-indigo-600" />} />
-          <FeatureCard title="Data & Intelligence" description="We build systems that organize complex information into clearer dashboards, summaries, alerts, and operational views." icon={<Activity className="w-6 h-6 text-blue-600" />} />
-        </div>
-      </section>
+      </div>
+    </section>
 
-      {/* 4. Internal Labs and Initiatives */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F1F5F9] border-y border-[#E2E8F0]">
-        <div className="max-w-[1120px] mx-auto">
-          <div className="max-w-3xl mb-16">
-            <SectionHeading 
-              title="Labs and internal initiatives" 
-              subtitle="Third Leap Labs also develops internal initiatives that explore specific use cases in blockchain intelligence, payment workflows, and software automation."
-            />
+    <section className="section-space bg-[#edf2f6]">
+      <div className="page-shell">
+        <Reveal>
+          <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+            <SectionIntro eyebrow="Selected work" title="Products with a clear job to do." />
+            <p className="max-w-2xl text-lg leading-8 text-[#5b6472] lg:justify-self-end">
+              Each product starts with a real operational problem—not a technology category looking for a use case.
+            </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <ProductCard 
-              title="WhaleScanner"
-              subtitle="Web3 wallet intelligence and visibility"
-              description="WhaleScanner is an internal Web3 intelligence initiative focused on wallet activity visibility, whale movement monitoring, suspicious pattern awareness, and AI-assisted wallet behavior summaries."
-              features={[
-                "Wallet activity visibility",
-                "Suspicious pattern awareness",
-                "Whale movement monitoring",
-                "AI-assisted summaries"
-              ]}
-              icon={Database}
-              to="/labs/whalescanner"
-              buttonText="View WhaleScanner Initiative"
-              accentColorClass="text-cyan-600"
-              isFeatured={true}
-            />
-            <ProductCard 
-              title="GoPaySol"
-              subtitle="Solana payment links and QR workflows"
-              description="GoPaySol is an internal payment workflow initiative focused on Solana payment links, QR payment requests, receipt records, and non-custodial payment verification flows."
-              features={[
-                "Solana payment links",
-                "QR code payment requests",
-                "Payment verification flows",
-                "Non-custodial workflows"
-              ]}
-              icon={Zap}
-              to="/labs/gopaysol"
-              buttonText="View GoPaySol Initiative"
-              accentColorClass="text-indigo-600"
-              isFeatured={true}
-            />
-          </div>
+        </Reveal>
+        <div className="mt-16 grid gap-5 lg:grid-cols-2">
+          <Reveal><ProductCard category="Crypto intelligence" title="WhaleScanner" description="Wallet activity, market context, project discovery, signals and community in one connected crypto platform." to="/work/whalescanner" icon={WalletCards} dark /></Reveal>
+          <Reveal delay={.05}><ProductCard category="AI video operations" title="VisionX" description="A calmer operational experience for live monitoring, AI events, alerts, investigation and evidence." to="/work/visionx" icon={Camera} /></Reveal>
+          <Reveal><ProductCard category="Computer-vision platform" title="FlameTrax" description="The reusable edge-to-cloud engine behind visual detection, event processing, integrations and deployment." to="/work/flametrax" icon={Cpu} /></Reveal>
+          <Reveal delay={.05}><ProductCard category="Non-custodial payments" title="GoPaySol" description="Create Solana payment requests, share links or QR codes, verify settlement and keep a readable record." to="/work/gopaysol" icon={Zap} dark /></Reveal>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* 5. How We Work */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-[1120px] mx-auto">
-        <div className="max-w-3xl mb-16">
-          <SectionHeading 
-            title="How we approach software delivery" 
-            subtitle="Building reliable software is a process of understanding, designing, building, and iterating."
+    <section className="dark-panel section-space relative overflow-hidden">
+      <div className="absolute inset-0 tech-grid opacity-30" />
+      <div className="page-shell relative grid gap-14 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-20">
+        <Reveal>
+          <SectionIntro
+            eyebrow="System thinking"
+            title="From edge to cloud to chain."
+            description="A strong interface cannot rescue an unreliable pipeline. We design models, devices, data, infrastructure and user workflows as one system."
+            tone="dark"
           />
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <FeatureCard title="Understand the problem" description="Every solution begins with a clear understanding of the real-world workflow and business needs." icon={<Lightbulb className="w-6 h-6 text-blue-600" />} />
-          <FeatureCard title="Shape the architecture" description="We design practical interfaces and logical data models before writing any code." icon={<Blocks className="w-6 h-6 text-indigo-600" />} />
-          <FeatureCard title="Build the first version" description="We focus on shipping reliable, working software over endless, complex prototyping." icon={<Code className="w-6 h-6 text-cyan-600" />} />
-          <FeatureCard title="Validate the workflow" description="We ensure the system actually solves the problem in real production environments." icon={<CheckCircle2 className="w-6 h-6 text-blue-600" />} />
-          <FeatureCard title="Improve and scale" description="Software is iteratively refined and strengthened as usage and requirements grow." icon={<RefreshCw className="w-6 h-6 text-indigo-600" />} />
-          <FeatureCard title="Maintain security" description="Security and proper data handling are built into the foundation, not bolted on later." icon={<ShieldCheck className="w-6 h-6 text-cyan-600" />} />
-        </div>
-      </section>
-
-      {/* 6. Trust & Security */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F1F5F9] border-t border-[#E2E8F0]">
-        <div className="max-w-[1120px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="md:col-span-5">
-            <SectionHeading title="Trust is part of the architecture" />
-            <div className="prose max-w-none text-[16px] text-[#475569] leading-relaxed">
-              <p>
-                Third Leap Labs treats trust, clarity, and security as absolute engineering requirements. Our Web3 and payment solutions are built with clear boundaries. We do not engage in misleading financial claims or unnecessary risk.
-              </p>
-            </div>
+        </Reveal>
+        <Reveal delay={.08}>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {systemLayers.map(({ number, title, description, icon: Icon }) => (
+              <div key={number} className="rounded-[1.4rem] border border-white/10 bg-white/[.055] p-5 backdrop-blur-sm">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs text-white/28">{number}</span>
+                  <Icon className="h-4 w-4 text-[#7dd3fc]" />
+                </div>
+                <h3 className="mt-12 text-lg font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-xs leading-6 text-white/44">{description}</p>
+              </div>
+            ))}
           </div>
-          <div className="md:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="modern-card p-6 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                  <Lock className="w-5 h-5 text-blue-600" />
-                </div>
-                <h4 className="font-bold text-[#0F172A]">No seed phrases</h4>
+        </Reveal>
+      </div>
+    </section>
+
+    <section className="section-space bg-white">
+      <div className="page-shell grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20">
+        <Reveal>
+          <div className="surface-card relative min-h-[420px] overflow-hidden rounded-[2rem] p-8">
+            <div className="absolute inset-0 light-grid opacity-70" />
+            <div className="relative flex h-full min-h-[350px] flex-col justify-between rounded-[1.5rem] bg-[#07111f] p-7 text-white">
+              <div className="flex items-center justify-between">
+                <Code2 className="h-6 w-6 text-[#7dd3fc]" />
+                <span className="text-[10px] font-semibold uppercase tracking-[.16em] text-white/38">Open engineering</span>
               </div>
-              <div className="modern-card p-6 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-cyan-50 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-cyan-600" />
-                </div>
-                <h4 className="font-bold text-[#0F172A]">No private keys</h4>
-              </div>
-              <div className="modern-card p-6 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center shrink-0">
-                  <Activity className="w-5 h-5 text-indigo-600" />
-                </div>
-                <h4 className="font-bold text-[#0F172A]">No financial guarantees</h4>
-              </div>
-              <div className="modern-card p-6 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
-                  <Network className="w-5 h-5 text-slate-600" />
-                </div>
-                <h4 className="font-bold text-[#0F172A]">No trading signals</h4>
+              <div>
+                <p className="text-5xl font-semibold tracking-[-.06em]">Inspect.<br />Extend.<br />Own.</p>
+                <p className="mt-6 max-w-sm text-sm leading-7 text-white/52">Reusable foundations should make future engineering easier—not create another black box.</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </Reveal>
+        <Reveal delay={.08}>
+          <SectionIntro
+            eyebrow="Open source"
+            title="Foundations built to be understood and extended."
+            description="We publish and maintain reusable engines, APIs, plugin boundaries and developer tools where openness improves trust, learning and long-term ownership."
+          />
+          <div className="mt-9">
+            <PrimaryLink to="/open-source">Explore open engineering</PrimaryLink>
+          </div>
+        </Reveal>
+      </div>
+    </section>
 
-      {/* 7. Final CTA */}
-      <CTASection 
-        title="Looking for a software engineering partner?"
-        description="We can help shape the idea, define the architecture, and build the first serious version of your platform."
-        buttonText="Contact Third Leap Labs"
-        to="/contact"
-      />
-    </Layout>
-  );
-};
+    <section className="border-t border-black/10 bg-[#edf2f6] py-20 sm:py-24">
+      <div className="page-shell flex flex-col gap-9 lg:flex-row lg:items-end lg:justify-between">
+        <Reveal>
+          <div>
+            <p className="eyebrow">Build with us</p>
+            <h2 className="section-title mt-5 max-w-4xl text-[#07111f]">Bring the difficult part—not a perfect specification.</h2>
+            <p className="mt-6 max-w-2xl text-[17px] leading-8 text-[#5b6472]">We can help clarify the problem, choose the architecture and build the first serious version.</p>
+          </div>
+        </Reveal>
+        <PrimaryLink to="/contact">Start a conversation</PrimaryLink>
+      </div>
+    </section>
+  </Layout>
+);

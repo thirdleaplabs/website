@@ -1,127 +1,137 @@
-import React from 'react';
-import { ModernPageHeader } from '../components/ui/ModernPageHeader';
-import { WorkflowVisual } from '../components/ui/WorkflowVisual';
-import { SectionHeading } from '../components/ui/SectionHeading';
-import { CTASection } from '../components/ui/CTASection';
+import { Compass, Heart, Lightbulb, ShieldCheck, UsersRound } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
-import { CheckCircle2, ShieldCheck, Database, Network } from 'lucide-react';
+import { PageHero, PrimaryLink, Reveal, SectionIntro } from '../components/ui/Primitives';
 
-export const Company = () => {
-  return (
-    <Layout>
-      <SEO 
-        title="Company | Third Leap Labs LLC" 
-        description="Third Leap Labs LLC is a software company building solutions for blockchain, payments, SaaS, and automation."
-      />
-      
-      <ModernPageHeader 
-        eyebrow="Company"
-        title="Third Leap Labs"
-        subtitle="A software engineering company focused on modern digital infrastructure."
-        theme="light"
-      />
-
-      {/* The Next Digital Leap (Split Section) */}
-      <section className="pt-[72px] pb-[72px] px-4 sm:px-6 lg:px-8 max-w-[1120px] mx-auto">
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
-          <div className="lg:w-1/2">
-            <h2 className="text-[36px] font-bold text-[#0F172A] mb-6">The Next Digital Leap</h2>
-            <div className="prose max-w-none text-[16px] text-[#475569] leading-relaxed space-y-4">
-              <p>
-                We believe the next phase of software involves pragmatic, well-architected systems that connect traditional web infrastructure with blockchain verification, non-custodial workflows, and intelligent automation.
-              </p>
-              <p>
-                Third Leap Labs LLC was formed to design and build these systems. We partner with businesses, product teams, and communities to move their ideas from concept to a working first version, focusing on maintainability over hype.
-              </p>
-              <p>
-                We avoid unnecessary complexity. If a problem needs a standard PostgreSQL database and a clean React frontend, that is what we build. If a problem requires a Solana smart contract and a non-custodial payment flow, we engineer that securely.
-              </p>
-            </div>
-          </div>
-          <div className="lg:w-1/2 w-full bg-[#F8FAFC] border border-[#E2E8F0] p-8 rounded-2xl shadow-sm">
-            <h3 className="text-[18px] font-bold text-[#0F172A] mb-8">Our Delivery Process</h3>
-            <WorkflowVisual />
-          </div>
-        </div>
-      </section>
-
-      {/* What We Believe */}
-      <section className="pt-[72px] pb-[72px] px-4 sm:px-6 lg:px-8 bg-[#F1F5F9] border-y border-[#E2E8F0]">
-        <div className="max-w-[1120px] mx-auto">
-          <SectionHeading 
-            title="What We Believe" 
-            subtitle="The engineering principles that guide our work."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <div className="modern-card p-8">
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4">
-                <Database className="w-5 h-5 text-blue-600" />
-              </div>
-              <h3 className="text-[18px] font-bold text-[#0F172A] mb-3">Blockchain should be practical</h3>
-              <p className="text-[15px] text-[#475569] leading-relaxed">
-                Web3 technology is useful for verification, self-custody, and open data, but it is not a solution for everything. We integrate blockchain where it adds real architectural value.
-              </p>
-            </div>
-            <div className="modern-card p-8">
-              <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-5 h-5 text-indigo-600" />
-              </div>
-              <h3 className="text-[18px] font-bold text-[#0F172A] mb-3">Working software beats endless planning</h3>
-              <p className="text-[15px] text-[#475569] leading-relaxed">
-                We focus on getting to a reliable first version. Architecture is important, but software must ultimately ship and be tested in the real world to prove its value.
-              </p>
-            </div>
-            <div className="modern-card p-8">
-              <div className="w-10 h-10 rounded-full bg-cyan-50 flex items-center justify-center mb-4">
-                <Network className="w-5 h-5 text-cyan-600" />
-              </div>
-              <h3 className="text-[18px] font-bold text-[#0F172A] mb-3">Keep the stack maintainable</h3>
-              <p className="text-[15px] text-[#475569] leading-relaxed">
-                We prefer boring, proven technology (like React, standard databases, and reliable server architectures) for the core infrastructure so that the system remains easy to operate.
-              </p>
-            </div>
-            <div className="modern-card p-8">
-              <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-4">
-                <ShieldCheck className="w-5 h-5 text-slate-600" />
-              </div>
-              <h3 className="text-[18px] font-bold text-[#0F172A] mb-3">Security and safety first</h3>
-              <p className="text-[15px] text-[#475569] leading-relaxed">
-                We do not collect seed phrases. We do not provide financial advice. We build non-custodial boundaries and design with a defensive engineering mindset.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Focus Areas */}
-      <section className="pt-[72px] pb-[72px] px-4 sm:px-6 lg:px-8 max-w-[1120px] mx-auto">
-        <SectionHeading 
-          title="Focus Areas" 
-          subtitle="Where we apply our engineering efforts."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          <div className="p-6 border border-[#E2E8F0] rounded-xl hover:border-blue-200 transition-colors">
-            <h4 className="text-[16px] font-bold text-[#0F172A] mb-2">Partner Solutions</h4>
-            <p className="text-[14px] text-[#475569]">Building custom platforms, payment flows, and SaaS systems for clients and product teams.</p>
-          </div>
-          <div className="p-6 border border-[#E2E8F0] rounded-xl hover:border-blue-200 transition-colors">
-            <h4 className="text-[16px] font-bold text-[#0F172A] mb-2">Technical Architecture</h4>
-            <p className="text-[14px] text-[#475569]">Helping teams design their system data models, API connections, and Web3 integration boundaries.</p>
-          </div>
-          <div className="p-6 border border-[#E2E8F0] rounded-xl hover:border-blue-200 transition-colors">
-            <h4 className="text-[16px] font-bold text-[#0F172A] mb-2">Lab Initiatives</h4>
-            <p className="text-[14px] text-[#475569]">Developing internal experiments and utility software like WhaleScanner and GoPaySol.</p>
-          </div>
-        </div>
-      </section>
-
-      <CTASection 
-        title="Ready to build together?"
-        description="Reach out to discuss your software project, architecture needs, or Web3 integration."
-        buttonText="Contact Us"
-        to="/contact"
-      />
-    </Layout>
-  );
+type Value = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
 };
+
+const values: Value[] = [
+  {
+    title: 'Curiosity with discipline',
+    description: 'Explore ambitious ideas, then test them honestly against real users, systems and constraints.',
+    icon: Lightbulb,
+  },
+  {
+    title: 'Trust by design',
+    description: 'Make security, ownership, custody and system boundaries clear from the beginning.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Product empathy',
+    description: 'Understand what the user is trying to accomplish—not only what the feature should do.',
+    icon: Heart,
+  },
+  {
+    title: 'Long-view engineering',
+    description: 'Build the first release with enough structure to support the versions that follow.',
+    icon: Compass,
+  },
+];
+
+export const Company = () => (
+  <Layout>
+    <SEO
+      title="Company | Third Leap Labs"
+      description="Third Leap Labs is an applied technology studio building across AI, computer vision, Web3 and open source."
+      path="/company"
+    />
+    <PageHero
+      eyebrow="Company"
+      title={<>A lab for technologies that are <span className="text-gradient">becoming products.</span></>}
+      description="Third Leap Labs LLC builds its own technology products and selectively works with teams facing difficult engineering problems."
+    />
+
+    <section className="section-space bg-white">
+      <div className="page-shell grid gap-14 lg:grid-cols-[.78fr_1.22fr] lg:gap-24">
+        <Reveal>
+          <div className="lg:sticky lg:top-32">
+            <p className="eyebrow">Why we exist</p>
+            <h2 className="section-title mt-5 text-[#07111f]">Good technology should become useful technology.</h2>
+          </div>
+        </Reveal>
+        <Reveal delay={.08}>
+          <div className="space-y-7 text-[18px] leading-9 text-[#5b6472]">
+            <p>
+              Third Leap Labs started from a simple frustration: ambitious technology is often presented brilliantly and experienced poorly.
+            </p>
+            <p>
+              We want to close that gap. That means caring about the model and the interface, the architecture and the workflow, the launch and the months after launch.
+            </p>
+            <p>
+              Our work sits where intelligent software, visual perception, decentralized systems and open technology meet. We are building depth in the areas where we already have serious hands-on experience.
+            </p>
+            <p className="border-l-2 border-[#1d9bf0] pl-6 text-2xl font-semibold leading-9 tracking-[-.035em] text-[#07111f]">
+              We are engineers who build products—not a presentation-led innovation consultancy.
+            </p>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+
+    <section className="dark-panel section-space relative overflow-hidden">
+      <div className="absolute inset-0 tech-grid opacity-30" />
+      <div className="page-shell relative">
+        <Reveal>
+          <SectionIntro
+            eyebrow="How we show up"
+            title="Small-team clarity. Serious-system thinking."
+            description="We prefer direct conversations, visible decisions and practical ownership. The work is stronger when the people shaping the architecture stay close to the people using the product."
+            tone="dark"
+          />
+        </Reveal>
+        <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {values.map(({ title, description, icon: Icon }, index) => (
+            <Reveal key={title} delay={index * .05}>
+              <article className="h-full rounded-[1.5rem] border border-white/10 bg-white/[.055] p-7 backdrop-blur-sm">
+                <Icon className="h-5 w-5 text-[#7dd3fc]" />
+                <h3 className="mt-9 text-xl font-semibold tracking-[-.035em] text-white">{title}</h3>
+                <p className="mt-4 text-sm leading-7 text-white/50">{description}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="section-space bg-[#edf2f6]">
+      <div className="page-shell grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20">
+        <Reveal>
+          <div className="surface-card relative overflow-hidden rounded-[2rem] p-8 sm:p-10">
+            <div className="absolute inset-0 light-grid opacity-70" />
+            <div className="relative rounded-[1.5rem] bg-[#07111f] p-8 text-white sm:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[.16em] text-white/40">Third Leap operating model</p>
+              <div className="mt-10 space-y-4">
+                {[
+                  ['01', 'Own the problem'],
+                  ['02', 'Keep architecture visible'],
+                  ['03', 'Ship working increments'],
+                  ['04', 'Learn from operations'],
+                ].map(([number, label]) => (
+                  <div key={number} className="flex items-center gap-5 border-b border-white/10 pb-4">
+                    <span className="font-mono text-xs text-white/30">{number}</span>
+                    <span className="text-lg font-semibold">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+        <Reveal delay={.08}>
+          <UsersRound className="h-7 w-7 text-[#0b7dbd]" />
+          <h2 className="section-title mt-6 max-w-4xl text-[#07111f]">A good collaboration starts with an honest technical conversation.</h2>
+          <p className="mt-6 max-w-2xl text-[17px] leading-8 text-[#5b6472]">
+            Bring the idea, the current system or the part that keeps getting stuck. We will tell you where we can genuinely help.
+          </p>
+          <div className="mt-9">
+            <PrimaryLink to="/contact">Talk to Third Leap Labs</PrimaryLink>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  </Layout>
+);

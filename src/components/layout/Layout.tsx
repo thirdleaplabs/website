@@ -1,21 +1,13 @@
-import React from 'react';
-import { Navbar } from './Navbar';
+import type { ReactNode } from 'react';
 import { Footer } from './Footer';
+import { Navbar } from './Navbar';
 import { ScrollToTop } from './ScrollToTop';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return (
-    <div className="min-h-screen flex flex-col font-sans">
-      <ScrollToTop />
-      <Navbar />
-      <main className="flex-grow pt-[72px] premium-gradient-bg">
-        {children}
-      </main>
-      <Footer />
-    </div>
-  );
-};
+export const Layout = ({ children }: { children: ReactNode }) => (
+  <div className="min-h-screen overflow-x-hidden bg-[#f4f5f7] text-[#111827]">
+    <ScrollToTop />
+    <Navbar />
+    <main>{children}</main>
+    <Footer />
+  </div>
+);
