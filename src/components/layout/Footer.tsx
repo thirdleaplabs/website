@@ -1,77 +1,42 @@
-import { ArrowUpRight, Github, Mail } from 'lucide-react';
+import { Github, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const columns = [
-  {
-    title: 'Explore',
-    links: [
-      ['Work', '/work'],
-      ['Capabilities', '/capabilities'],
-      ['Open source', '/open-source'],
-      ['Company', '/company'],
-    ],
-  },
-  {
-    title: 'Products',
-    links: [
-      ['WhaleScanner', '/work/whalescanner'],
-      ['VisionX', '/work/visionx'],
-      ['FlameTrax', '/work/flametrax'],
-      ['GoPaySol', '/work/gopaysol'],
-    ],
-  },
+  { title: 'Work', links: [['Products', '/work'], ['WhaleScanner', '/work/whalescanner'], ['VisionX', '/work/visionx']] },
+  { title: 'Capabilities', links: [['AI', '/capabilities'], ['Computer Vision', '/capabilities'], ['Web3 Systems', '/capabilities'], ['Open Engineering', '/open-source']] },
+  { title: 'Open Source', links: [['Repositories', '/open-source'], ['Platforms & APIs', '/open-source'], ['Documentation', '/open-source']] },
+  { title: 'Company', links: [['About', '/company'], ['Contact', '/contact'], ['Security', '/security-notice']] },
 ];
 
 export const Footer = () => (
-  <footer className="relative overflow-hidden border-t border-white/10 bg-[#050b14] text-white">
-    <div className="absolute inset-0 tech-grid opacity-25" />
-    <div className="absolute -right-24 top-0 h-72 w-72 rounded-full bg-[#1d9bf0]/15 blur-[100px]" />
-    <div className="page-shell relative py-16 sm:py-20">
-      <div className="grid gap-14 lg:grid-cols-[1.3fr_.7fr_.7fr]">
+  <footer className="border-t border-[#e1e6ec] bg-white text-[#1a1a1a]">
+    <div className="page-shell py-12">
+      <div className="grid gap-12 lg:grid-cols-[1.35fr_repeat(4,.65fr)]">
         <div>
           <Link to="/" className="inline-flex items-center gap-3">
-            <img src="/logo.svg" alt="" className="h-11 w-11" />
-            <span>
-              <span className="block text-[19px] font-semibold tracking-[-.035em]">Third Leap Labs</span>
-              <span className="block text-[9px] font-semibold uppercase tracking-[.16em] text-white/42">Applied technology studio</span>
-            </span>
+            <img src="/logo.svg" alt="" className="h-10 w-10" />
+            <span><span className="block text-lg font-semibold tracking-[-.035em]">Third Leap <span className="font-normal">Labs</span></span><span className="mt-1 block text-[8px] font-bold uppercase tracking-[.19em] text-[#0078d4]">Build · Open · Elevate</span></span>
           </Link>
-          <p className="mt-6 max-w-md text-[16px] leading-8 text-white/58">
-            We build applied AI, computer-vision and Web3 products—and the open engineering foundations behind them.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
-            <a href="mailto:info@thirdleaplabs.com" className="inline-flex items-center gap-2 text-sm font-medium text-white/68 transition hover:text-[#7dd3fc]">
-              <Mail className="h-4 w-4" /> info@thirdleaplabs.com
-            </a>
-            <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-white/68 transition hover:text-[#7dd3fc]">
-              <Github className="h-4 w-4" /> GitHub <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
+          <p className="mt-5 max-w-sm text-[13px] leading-6 text-[#667085]">Building intelligent products across AI, computer vision, Web3 and open engineering.</p>
+          <div className="mt-6 flex gap-3">
+            <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" aria-label="GitHub" className="grid h-9 w-9 place-items-center rounded-lg border border-[#e1e6ec] text-[#5e6b7d] transition hover:border-[#0078d4] hover:text-[#0078d4]"><Github className="h-4 w-4" /></a>
+            <a href="mailto:info@thirdleaplabs.com" aria-label="Email" className="grid h-9 w-9 place-items-center rounded-lg border border-[#e1e6ec] text-[#5e6b7d] transition hover:border-[#0078d4] hover:text-[#0078d4]"><Mail className="h-4 w-4" /></a>
           </div>
         </div>
 
         {columns.map((column) => (
           <div key={column.title}>
-            <p className="text-[13px] font-semibold uppercase tracking-[.12em] text-white/42">{column.title}</p>
-            <ul className="mt-5 space-y-3.5">
-              {column.links.map(([label, to]) => (
-                <li key={to}>
-                  <Link to={to} className="text-[15px] leading-6 text-white/62 transition hover:text-[#7dd3fc]">
-                    {label}
-                  </Link>
-                </li>
-              ))}
+            <p className="text-[12px] font-semibold text-[#1a1a1a]">{column.title}</p>
+            <ul className="mt-4 space-y-2.5">
+              {column.links.map(([label, to]) => <li key={`${column.title}-${label}`}><Link to={to} className="text-[12px] text-[#667085] transition hover:text-[#0078d4]">{label}</Link></li>)}
             </ul>
           </div>
         ))}
       </div>
 
-      <div className="mt-16 flex flex-col gap-5 border-t border-white/12 pt-7 text-[13px] text-white/38 sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 Third Leap Labs LLC.</p>
-        <div className="flex flex-wrap gap-x-5 gap-y-2">
-          <Link to="/privacy-policy" className="transition hover:text-white/70">Privacy</Link>
-          <Link to="/legal-disclaimer" className="transition hover:text-white/70">Legal</Link>
-          <Link to="/security-notice" className="transition hover:text-white/70">Security</Link>
-        </div>
+      <div className="mt-12 flex flex-col gap-4 border-t border-[#e4e9ef] pt-6 text-[11px] text-[#7a8595] sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2026 Third Leap Labs LLC. All rights reserved.</p>
+        <div className="flex flex-wrap gap-5"><Link to="/privacy-policy" className="hover:text-[#0078d4]">Privacy Policy</Link><Link to="/legal-disclaimer" className="hover:text-[#0078d4]">Legal</Link><Link to="/security-notice" className="hover:text-[#0078d4]">Security</Link></div>
       </div>
     </div>
   </footer>
