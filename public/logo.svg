@@ -1,19 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
   <title id="title">Third Leap Labs</title>
-  <desc id="desc">Three ascending pillars representing technology, progress and the third leap.</desc>
+  <desc id="desc">Three ascending geometric forms representing the third leap.</desc>
   <defs>
-    <linearGradient id="surface" x1="8" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#111827"/>
-      <stop offset="1" stop-color="#030712"/>
+    <linearGradient id="g1" x1="5" y1="55" x2="55" y2="8" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#005FB8"/>
+      <stop offset="1" stop-color="#00A4EF"/>
     </linearGradient>
-    <linearGradient id="blue" x1="40" y1="12" x2="48" y2="51" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7DD3FC"/>
-      <stop offset="1" stop-color="#1D9BF0"/>
+    <linearGradient id="g2" x1="20" y1="55" x2="58" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0067C5"/>
+      <stop offset="1" stop-color="#169BEE"/>
     </linearGradient>
   </defs>
-  <rect x="1" y="1" width="62" height="62" rx="18" fill="url(#surface)" stroke="#FFFFFF" stroke-opacity=".16"/>
-  <rect x="14" y="35" width="9" height="15" rx="4.5" fill="#FFFFFF"/>
-  <rect x="27.5" y="25" width="9" height="25" rx="4.5" fill="#BAE6FD"/>
-  <rect x="41" y="14" width="9" height="36" rx="4.5" fill="url(#blue)"/>
-  <path d="M14.5 54H50.5" stroke="#FFFFFF" stroke-opacity=".22" stroke-width="2" stroke-linecap="round"/>
+  <path d="M7 49.5 18.5 41v8.5L7 57Z" fill="url(#g1)"/>
+  <path d="M22 34.5 36 24v22L22 56Z" fill="url(#g1)"/>
+  <path d="M41 19 57 7v36L41 55Z" fill="url(#g2)"/>
 </svg>
