@@ -1,4 +1,4 @@
-import { BellRing, Camera, FileSearch, LayoutDashboard, ShieldCheck, Smartphone } from 'lucide-react';
+import { BellRing, Camera, Cpu, FileSearch, LayoutDashboard, ShieldCheck, Smartphone } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
 import { PageHero, Reveal, SectionIntro } from '../components/ui/Primitives';
@@ -8,13 +8,13 @@ export const VisionX = () => (
   <Layout>
     <SEO
       title="VisionX | Third Leap Labs"
-      description="VisionX is an AI-powered video security and operations product powered by FlameTrax."
+      description="VisionX is the AI and computer-vision platform from Third Leap Labs for video security, safety and operations."
       path="/work/visionx"
     />
     <PageHero
-      eyebrow="Third Leap Labs product · Computer vision"
+      eyebrow="Third Leap Labs product · AI & computer vision"
       title={<>A calmer way to understand what is happening <span className="text-gradient">across your cameras.</span></>}
-      description="VisionX helps security and operations teams monitor live sites, understand AI-generated events and investigate incidents from one focused experience."
+      description="VisionX is an edge-to-cloud video intelligence platform for live monitoring, AI event detection, alerts, investigation and operational response."
     />
 
     <section className="pb-24 sm:pb-32">
@@ -24,9 +24,9 @@ export const VisionX = () => (
         </Reveal>
         <Reveal delay={.08}>
           <SectionIntro
-            eyebrow="Product relationship"
-            title="A security product powered by the FlameTrax vision engine."
-            description="FlameTrax handles camera streams, models and event processing. VisionX turns that capability into the screens, alerts and investigation workflows used by security and operational teams."
+            eyebrow="One complete platform"
+            title="From camera stream to an event a team can act on."
+            description="VisionX brings camera integration, edge inference, AI models, event processing, evidence, alerts, cloud coordination and operator workflows together under one product name."
           />
         </Reveal>
       </div>
@@ -36,11 +36,12 @@ export const VisionX = () => (
       <div className="page-shell grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {[
           ['Live monitoring', 'See the cameras and sites that matter without crowding the screen with unnecessary controls.', Camera],
-          ['AI event detection', 'Bring important detections into a structured event workflow instead of an endless video wall.', ShieldCheck],
-          ['Focused alerts', 'Route meaningful incidents to the right people with context and evidence.', BellRing],
+          ['Edge AI', 'Run visual intelligence close to the camera for responsive detection and controlled bandwidth.', Cpu],
+          ['AI event detection', 'Turn model output into structured events with context, severity and evidence.', ShieldCheck],
+          ['Focused alerts', 'Route meaningful incidents to the right people with the information needed to respond.', BellRing],
           ['Incident investigation', 'Move from an alert to related footage, event details and evidence quickly.', FileSearch],
+          ['Cloud and mobile access', 'Manage sites, review activity and keep response available beyond the control room.', Smartphone],
           ['Operational dashboards', 'Understand system health, recurring event patterns and site-level activity.', LayoutDashboard],
-          ['Cloud and mobile access', 'Keep monitoring and response available beyond the control room.', Smartphone],
         ].map(([title, copy, Icon], index) => (
           <Reveal key={String(title)} delay={(index % 3) * .05}>
             <div className="h-full rounded-[1.55rem] border border-white/[.08] bg-white/[.025] p-7">
