@@ -6,11 +6,11 @@ import {
   BrainCircuit,
   Camera,
   Code2,
-  Github,
   ShieldCheck,
   Sparkles,
   Workflow,
 } from 'lucide-react';
+import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
@@ -18,13 +18,11 @@ import {
   CapabilityCard,
   PrimaryLink,
   Reveal,
-  SecondaryLink,
   SectionIntro,
 } from '../components/ui/Primitives';
 import {
   FlameTraxVisual,
   OpenSourceVisual,
-  TechnologyMap,
   VisionXVisual,
   WhaleScannerVisual,
 } from '../components/ui/Visuals';
@@ -99,6 +97,9 @@ const products = [
   },
 ];
 
+const heroPhoto = 'https://images.pexels.com/photos/6804068/pexels-photo-6804068.jpeg?auto=compress&cs=tinysrgb&w=1600';
+const processPhoto = 'https://images.pexels.com/photos/6804071/pexels-photo-6804071.jpeg?auto=compress&cs=tinysrgb&w=1400';
+
 export const Home = () => (
   <Layout>
     <SEO
@@ -107,42 +108,46 @@ export const Home = () => (
       path="/"
     />
 
-    <section className="noise relative min-h-[860px] overflow-hidden pb-20 pt-36 sm:pt-44 lg:flex lg:min-h-screen lg:items-center lg:pb-24">
-      <div className="absolute inset-0 section-grid opacity-60" />
-      <div className="absolute left-[18%] top-[8%] h-[34rem] w-[34rem] rounded-full bg-electric/12 blur-[140px]" />
-      <div className="absolute right-[-8%] top-[10%] h-[32rem] w-[32rem] rounded-full bg-violet/10 blur-[130px]" />
+    <section className="relative overflow-hidden bg-[#f5f7fb] pb-20 pt-36 text-slate-950 sm:pt-44 lg:min-h-[850px] lg:pb-24">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,.035)_1px,transparent_1px)] bg-[size:54px_54px]" />
+      <div className="absolute -left-32 top-24 h-96 w-96 rounded-full bg-cyan-200/35 blur-[120px]" />
+      <div className="absolute right-[20%] top-8 h-80 w-80 rounded-full bg-indigo-200/35 blur-[120px]" />
 
-      <div className="page-shell relative grid items-center gap-14 lg:grid-cols-[1.08fr_.92fr] lg:gap-10">
+      <div className="page-shell relative grid items-center gap-12 lg:grid-cols-[.92fr_1.08fr] lg:gap-14">
         <div>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .55 }}
-            className="eyebrow"
+            className="inline-flex items-center gap-3 text-[12px] font-bold uppercase tracking-[.17em] text-blue-700"
           >
+            <span className="h-px w-8 bg-gradient-to-r from-cyan-500 to-blue-600" />
             Product & engineering lab
           </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .75, delay: .08, ease: [0.22, 1, 0.36, 1] }}
-            className="display mt-7 max-w-[850px]"
+            className="mt-7 max-w-[760px] text-[clamp(3.25rem,6.8vw,6.2rem)] font-bold leading-[.94] tracking-[-.065em]"
           >
-            We build <span className="text-gradient">intelligent systems</span> for the real world.
+            We build <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-fuchsia-600 bg-clip-text text-transparent">intelligent systems</span> for the real world.
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .65, delay: .2 }}
-            className="mt-8 max-w-2xl text-[18px] leading-8 text-white/58 sm:text-[20px]"
+            className="mt-8 max-w-2xl text-[18px] leading-8 text-slate-600 sm:text-[20px]"
           >
             Third Leap Labs turns ambitious ideas into production-ready products across AI, computer vision, Web3 and open-source technology.
           </motion.p>
+
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: .65, delay: .28 }}
-            className="mt-4 max-w-xl text-[15px] leading-7 text-white/42 sm:text-base"
+            className="mt-4 max-w-xl text-[15px] leading-7 text-slate-500 sm:text-base"
           >
             We are hands-on builders. We care about the product people use, the systems behind it and the details that keep both reliable.
           </motion.p>
@@ -153,49 +158,73 @@ export const Home = () => (
             transition={{ duration: .65, delay: .36 }}
             className="mt-9 flex flex-col gap-3 sm:flex-row"
           >
-            <PrimaryLink to="/work">Explore our work</PrimaryLink>
-            <SecondaryLink to="/contact">Build with us</SecondaryLink>
+            <Link
+              to="/work"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3.5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(37,99,235,.24)] transition hover:-translate-y-0.5"
+            >
+              Explore our work <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3.5 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-400"
+            >
+              Start a conversation <ArrowRight className="h-4 w-4" />
+            </Link>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: .7, delay: .55 }}
-            className="mt-11 flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] font-semibold uppercase tracking-[.16em] text-white/28"
+            className="mt-10 flex flex-wrap gap-2"
           >
-            <span>Artificial intelligence</span>
-            <span className="hidden h-1 w-1 rounded-full bg-white/20 sm:block" />
-            <span>Computer vision</span>
-            <span className="hidden h-1 w-1 rounded-full bg-white/20 sm:block" />
-            <span>Web3</span>
-            <span className="hidden h-1 w-1 rounded-full bg-white/20 sm:block" />
-            <span>Open source</span>
+            {['Artificial intelligence', 'Computer vision', 'Web3', 'Open source'].map((item) => (
+              <span key={item} className="rounded-full border border-slate-200 bg-white/80 px-3.5 py-2 text-[11px] font-semibold text-slate-600 shadow-sm">
+                {item}
+              </span>
+            ))}
           </motion.div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: .96, y: 20 }}
+          initial={{ opacity: 0, scale: .97, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: .9, delay: .18, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <TechnologyMap />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white bg-white p-2 shadow-[0_32px_90px_rgba(15,23,42,.20)]">
+            <img
+              src={heroPhoto}
+              alt="Software engineers working together in a bright modern office"
+              className="aspect-[4/3] w-full rounded-[1.55rem] object-cover"
+              loading="eager"
+              fetchPriority="high"
+            />
+            <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/60 bg-white/88 p-4 shadow-lg backdrop-blur-xl sm:inset-x-auto sm:bottom-7 sm:left-7 sm:max-w-[320px]">
+              <p className="text-[10px] font-bold uppercase tracking-[.16em] text-blue-700">End-to-end product engineering</p>
+              <p className="mt-2 text-sm font-semibold leading-6 text-slate-900">From product thinking and architecture to working software.</p>
+            </div>
+          </div>
+          <div className="absolute -right-5 -top-5 hidden rounded-2xl border border-white bg-white px-4 py-3 shadow-xl sm:block">
+            <p className="text-[10px] font-bold uppercase tracking-[.15em] text-slate-400">Building across</p>
+            <p className="mt-1 text-sm font-semibold text-slate-900">AI · Vision · Web3 · Open</p>
+          </div>
         </motion.div>
       </div>
     </section>
 
-    <section className="overflow-hidden border-y border-white/[.075] bg-white/[.018] py-5">
+    <section className="overflow-hidden border-y border-slate-200 bg-white py-5 text-slate-900">
       <div className="marquee-track flex w-max items-center">
         {[0, 1].map((set) => (
-          <div key={set} className="flex items-center gap-12 pr-12 text-xs font-semibold uppercase tracking-[.19em] text-white/30 sm:gap-20 sm:pr-20">
+          <div key={set} className="flex items-center gap-12 pr-12 text-xs font-semibold uppercase tracking-[.18em] text-slate-500 sm:gap-20 sm:pr-20">
             <span>Systems that see</span>
-            <Sparkles className="h-3.5 w-3.5 text-cyan/65" />
+            <Sparkles className="h-3.5 w-3.5 text-cyan-600" />
             <span>Products that think</span>
-            <Sparkles className="h-3.5 w-3.5 text-electric/70" />
+            <Sparkles className="h-3.5 w-3.5 text-blue-600" />
             <span>Technology people can trust</span>
-            <Sparkles className="h-3.5 w-3.5 text-violet/70" />
+            <Sparkles className="h-3.5 w-3.5 text-violet-600" />
             <span>Open foundations that evolve</span>
-            <Sparkles className="h-3.5 w-3.5 text-coral/70" />
+            <Sparkles className="h-3.5 w-3.5 text-fuchsia-600" />
           </div>
         ))}
       </div>
@@ -240,7 +269,7 @@ export const Home = () => (
             <Reveal key={product.title} delay={(index % 2) * .08}>
               <article
                 className="product-card flex h-full flex-col rounded-[2rem] p-5 sm:p-7"
-                style={{ '--card-glow': product.glow } as React.CSSProperties}
+                style={{ '--card-glow': product.glow } as CSSProperties}
               >
                 <div className="relative z-10">
                   <p className="text-[10px] font-semibold uppercase tracking-[.18em] text-cyan/68">{product.eyebrow}</p>
@@ -268,13 +297,25 @@ export const Home = () => (
     <section className="section-space relative overflow-hidden">
       <div className="absolute inset-0 section-grid opacity-45" />
       <div className="page-shell relative">
-        <Reveal>
-          <SectionIntro
-            eyebrow="How we work"
-            title="Serious engineering, without the theatre."
-            description="We keep teams close to the problem, make decisions visible and ship in focused increments. The aim is not a beautiful presentation—it is a product that survives contact with the real world."
-          />
-        </Reveal>
+        <div className="grid gap-10 lg:grid-cols-[.88fr_1.12fr] lg:items-center">
+          <Reveal>
+            <div className="overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/[.025] p-2 shadow-2xl shadow-black/25">
+              <img
+                src={processPhoto}
+                alt="Software team reviewing a development project together"
+                loading="lazy"
+                className="aspect-[4/3] w-full rounded-[1.4rem] object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={.08}>
+            <SectionIntro
+              eyebrow="How we work"
+              title="Serious engineering, without the theatre."
+              description="We keep teams close to the problem, make decisions visible and ship in focused increments. The aim is not a beautiful presentation—it is a product that survives contact with the real world."
+            />
+          </Reveal>
+        </div>
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-[1.8rem] border border-white/[.075] bg-white/[.075] md:grid-cols-2 xl:grid-cols-4">
           {[
