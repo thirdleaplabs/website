@@ -4,6 +4,13 @@ import type { LucideIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
+const heroSystems: { label: string; action: string; icon: LucideIcon }[] = [
+  { label: 'AI', action: 'Reason', icon: BrainCircuit },
+  { label: 'Vision', action: 'See', icon: Camera },
+  { label: 'Web3', action: 'Verify', icon: ShieldCheck },
+  { label: 'Open', action: 'Extend', icon: Code2 },
+];
+
 export const Reveal = ({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 18 }}
@@ -49,16 +56,11 @@ const HeroSystem = () => (
       <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-emerald-400" /> Online</span>
     </div>
     <div className="relative mt-10 grid grid-cols-2 gap-3">
-      {[
-        ['AI', 'Reason', BrainCircuit],
-        ['Vision', 'See', Camera],
-        ['Web3', 'Verify', ShieldCheck],
-        ['Open', 'Extend', Code2],
-      ].map(([label, action, Icon]) => (
-        <div key={String(label)} className="rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur-sm">
+      {heroSystems.map(({ label, action, icon: Icon }) => (
+        <div key={label} className="rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur-sm">
           <Icon className="h-5 w-5 text-[#7dd3fc]" />
-          <p className="mt-6 text-lg font-semibold tracking-[-.03em] text-white">{String(label)}</p>
-          <p className="mt-1 text-xs uppercase tracking-[.14em] text-white/38">{String(action)}</p>
+          <p className="mt-6 text-lg font-semibold tracking-[-.03em] text-white">{label}</p>
+          <p className="mt-1 text-xs uppercase tracking-[.14em] text-white/38">{action}</p>
         </div>
       ))}
     </div>
