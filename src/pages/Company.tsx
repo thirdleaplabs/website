@@ -1,137 +1,118 @@
-import { Compass, Heart, Lightbulb, ShieldCheck, UsersRound } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { ArrowRight, Code2, ShieldCheck, Box, Workflow, BookOpen, Layers3 } from 'lucide-react';
+import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
-import { PageHero, PrimaryLink, Reveal, SectionIntro } from '../components/ui/Primitives';
 
-type Value = {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-};
+const SectionLabel = ({ children }: { children: ReactNode }) => (
+  <p className="eyebrow">{children}</p>
+);
 
-const values: Value[] = [
-  {
-    title: 'Curiosity with discipline',
-    description: 'Explore ambitious ideas, then test them honestly against real users, systems and constraints.',
-    icon: Lightbulb,
-  },
-  {
-    title: 'Trust by design',
-    description: 'Make security, ownership, custody and system boundaries clear from the beginning.',
-    icon: ShieldCheck,
-  },
-  {
-    title: 'Product empathy',
-    description: 'Understand what the user is trying to accomplish—not only what the feature should do.',
-    icon: Heart,
-  },
-  {
-    title: 'Long-view engineering',
-    description: 'Build the first release with enough structure to support the versions that follow.',
-    icon: Compass,
-  },
-];
-
-export const Company = () => (
-  <Layout>
-    <SEO
-      title="Company | Third Leap Labs"
-      description="Third Leap Labs is an applied technology studio building across AI, computer vision, Web3 and open source."
-      path="/company"
-    />
-    <PageHero
-      eyebrow="Company"
-      title={<>A lab for technologies that are <span className="text-gradient">becoming products.</span></>}
-      description="Third Leap Labs LLC builds its own technology products and selectively works with teams facing difficult engineering problems."
-    />
-
-    <section className="section-space bg-white">
-      <div className="page-shell grid gap-14 lg:grid-cols-[.78fr_1.22fr] lg:gap-24">
-        <Reveal>
-          <div className="lg:sticky lg:top-32">
-            <p className="eyebrow">Why we exist</p>
-            <h2 className="section-title mt-5 text-[#07111f]">Good technology should become useful technology.</h2>
-          </div>
-        </Reveal>
-        <Reveal delay={.08}>
-          <div className="space-y-7 text-[18px] leading-9 text-[#5b6472]">
-            <p>
-              Third Leap Labs started from a simple frustration: ambitious technology is often presented brilliantly and experienced poorly.
-            </p>
-            <p>
-              We want to close that gap. That means caring about the model and the interface, the architecture and the workflow, the launch and the months after launch.
-            </p>
-            <p>
-              Our work sits where intelligent software, visual perception, decentralized systems and open technology meet. We are building depth in the areas where we already have serious hands-on experience.
-            </p>
-            <p className="border-l-2 border-[#1d9bf0] pl-6 text-2xl font-semibold leading-9 tracking-[-.035em] text-[#07111f]">
-              We are engineers who build products—not a presentation-led innovation consultancy.
+export const Company = () => {
+  return (
+    <Layout>
+      <SEO 
+        title="Company | Third Leap Labs" 
+        description="Third Leap Labs was created to turn ambitious technical ideas into working, usable platforms across applied AI, computer vision, cloud systems and data intelligence." 
+      />
+      <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
+        
+        {/* Hero */}
+        <section className="page-shell py-20 sm:py-28 lg:py-36 text-center">
+          <div className="mx-auto max-w-3xl">
+            <SectionLabel>ABOUT THIRD LEAP LABS</SectionLabel>
+            <h1 className="mt-5 page-title">A product company built by an engineer.</h1>
+            <p className="mt-6 text-[17px] leading-8 text-[#5e6b7d]">
+              Third Leap Labs was created to turn ambitious technical ideas into working, usable platforms across applied AI, computer vision, cloud systems and data intelligence.
             </p>
           </div>
-        </Reveal>
-      </div>
-    </section>
+        </section>
 
-    <section className="dark-panel section-space relative overflow-hidden">
-      <div className="absolute inset-0 tech-grid opacity-30" />
-      <div className="page-shell relative">
-        <Reveal>
-          <SectionIntro
-            eyebrow="How we show up"
-            title="Small-team clarity. Serious-system thinking."
-            description="We prefer direct conversations, visible decisions and practical ownership. The work is stronger when the people shaping the architecture stay close to the people using the product."
-            tone="dark"
-          />
-        </Reveal>
-        <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {values.map(({ title, description, icon: Icon }, index) => (
-            <Reveal key={title} delay={index * .05}>
-              <article className="h-full rounded-[1.5rem] border border-white/10 bg-white/[.055] p-7 backdrop-blur-sm">
-                <Icon className="h-5 w-5 text-[#7dd3fc]" />
-                <h3 className="mt-9 text-xl font-semibold tracking-[-.035em] text-white">{title}</h3>
-                <p className="mt-4 text-sm leading-7 text-white/50">{description}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="section-space bg-[#edf2f6]">
-      <div className="page-shell grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20">
-        <Reveal>
-          <div className="surface-card relative overflow-hidden rounded-[2rem] p-8 sm:p-10">
-            <div className="absolute inset-0 light-grid opacity-70" />
-            <div className="relative rounded-[1.5rem] bg-[#07111f] p-8 text-white sm:p-10">
-              <p className="text-xs font-semibold uppercase tracking-[.16em] text-white/40">Third Leap operating model</p>
-              <div className="mt-10 space-y-4">
-                {[
-                  ['01', 'Own the problem'],
-                  ['02', 'Keep architecture visible'],
-                  ['03', 'Ship working increments'],
-                  ['04', 'Learn from operations'],
-                ].map(([number, label]) => (
-                  <div key={number} className="flex items-center gap-5 border-b border-white/10 pb-4">
-                    <span className="font-mono text-xs text-white/30">{number}</span>
-                    <span className="text-lg font-semibold">{label}</span>
-                  </div>
-                ))}
+        {/* Founder & Facts */}
+        <section className="bg-[#fbfcfe] border-y border-[#e6ebf1] py-24 sm:py-32">
+          <div className="page-shell">
+            <div className="grid gap-16 lg:grid-cols-2">
+              <div>
+                <SectionLabel>LEADERSHIP</SectionLabel>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight">Gokul Kartha</h2>
+                <p className="mt-1 text-sm font-medium text-[#0078d4]">Founder & CEO</p>
+                <p className="mt-6 text-[15px] leading-7 text-[#5e6b7d]">
+                  Gokul Kartha is a software engineering and technology leader with experience across embedded systems, automotive software, platform architecture, cloud applications and product development. Through Third Leap Labs, he builds and commercialises applied-AI products including Cognisense Cloud and WhaleScanner.
+                </p>
+              </div>
+              <div>
+                <SectionLabel>COMPANY FACTS</SectionLabel>
+                <ul className="mt-4 flex flex-col gap-4">
+                  <li className="flex items-center gap-4 rounded-xl border border-[#e1e7ee] bg-white px-6 py-4 shadow-sm">
+                    <span className="w-1/3 text-[13px] font-bold text-[#5e6b7d] uppercase tracking-wider">Legal entity</span>
+                    <span className="text-[15px] font-medium text-[#1a1a1a]">Third Leap Labs LLC</span>
+                  </li>
+                  <li className="flex items-center gap-4 rounded-xl border border-[#e1e7ee] bg-white px-6 py-4 shadow-sm">
+                    <span className="w-1/3 text-[13px] font-bold text-[#5e6b7d] uppercase tracking-wider">Incorporated in</span>
+                    <span className="text-[15px] font-medium text-[#1a1a1a]">New Mexico, United States</span>
+                  </li>
+                  <li className="flex items-center gap-4 rounded-xl border border-[#e1e7ee] bg-white px-6 py-4 shadow-sm">
+                    <span className="w-1/3 text-[13px] font-bold text-[#5e6b7d] uppercase tracking-wider">Operating</span>
+                    <span className="text-[15px] font-medium text-[#1a1a1a]">Eindhoven, Netherlands</span>
+                  </li>
+                  <li className="flex items-center gap-4 rounded-xl border border-[#e1e7ee] bg-white px-6 py-4 shadow-sm">
+                    <span className="w-1/3 text-[13px] font-bold text-[#5e6b7d] uppercase tracking-wider">Expansion</span>
+                    <span className="text-[15px] font-medium text-[#1a1a1a]">Qatar and the GCC</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </Reveal>
-        <Reveal delay={.08}>
-          <UsersRound className="h-7 w-7 text-[#0b7dbd]" />
-          <h2 className="section-title mt-6 max-w-4xl text-[#07111f]">A good collaboration starts with an honest technical conversation.</h2>
-          <p className="mt-6 max-w-2xl text-[17px] leading-8 text-[#5b6472]">
-            Bring the idea, the current system or the part that keeps getting stuck. We will tell you where we can genuinely help.
-          </p>
-          <div className="mt-9">
-            <PrimaryLink to="/contact">Talk to Third Leap Labs</PrimaryLink>
+        </section>
+
+        {/* Mission */}
+        <section className="page-shell py-24 sm:py-32 text-center">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="section-title">Make complex systems understandable and actionable.</h2>
+            <p className="mt-6 text-[17px] leading-8 text-[#5e6b7d]">
+              We believe useful intelligence is not only a prediction. It is the complete path from signal and context to a decision, workflow and measurable outcome.
+            </p>
           </div>
-        </Reveal>
-      </div>
-    </section>
-  </Layout>
-);
+        </section>
+
+        {/* Values */}
+        <section className="page-shell pb-24 sm:pb-32">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'Technical depth', icon: Code2 },
+              { title: 'Product clarity', icon: Box },
+              { title: 'Honest evidence', icon: ShieldCheck },
+              { title: 'Interoperability', icon: Layers3 },
+              { title: 'Responsible AI', icon: Workflow },
+              { title: 'Continuous learning', icon: BookOpen },
+            ].map((value) => (
+              <div key={value.title} className="flex flex-col items-center justify-center rounded-2xl border border-[#e1e7ee] bg-white p-8 text-center shadow-sm">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#edf7ff] text-[#0078d4]">
+                  <value.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold">{value.title}</h3>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="page-shell pb-24 sm:pb-32">
+          <div className="dark-panel relative overflow-hidden rounded-[2rem] px-8 py-16 text-center sm:px-16 sm:py-24">
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.05] tracking-[-.04em] text-white">
+                Ready to talk about a project?
+              </h2>
+              <div className="mt-10">
+                <Link to="/contact" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-white px-8 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#f0f4f8]">
+                  Start a Conversation <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </Layout>
+  );
+};

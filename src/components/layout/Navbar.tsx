@@ -4,10 +4,11 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const links = [
-  { label: 'Work', to: '/work' },
-  { label: 'Capabilities', to: '/capabilities', dropdown: true },
-  { label: 'Open Source', to: '/open-source', dropdown: true },
-  { label: 'Company', to: '/company', dropdown: true },
+  { label: 'Cognisense Cloud', to: '/cognisense' },
+  { label: 'Products', to: '/products' },
+  { label: 'Capabilities', to: '/capabilities' },
+  { label: 'Open Source', to: '/open-source' },
+  { label: 'Company', to: '/company' },
   { label: 'Contact', to: '/contact' },
 ];
 
@@ -41,16 +42,16 @@ export const Navbar = () => {
             const active = pathname === link.to || pathname.startsWith(`${link.to}/`);
             return (
               <Link key={link.to} to={link.to} className={`inline-flex items-center gap-1 py-3 text-[13px] font-semibold transition ${active ? 'text-[#0078d4]' : 'text-[#495566] hover:text-[#0078d4]'}`}>
-                {link.label}{link.dropdown && <ChevronDown className="h-3.5 w-3.5" />}
+                {link.label}
               </Link>
             );
           })}
         </div>
 
         <div className="hidden lg:block">
-          <Link to="/contact" className="inline-flex min-h-11 items-center gap-3 rounded-lg bg-[#0078d4] px-5 text-[13px] font-semibold text-white shadow-[0_8px_24px_rgba(0,120,212,.2)] transition hover:bg-[#006cbe]">
-            Start a project <ArrowRight className="h-4 w-4" />
-          </Link>
+          <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-3 rounded-lg bg-[#0078d4] px-5 text-[13px] font-semibold text-white shadow-[0_8px_24px_rgba(0,120,212,.2)] transition hover:bg-[#006cbe]">
+            Explore Cognisense <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
 
         <button type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} className="grid h-11 w-11 place-items-center rounded-lg border border-[#dfe5ec] bg-white text-[#17191e] lg:hidden">
@@ -67,7 +68,7 @@ export const Navbar = () => {
                   {link.label}<ArrowRight className="h-4 w-4 opacity-45" />
                 </Link>
               ))}
-              <Link to="/contact" className="mt-3 flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#0078d4] px-5 text-sm font-semibold text-white">Start a project <ArrowRight className="h-4 w-4" /></Link>
+              <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="mt-3 flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#0078d4] px-5 text-sm font-semibold text-white">Explore Cognisense <ArrowRight className="h-4 w-4" /></a>
             </div>
           </motion.div>
         )}
