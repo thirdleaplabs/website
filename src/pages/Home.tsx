@@ -1,4 +1,4 @@
-import { ArrowRight, BrainCircuit, Eye, Blocks, Braces, Search, Network, ShieldCheck, Box, Workflow, Cloud, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Eye, Blocks, Braces, Cloud, CheckCircle2 } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
