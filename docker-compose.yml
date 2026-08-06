@@ -2,7 +2,11 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile
+      target: build
+    command: npm run dev
+    volumes:
+      - .:/app
+      - /app/node_modules
     ports:
-      - "8080:80"
+      - "8080:5173"
     restart: unless-stopped
