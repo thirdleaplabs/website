@@ -1,4 +1,4 @@
-import { ArrowRight, BrainCircuit, Box, Eye, Layers3, Cpu, Braces, Cloud } from 'lucide-react';
+import { ArrowRight, BrainCircuit, Box, Eye, Cpu, Braces, Cloud } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
@@ -105,7 +105,7 @@ export const Capabilities = () => {
                     'Collaboration with developers and research communities'
                   ]
                 }
-              ].map((cap, i) => (
+              ].map((cap) => (
                 <div key={cap.title} className="surface-card flex flex-col rounded-2xl p-8">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#edf7ff] text-[#0078d4]">
                     <cap.icon className="h-6 w-6" />
