@@ -3,65 +3,70 @@
 
   <url>
     <loc>https://thirdleaplabs.com/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://thirdleaplabs.com/solutions</loc>
-    <lastmod>2026-07-07</lastmod>
+    <loc>https://thirdleaplabs.com/cognisense</loc>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://thirdleaplabs.com/company</loc>
-    <lastmod>2026-07-07</lastmod>
+    <loc>https://thirdleaplabs.com/products</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://thirdleaplabs.com/capabilities</loc>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-
   <url>
-    <loc>https://thirdleaplabs.com/labs/whalescanner</loc>
-    <lastmod>2026-07-07</lastmod>
+    <loc>https://thirdleaplabs.com/open-source</loc>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://thirdleaplabs.com/labs/gopaysol</loc>
-    <lastmod>2026-07-07</lastmod>
+    <loc>https://thirdleaplabs.com/company</loc>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-
 
   <url>
     <loc>https://thirdleaplabs.com/contact</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://thirdleaplabs.com/legal-disclaimer</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://thirdleaplabs.com/privacy-policy</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://thirdleaplabs.com/security-notice</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

@@ -17,7 +17,7 @@ The purpose of this task is to update the website content and page structure aro
 - Supporting product: WhaleScanner
 - Supporting themes: applied AI, computer vision, cloud/edge engineering, Web3 and open engineering
 
-Do not treat VisionX, FlameTrax or Indus Vision as current public brands. Replace current customer-facing references with Cognisense Cloud. Preserve old URLs only as redirects to `/work/cognisense-cloud`.
+Use **Cognisense Cloud by Third Leap Labs** as the current public visual-intelligence product name. Legacy product names may appear only in explicit redirect-compatibility documentation for `/cognisense`.
 
 ### First response before editing
 
@@ -25,7 +25,7 @@ Return a concise audit containing:
 
 1. Current routes and pages.
 2. Shared layout and UI components that should be reused.
-3. Every current public reference to VisionX or FlameTrax.
+3. Every current public reference that does not use the confirmed Cognisense Cloud name.
 4. Proposed files to edit, create, redirect or delete.
 5. Any factual content that cannot be safely inferred.
 
@@ -74,18 +74,17 @@ WhaleScanner and open engineering should follow as supporting proof of product b
 Implement or maintain:
 
 - `/`
-- `/work`
+- `/products`
 - `/capabilities`
 - `/open-source`
 - `/company`
 - `/contact`
-- `/work/cognisense-cloud`
-- `/work/whalescanner`
+- `/cognisense`
 - Existing legal pages
 
 Maintain GoPaySol only when the current portfolio still requires it.
 
-Redirect all legacy VisionX and FlameTrax routes to `/work/cognisense-cloud`. Remove duplicate navigation entries and duplicate current-brand pages.
+Redirect legacy Cognisense, VisionX and FlameTrax route variants explicitly to `/cognisense`. Redirect legacy WhaleScanner detail routes to `/products#whalescanner`; do not use a broad `/work/*` redirect.
 
 ### Cognisense Cloud product page
 
@@ -198,11 +197,11 @@ Return:
 Do not use the entire master task as one uncontrolled rewrite. Use these reviewable Codex tasks in order:
 
 1. Audit current site and prepare naming/route migration.
-2. Replace VisionX and FlameTrax with Cognisense Cloud and add redirects.
+2. Keep Cognisense Cloud naming current and maintain explicit legacy redirects.
 3. Update navigation, footer and SEO.
 4. Update the homepage narrative.
-5. Build `/work/cognisense-cloud`.
-6. Refine `/work` and `/capabilities`.
+5. Refine `/cognisense`.
+6. Refine `/products` and `/capabilities`.
 7. Update `/company` and `/contact`.
 8. Run full responsive, accessibility, lint and build review.
 

@@ -8,6 +8,7 @@ export function CognisenseCloud() {
       <SEO 
         title="Cognisense Cloud | Cloud Visual Intelligence Platform" 
         description="Connect existing cameras, edge AI and cloud workflows in one browser-based platform for live operations and visual event detection." 
+        path="/cognisense"
       />
       <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
         

@@ -12,7 +12,7 @@ const ArrowLink = ({ to, children, external }: { to: string; children: ReactNode
   const className = "inline-flex items-center gap-2 text-[13px] font-semibold text-[#0078d4] transition hover:gap-3 hover:text-[#005ea6]";
   if (external) {
     return (
-      <a href={to} target="_blank" rel="noreferrer" className={className}>
+      <a href={to} target="_blank" rel="noopener noreferrer" className={className}>
         {children} <ArrowRight className="h-3.5 w-3.5" />
       </a>
     );
@@ -228,7 +228,7 @@ export const Home = () => (
                 <div className="tech-grid h-full w-full" />
               </div>
               <div className="mt-8">
-                <ArrowLink to="/products">Visit whalescanner.com</ArrowLink>
+                <ArrowLink to="https://whalescanner.com" external>Visit whalescanner.com</ArrowLink>
               </div>
             </div>
           </div>

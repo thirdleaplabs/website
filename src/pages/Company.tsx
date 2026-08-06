@@ -14,6 +14,7 @@ export const Company = () => {
       <SEO 
         title="Company | Third Leap Labs" 
         description="Third Leap Labs was created to turn ambitious technical ideas into working, usable platforms across applied AI, computer vision, cloud systems and data intelligence." 
+        path="/company"
       />
       <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
         
