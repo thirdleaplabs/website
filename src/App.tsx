@@ -26,7 +26,25 @@ function App() {
       <Route path="/security-notice" element={<SecurityNotice />} />
 
       {/* Legacy Redirects */}
-      <Route path="/work/*" element={<Navigate to="/products" replace />} />
+      <Route path="/work" element={<Navigate to="/products" replace />} />
+
+      <Route path="/work/cognisense" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/work/cognisense-cloud" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/work/visionx" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/work/flametrax" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/products/cognisense" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/products/cognisense-cloud" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/products/visionx" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/products/flametrax" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/labs/cognisense" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/labs/cognisense-cloud" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/labs/visionx" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/labs/flametrax" element={<Navigate to="/cognisense" replace />} />
+
+      <Route path="/labs/whalescanner" element={<Navigate to="/products#whalescanner" replace />} />
+      <Route path="/work/whalescanner" element={<Navigate to="/products#whalescanner" replace />} />
+      <Route path="/products/whalescanner" element={<Navigate to="/products#whalescanner" replace />} />
+
       <Route path="/solutions" element={<Navigate to="/capabilities" replace />} />
       <Route path="/about" element={<Navigate to="/company" replace />} />
       <Route path="/services" element={<Navigate to="/capabilities" replace />} />

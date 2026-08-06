@@ -19,14 +19,7 @@ Use consistently:
 - Product domain: **https://cognisense.cam**
 - Product category: **Cloud Visual Intelligence Platform**
 
-Do not use the following as current public product names:
-
-- VisionX
-- FlameTrax
-- Indus Vision
-- TTL Cognisense
-
-Legacy URLs may remain only as redirects to the current Cognisense Cloud route.
+**Cognisense Cloud by Third Leap Labs** is the only current public name for the visual-intelligence product. Legacy product names may appear only when documenting redirect compatibility to `/cognisense`.
 
 ## Existing technology stack
 
@@ -109,25 +102,23 @@ When those files are available in the current workspace, read them before implem
 Maintain or implement these principal routes:
 
 - `/` — Home
-- `/work` — Product portfolio
+- `/products` — Product portfolio
 - `/capabilities` — AI, computer vision, cloud/edge, Web3 and open engineering
 - `/open-source` — Open-engineering philosophy and work
 - `/company` — Company and founder story
 - `/contact` — Contact and partnership enquiry
-- `/work/cognisense-cloud` — Cognisense Cloud product overview
-- `/work/whalescanner` — WhaleScanner
-- `/work/gopaysol` — GoPaySol, only if still approved for the portfolio
+- `/cognisense` — Cognisense Cloud product overview and canonical corporate-site route
 - Existing legal pages
 
 Required redirects:
 
-- `/work/visionx` → `/work/cognisense-cloud`
-- `/work/flametrax` → `/work/cognisense-cloud`
-- `/products/visionx` → `/work/cognisense-cloud`
-- `/products/flametrax` → `/work/cognisense-cloud`
-- Equivalent legacy `/labs/...` routes → current routes
+- `/work` → `/products`
+- `/work/cognisense`, `/work/cognisense-cloud`, `/work/visionx`, `/work/flametrax` → `/cognisense`
+- `/products/cognisense`, `/products/cognisense-cloud`, `/products/visionx`, `/products/flametrax` → `/cognisense`
+- `/labs/cognisense`, `/labs/cognisense-cloud`, `/labs/visionx`, `/labs/flametrax` → `/cognisense`
+- `/labs/whalescanner`, `/work/whalescanner`, `/products/whalescanner` → `/products#whalescanner`
 
-Do not leave duplicate public pages for VisionX, FlameTrax and Cognisense Cloud.
+Do not leave duplicate public product pages; preserve legacy names only in the explicit redirect paths above.
 
 ## Corporate homepage priorities
 

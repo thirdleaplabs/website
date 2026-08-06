@@ -12,7 +12,7 @@ const ArrowLink = ({ to, children, external }: { to: string; children: ReactNode
   const className = "inline-flex items-center gap-2 text-[13px] font-semibold text-[#0078d4] transition hover:gap-3 hover:text-[#005ea6]";
   if (external) {
     return (
-      <a href={to} target="_blank" rel="noreferrer" className={className}>
+      <a href={to} target="_blank" rel="noopener noreferrer" className={className}>
         {children} <ArrowRight className="h-3.5 w-3.5" />
       </a>
     );
@@ -30,6 +30,7 @@ export const Products = () => {
       <SEO 
         title="Products | Third Leap Labs" 
         description="Our products combine domain understanding, software architecture, data systems and applied AI in operational platforms designed to be used—not simply demonstrated." 
+        path="/products"
       />
       <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
         
@@ -86,7 +87,7 @@ export const Products = () => {
         </section>
 
         {/* Product 2 — WhaleScanner */}
-        <section className="bg-[#fbfcfe] border-y border-[#e6ebf1] py-24 sm:py-32">
+        <section id="whalescanner" className="bg-[#fbfcfe] border-y border-[#e6ebf1] py-24 sm:py-32">
           <div className="page-shell">
             <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
               <div className="order-2 overflow-hidden rounded-2xl border border-[#e1e7ee] bg-[#f8fafc] h-[400px] lg:h-[500px] shadow-[0_12px_45px_rgba(31,55,82,.08)] lg:order-1">
@@ -107,7 +108,7 @@ export const Products = () => {
                   WhaleScanner brings market intelligence, token and wallet insight, project discovery, signals and community workflows into one platform designed to improve transparency and informed participation.
                 </p>
                 <div className="mt-10">
-                  <ArrowLink to="#">Explore WhaleScanner</ArrowLink>
+                  <ArrowLink to="https://whalescanner.com" external>Explore WhaleScanner</ArrowLink>
                 </div>
               </div>
             </div>

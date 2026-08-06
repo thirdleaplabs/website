@@ -14,6 +14,7 @@ export const Capabilities = () => {
       <SEO 
         title="Capabilities | Third Leap Labs" 
         description="Third Leap Labs builds the complete system around applied intelligence: data ingestion, models, distributed runtime, APIs, workflows, interfaces, deployment and monitoring." 
+        path="/capabilities"
       />
       <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
         

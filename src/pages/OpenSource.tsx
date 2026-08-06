@@ -13,6 +13,7 @@ export const OpenSource = () => {
       <SEO 
         title="Open Source | Third Leap Labs" 
         description="Build openly. Learn quickly. Share what compounds. Third Leap Labs contributes to the wider technology community." 
+        path="/open-source"
       />
       <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
         

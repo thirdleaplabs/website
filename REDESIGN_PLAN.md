@@ -32,15 +32,15 @@ The design should feel current, technically credible and human—not like a stoc
 ## Information architecture
 
 - `/` — Home
-- `/work` — Product and engineering portfolio
+- `/cognisense` — Cognisense Cloud product overview and canonical corporate-site route
+- `/products` — Product and engineering portfolio
 - `/capabilities` — AI, computer vision, Web3 and open-source capabilities
 - `/open-source` — Open-source philosophy and contribution model
 - `/company` — Company story, principles and working style
 - `/contact` — Enquiry form and contact information
-- `/work/whalescanner` — WhaleScanner
-- `/work/gopaysol` — GoPaySol
-- `/work/visionx` — VisionX
 - Existing legal routes remain available
+
+Legacy Cognisense, VisionX and FlameTrax routes redirect explicitly to `/cognisense`. Legacy WhaleScanner detail routes redirect to `/products#whalescanner`.
 
 ## Portfolio structure
 
@@ -51,13 +51,13 @@ The design should feel current, technically credible and human—not like a stoc
 
 ### AI and computer vision
 
-- **VisionX** — Edge-to-cloud video intelligence platform for monitoring, AI events, alerts, evidence and operational response
+- **Cognisense Cloud by Third Leap Labs** — Cloud and edge visual-intelligence platform for monitoring, AI events, incidents, evidence and operational response
 
 ### Open source
 
 - **Open-source engineering** — Reusable engines, APIs, plugins and developer tools
 
-VisionX is the only public computer-vision product name used by Third Leap Labs.
+Cognisense Cloud by Third Leap Labs is the current public visual-intelligence product name.
 
 ## UX principles
 

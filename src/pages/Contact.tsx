@@ -17,6 +17,7 @@ export const Contact = () => {
       <SEO 
         title="Contact | Third Leap Labs" 
         description="Contact Third Leap Labs about Cognisense Cloud pilots, applied-AI projects, partnerships, integrations or investment conversations." 
+        path="/contact"
       />
       <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
         
