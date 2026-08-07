@@ -10,8 +10,8 @@ const eyeWitXCapabilities = [
   { label: 'Operational analytics', icon: BarChart3 },
 ];
 
-const warehouseImage = 'https://images.unsplash.com/photo-1672552226380-486fe900b322?auto=format&fit=crop&w=1400&q=82';
-const marketImage = 'https://images.unsplash.com/photo-1768055105681-7d2096c5165f?auto=format&fit=crop&w=1400&q=82';
+const warehouseImage = '/media/eyewitx/eyewitx-operations.webp';
+const marketImage = '/media/whalescanner/whalescanner-product-overview.webp';
 
 export const Products = () => (
   <Layout>
