@@ -7,68 +7,59 @@ const links = [
   { label: 'Cognisense Cloud', to: '/cognisense' },
   { label: 'Products', to: '/products' },
   { label: 'Capabilities', to: '/capabilities' },
-  { label: 'Open Source', to: '/open-source' },
+  { label: 'Research', to: '/open-source' },
   { label: 'Company', to: '/company' },
   { label: 'Contact', to: '/contact' },
 ];
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
 
   useEffect(() => setOpen(false), [pathname]);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 border-b transition duration-300 ${scrolled || open ? 'border-[#dfe5ec] bg-white/95 shadow-[0_8px_28px_rgba(31,55,82,.08)] backdrop-blur-xl' : 'border-[#e7ebf0] bg-white/90 backdrop-blur-lg'}`}>
-      <nav className="page-shell flex h-[74px] items-center justify-between sm:h-[82px]" aria-label="Primary navigation">
-        <Link to="/" className="group flex items-center gap-3" aria-label="Third Leap Labs home">
-          <img src="/logo.svg" alt="" className="h-9 w-9 sm:h-10 sm:w-10" />
-          <span>
-            <span className="block text-[17px] font-semibold leading-none tracking-[-.035em] text-[#17191e] sm:text-[19px]">Third Leap <span className="font-normal">Labs</span></span>
-            <span className="mt-1.5 block text-[8px] font-bold uppercase tracking-[.2em] text-[#0078d4]">Build · Open · Elevate</span>
-          </span>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#2D3142]/15 bg-white/95 backdrop-blur-md">
+      <nav className="page-shell flex h-16 items-center justify-between" aria-label="Primary navigation">
+        <Link to="/" className="flex items-center gap-2.5" aria-label="Third Leap Labs home">
+          <img src="/logo.svg" alt="" className="h-7 w-7" />
+          <span className="text-[15px] font-semibold tracking-[-.025em] text-[#2D3142] sm:text-[17px]">Third Leap Labs</span>
         </Link>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-stretch self-stretch lg:flex">
           {links.map((link) => {
             const active = pathname === link.to || pathname.startsWith(`${link.to}/`);
             return (
-              <Link key={link.to} to={link.to} className={`inline-flex items-center gap-1 py-3 text-[13px] font-semibold transition ${active ? 'text-[#0078d4]' : 'text-[#495566] hover:text-[#0078d4]'}`}>
+              <Link key={link.to} to={link.to} className={`relative flex items-center px-4 text-[11px] font-medium tracking-[.02em] transition ${active ? 'text-[#EF8354]' : 'text-[#2D3142] hover:text-[#EF8354]'}`}>
                 {link.label}
+                {active && <span className="absolute inset-x-4 bottom-0 h-[2px] bg-[#EF8354]" />}
               </Link>
             );
           })}
         </div>
 
         <div className="hidden lg:block">
-          <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-3 rounded-lg bg-[#0078d4] px-5 text-[13px] font-semibold text-white shadow-[0_8px_24px_rgba(0,120,212,.2)] transition hover:bg-[#006cbe]">
-            Explore Cognisense <ArrowRight className="h-4 w-4" />
-          </a>
+          <Link to="/contact" className="btn-primary min-h-9 px-5 py-2 text-[11px]">Get Started</Link>
         </div>
 
-        <button type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} className="grid h-11 w-11 place-items-center rounded-lg border border-[#dfe5ec] bg-white text-[#17191e] lg:hidden">
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        <button type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} className="grid h-10 w-10 place-items-center border border-[#2D3142]/25 bg-white text-[#2D3142] lg:hidden">
+          {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
         </button>
       </nav>
 
       <AnimatePresence>
         {open && (
-          <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="border-t border-[#e5e9ef] bg-white px-[var(--page-x)] py-4 lg:hidden">
-            <div className="page-shell space-y-1">
-              {links.map((link) => (
-                <Link key={link.to} to={link.to} className="flex min-h-12 items-center justify-between rounded-lg px-4 text-[15px] font-semibold text-[#374151] transition hover:bg-[#f2f7fc] hover:text-[#0078d4]">
-                  {link.label}<ArrowRight className="h-4 w-4 opacity-45" />
-                </Link>
-              ))}
-              <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="mt-3 flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#0078d4] px-5 text-sm font-semibold text-white">Explore Cognisense <ArrowRight className="h-4 w-4" /></a>
+          <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: .16 }} className="border-t border-[#2D3142]/10 bg-white lg:hidden">
+            <div className="page-shell py-3">
+              {links.map((link) => {
+                const active = pathname === link.to || pathname.startsWith(`${link.to}/`);
+                return (
+                  <Link key={link.to} to={link.to} className={`flex min-h-12 items-center justify-between border-b border-[#2D3142]/10 px-1 text-sm font-medium ${active ? 'text-[#EF8354]' : 'text-[#2D3142]'}`}>
+                    {link.label}<ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                );
+              })}
+              <Link to="/contact" className="btn-primary mt-4 w-full">Get Started <ArrowRight className="h-4 w-4" /></Link>
             </div>
           </motion.div>
         )}
