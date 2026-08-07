@@ -6,11 +6,13 @@ import { SEO } from '../components/layout/SEO';
 const bars = [34, 56, 40, 67, 48, 76, 62, 57];
 
 const operationalImages = [
-  'https://images.unsplash.com/photo-1672552226380-486fe900b322?auto=format&fit=crop&w=1000&q=82',
-  'https://images.unsplash.com/photo-1532186773960-85649e5cb70b?auto=format&fit=crop&w=1000&q=82',
-  'https://images.unsplash.com/photo-1584169417032-d34e8d805e8b?auto=format&fit=crop&w=1000&q=82',
-  'https://images.unsplash.com/photo-1775519520461-6b6e068d9250?auto=format&fit=crop&w=1000&q=82',
+  '/media/eyewitx/eyewitx-operations.webp',
+  '/media/eyewitx/eyewitx-operations.webp',
+  '/media/eyewitx/eyewitx-operations.webp',
+  '/media/eyewitx/eyewitx-operations.webp',
 ];
+
+const operationalPositions = ['left center', 'center center', 'right center', 'center 72%'];
 
 const eyeWitXFeatures = [
   { title: 'Hardware Agnostic', copy: 'Integrates with IP cameras and RTSP streams.', icon: Eye },
@@ -34,8 +36,10 @@ export const Home = () => (
     />
 
     <main className="site-page pt-16">
-      <section className="brand-grid border-b border-[#2D3142]/15">
-        <div className="page-shell grid min-h-[650px] items-center gap-14 py-20 lg:grid-cols-[1.18fr_.82fr] lg:py-24">
+      <section className="brand-grid relative overflow-hidden border-b border-[#2D3142]/15">
+        <img src="/media/home/hero-eyewitx-poster.webp" alt="" aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full object-cover grayscale opacity-[.16]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/75" />
+        <div className="page-shell relative grid min-h-[650px] items-center gap-14 py-20 lg:grid-cols-[1.18fr_.82fr] lg:py-24">
           <div className="max-w-[760px]">
             <span className="kicker-box"><span className="h-1.5 w-1.5 rounded-full bg-[#1DA1F2]" /> Operational intelligence v2.0</span>
             <h1 className="display-xl mt-7">Engineering intelligence for the <span className="accent">physical and digital</span> world.</h1>
@@ -63,7 +67,7 @@ export const Home = () => (
             <div className="browser-frame">
               <div className="browser-bar"><span className="text-[#1DA1F2]">AI VISION</span><span>LIVE DASHBOARD</span></div>
               <div className="cognisense-ui grid min-h-[330px] grid-cols-[1fr_150px] gap-2 p-3">
-                <div className="grid grid-cols-2 grid-rows-2 gap-2">{operationalImages.map((src, item) => <div key={src} className="ui-card relative overflow-hidden p-3"><img src={src} alt="Industrial operations camera feed" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.15] brightness-[.55]" /><div className="absolute inset-0 bg-[#111827]/25" /><div className="relative flex h-full flex-col justify-between"><span className="mono text-[7px] uppercase tracking-[.08em] text-white/80">CAM_{String(item + 1).padStart(2, '0')} / ACTIVE</span><div><div className="mb-2 h-px bg-white/20" /><div className="inline-flex border border-[#1DA1F2]/60 bg-[#0B1720]/70 px-2 py-1 mono text-[7px] uppercase text-[#1DA1F2]">Object event detected</div></div></div></div>)}</div>
+                <div className="grid grid-cols-2 grid-rows-2 gap-2">{operationalImages.map((src, item) => <div key={`${src}-${item}`} className="ui-card relative overflow-hidden p-3"><img src={src} alt="Industrial operations camera feed" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.15] brightness-[.55]" style={{ objectPosition: operationalPositions[item] }} /><div className="absolute inset-0 bg-[#111827]/25" /><div className="relative flex h-full flex-col justify-between"><span className="mono text-[7px] uppercase tracking-[.08em] text-white/80">CAM_{String(item + 1).padStart(2, '0')} / ACTIVE</span><div><div className="mb-2 h-px bg-white/20" /><div className="inline-flex border border-[#1DA1F2]/60 bg-[#0B1720]/70 px-2 py-1 mono text-[7px] uppercase text-[#1DA1F2]">Object event detected</div></div></div></div>)}</div>
                 <div className="ui-card p-3"><p className="mono text-[7px] uppercase tracking-[.08em] text-[#BFC0C0]">Event Stream</p><div className="mt-4 space-y-3">{[75, 58, 88, 47, 70].map((width, index) => <div key={`${width}-${index}`} className="border-b border-[#BFC0C0]/10 pb-3"><div className="ui-line" style={{ width: `${width}%` }} /><div className="ui-line blue mt-2" style={{ width: `${Math.max(24, width - 30)}%` }} /></div>)}</div></div>
               </div>
             </div>
