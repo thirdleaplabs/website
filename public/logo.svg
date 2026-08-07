@@ -1,17 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Third Leap Labs</title>
-  <desc id="desc">Three ascending geometric forms representing the third leap.</desc>
-  <defs>
-    <linearGradient id="g1" x1="5" y1="55" x2="55" y2="8" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#005FB8"/>
-      <stop offset="1" stop-color="#00A4EF"/>
-    </linearGradient>
-    <linearGradient id="g2" x1="20" y1="55" x2="58" y2="10" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0067C5"/>
-      <stop offset="1" stop-color="#169BEE"/>
-    </linearGradient>
-  </defs>
-  <path d="M7 49.5 18.5 41v8.5L7 57Z" fill="url(#g1)"/>
-  <path d="M22 34.5 36 24v22L22 56Z" fill="url(#g1)"/>
-  <path d="M41 19 57 7v36L41 55Z" fill="url(#g2)"/>
+  <desc id="desc">Third Leap Labs 3L monogram in brand navy and orange.</desc>
+  <path d="M120 180C120 146.863 146.863 120 180 120C213.137 120 240 146.863 240 180C240 213.137 213.137 240 180 240H120V180Z" fill="#2D3142"/>
+  <path d="M120 240V332C120 365.137 146.863 392 180 392C213.137 392 240 365.137 240 332V240H120Z" fill="#2D3142"/>
+  <path d="M272 120V332C272 365.137 298.863 392 332 392H392V332H332V120H272Z" fill="#2D3142"/>
+  <path d="M240 210L272 230L240 250V210Z" fill="#EF8354"/>
+  <rect x="230" y="225" width="50" height="10" rx="5" transform="rotate(-30 230 225)" fill="#EF8354"/>
 </svg>
