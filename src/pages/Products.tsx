@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
 
-const cognisenseCapabilities = [
+const eyeWitXCapabilities = [
   { label: 'Live visual operations', icon: Camera },
   { label: 'AI event detection', icon: Radar },
   { label: 'Incident workflows', icon: ShieldCheck },
@@ -17,7 +17,7 @@ export const Products = () => (
   <Layout>
     <SEO
       title="Products | Third Leap Labs"
-      description="Operational intelligence products from Third Leap Labs: Cognisense Cloud for visual intelligence and WhaleScanner for Web3 market and wallet intelligence."
+      description="Operational intelligence products from Third Leap Labs: EyeWitX for visual intelligence and WhaleScanner for Web3 market and wallet intelligence."
       path="/products"
     />
     <main className="site-page pt-16">
@@ -33,14 +33,14 @@ export const Products = () => (
         <div className="page-shell grid gap-10 lg:grid-cols-[.88fr_1.12fr] lg:items-center">
           <div>
             <p className="mono text-[10px] uppercase tracking-[.1em] text-[#1DA1F2]">Cloud Visual Intelligence / Product_01</p>
-            <h2 className="section-display mt-5">Cognisense Cloud</h2>
+            <h2 className="section-display mt-5">EyeWitX</h2>
             <p className="copy-md mt-5 max-w-[560px]">Transform existing camera infrastructure into a connected operational layer for safety, security, incidents, evidence and analytics.</p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">{cognisenseCapabilities.map((item) => <div key={item.label} className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[12px] text-[#2D3142]"><item.icon className="h-4 w-4 text-[#1DA1F2]" strokeWidth={1.7} />{item.label}</div>)}</div>
-            <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="btn-primary mt-9">Explore Cognisense Cloud <ArrowRight className="h-4 w-4" /></a>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">{eyeWitXCapabilities.map((item) => <div key={item.label} className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[12px] text-[#2D3142]"><item.icon className="h-4 w-4 text-[#1DA1F2]" strokeWidth={1.7} />{item.label}</div>)}</div>
+            <a href="https://eyewitx.com" target="_blank" rel="noreferrer" className="btn-primary mt-9">Explore EyeWitX <ArrowRight className="h-4 w-4" /></a>
           </div>
 
           <div className="browser-frame">
-            <div className="browser-bar"><span className="text-[#1DA1F2]">COGNISENSE</span><span>operational_view</span></div>
+            <div className="browser-bar"><span className="text-[#1DA1F2]">EYEWITX</span><span>operational_view</span></div>
             <div className="cognisense-ui grid min-h-[420px] grid-cols-[1.55fr_.75fr] gap-2 p-3">
               <div className="grid grid-rows-[1.2fr_.8fr] gap-2">
                 <div className="ui-card relative overflow-hidden p-4"><img src={warehouseImage} alt="Warehouse operations" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.18] brightness-[.46]" /><div className="absolute inset-0 bg-[#111827]/30" /><div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between mono text-[8px] uppercase text-white/80"><span>Live facility view</span><span className="text-[#1DA1F2]">12 events</span></div><div className="grid grid-cols-3 gap-3">{[72, 45, 61].map((height, index) => <div key={`${height}-${index}`} className="flex h-24 items-end border border-white/15 bg-black/10 p-2"><span className="w-full bg-[#1DA1F2]/65" style={{ height: `${height}%` }} /></div>)}</div></div></div>
