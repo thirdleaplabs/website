@@ -11,13 +11,13 @@ Inspect the existing Third Leap Labs website before changing code. Preserve the 
 The purpose of this task is to update the website content and page structure around the confirmed brand architecture:
 
 - Company: Third Leap Labs
-- Flagship visual-intelligence product: Cognisense Cloud
-- Brand signature: Cognisense Cloud by Third Leap Labs
-- Product domain: https://cognisense.cam
+- Flagship visual-intelligence product: EyeWitX
+- Brand signature: EyeWitX by Third Leap Labs
+- Product domain: https://eyewitx.com
 - Supporting product: WhaleScanner
 - Supporting themes: applied AI, computer vision, cloud/edge engineering, Web3 and open engineering
 
-Use **Cognisense Cloud by Third Leap Labs** as the current public visual-intelligence product name. Legacy product names may appear only in explicit redirect-compatibility documentation for `/cognisense`.
+Use **EyeWitX by Third Leap Labs** as the current public visual-intelligence product name. Cognisense Cloud is a retired predecessor name and may appear only in explicit redirect-compatibility or migration documentation pointing to `/eyewitx`.
 
 ### First response before editing
 
@@ -25,7 +25,7 @@ Return a concise audit containing:
 
 1. Current routes and pages.
 2. Shared layout and UI components that should be reused.
-3. Every current public reference that does not use the confirmed Cognisense Cloud name.
+3. Every current public reference that does not use the confirmed EyeWitX name.
 4. Proposed files to edit, create, redirect or delete.
 5. Any factual content that cannot be safely inferred.
 
@@ -38,7 +38,7 @@ Third Leap Labs is an applied AI and product-engineering company building intell
 The corporate website must clearly communicate:
 
 1. Applied AI and computer vision are the primary focus.
-2. Cognisense Cloud is the flagship visual-intelligence SaaS product.
+2. EyeWitX is the flagship visual-intelligence SaaS product.
 3. WhaleScanner is the Web3 intelligence product and evidence of platform execution.
 4. Open engineering supports transparency, extensibility and long-term ownership.
 5. Third Leap Labs can work with customers, pilot partners, integrators and investors.
@@ -55,17 +55,17 @@ Suggested hero:
 
 **Supporting copy:** Third Leap Labs builds applied AI, computer-vision and Web3 products that turn complex data into clearer, faster decisions.
 
-**Primary action:** Explore Cognisense Cloud
+**Primary action:** Explore EyeWitX
 
 **Secondary action:** View our work
 
-The next major section should feature Cognisense Cloud prominently:
+The next major section should feature EyeWitX prominently:
 
 **Headline:** Give every camera intelligence.
 
-**Copy:** Cognisense Cloud connects compatible cameras, edge AI and cloud workflows to surface important events, manage incidents and understand operations across every location.
+**Copy:** EyeWitX connects compatible cameras, edge AI and cloud workflows to surface important events, manage incidents and understand operations across every location.
 
-**Actions:** Explore Cognisense Cloud / Request a pilot
+**Actions:** Explore EyeWitX / Request a pilot
 
 WhaleScanner and open engineering should follow as supporting proof of product breadth.
 
@@ -79,14 +79,14 @@ Implement or maintain:
 - `/open-source`
 - `/company`
 - `/contact`
-- `/cognisense`
+- `/eyewitx`
 - Existing legal pages
 
 Maintain GoPaySol only when the current portfolio still requires it.
 
-Redirect legacy Cognisense, VisionX and FlameTrax route variants explicitly to `/cognisense`. Redirect legacy WhaleScanner detail routes to `/products#whalescanner`; do not use a broad `/work/*` redirect.
+Redirect retired Cognisense, VisionX and FlameTrax route variants explicitly to `/eyewitx`. Redirect legacy WhaleScanner detail routes to `/products#whalescanner`; do not use a broad `/work/*` redirect.
 
-### Cognisense Cloud product page
+### EyeWitX product page
 
 Create a credible corporate-site overview, not a dense application dashboard. Use the existing visual system.
 
@@ -110,7 +110,7 @@ Recommended narrative order:
    - Commercial facilities
    - Construction and transport environments
 6. Pilot approach — discover, connect, configure, validate and scale.
-7. CTA — visit cognisense.cam or request a pilot.
+7. CTA — visit eyewitx.com or request a pilot.
 
 Use careful wording. Do not claim that every listed detector is currently production-ready unless the repository contains verified evidence. Describe unverified capabilities as configurable, pilot-dependent or planned.
 
@@ -136,7 +136,7 @@ Do not publish sensitive personal, financial or registration identifiers.
 
 Prioritise these enquiry types:
 
-- Cognisense Cloud pilot
+- EyeWitX pilot
 - Systems-integration or channel partnership
 - Applied AI/product-engineering discussion
 - Investment or accelerator conversation
@@ -197,10 +197,10 @@ Return:
 Do not use the entire master task as one uncontrolled rewrite. Use these reviewable Codex tasks in order:
 
 1. Audit current site and prepare naming/route migration.
-2. Keep Cognisense Cloud naming current and maintain explicit legacy redirects.
+2. Keep EyeWitX naming current and maintain explicit legacy redirects.
 3. Update navigation, footer and SEO.
 4. Update the homepage narrative.
-5. Refine `/cognisense`.
+5. Refine `/eyewitx`.
 6. Refine `/products` and `/capabilities`.
 7. Update `/company` and `/contact`.
 8. Run full responsive, accessibility, lint and build review.
