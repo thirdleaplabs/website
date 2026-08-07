@@ -38,13 +38,13 @@ export const OpenSource = () => (
       <section className="brand-grid-soft border-b border-[#2D3142]/15 py-20 lg:py-24">
         <div className="page-shell">
           <div className="flex flex-col gap-4 border-b border-[#2D3142]/30 pb-5 sm:flex-row sm:items-end sm:justify-between">
-            <div><p className="mono text-[9px] uppercase tracking-[.1em] text-[#EF8354]">Featured Engineering</p><h2 className="section-display mt-3">Selected repositories.</h2></div>
+            <div><p className="mono text-[9px] uppercase tracking-[.1em] text-[#1DA1F2]">Featured Engineering</p><h2 className="section-display mt-3">Selected repositories.</h2></div>
             <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="text-link">View archive <ArrowRight className="h-3.5 w-3.5" /></a>
           </div>
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             {repositories.map((repo, index) => (
               <article key={repo.name} className="panel panel-hover flex min-h-[280px] flex-col p-7">
-                <div className="flex items-center justify-between"><span className="mono text-[9px] uppercase tracking-[.08em] text-[#4F5D75]">Repo_0{index + 1}</span><Github className="h-4 w-4 text-[#EF8354]" /></div>
+                <div className="flex items-center justify-between"><span className="mono text-[9px] uppercase tracking-[.08em] text-[#4F5D75]">Repo_0{index + 1}</span><Github className="h-4 w-4 text-[#1DA1F2]" /></div>
                 <h3 className="mt-7 break-words text-[20px] font-medium tracking-[-.03em]">{repo.name}</h3>
                 <p className="mt-4 flex-1 text-[13px] leading-6 text-[#4F5D75]">{repo.purpose}</p>
                 <div className="mt-7 flex items-center justify-between"><span className="tech-tag">{repo.tech}</span><a href={`https://github.com/thirdleaplabs/${repo.name}`} target="_blank" rel="noreferrer" className="text-link">Open <ArrowRight className="h-3 w-3" /></a></div>
@@ -57,24 +57,24 @@ export const OpenSource = () => (
       <section className="brand-grid border-b border-[#2D3142]/15 py-20 lg:py-24">
         <div className="page-shell grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
           <div className="panel bg-[#2D3142] p-7 text-white sm:p-9">
-            <div className="flex items-center justify-between border-b border-white/15 pb-4"><div className="flex items-center gap-2"><TerminalSquare className="h-4 w-4 text-[#EF8354]" /><p className="mono text-[9px] uppercase tracking-[.08em]">Engineering Logs</p></div><span className="mono text-[8px] uppercase text-[#BFC0C0]">live</span></div>
+            <div className="flex items-center justify-between border-b border-white/15 pb-4"><div className="flex items-center gap-2"><TerminalSquare className="h-4 w-4 text-[#1DA1F2]" /><p className="mono text-[9px] uppercase tracking-[.08em]">Engineering Logs</p></div><span className="mono text-[8px] uppercase text-[#BFC0C0]">live</span></div>
             <div className="mt-7 space-y-7">
               {[
                 ['08.06', 'Optimized tensor allocation routines and reduced inference latency in constrained edge pipelines.'],
                 ['08.04', 'Refined lock-free event ingestion architecture for higher-frequency operational streams.'],
                 ['08.01', 'Expanded validation coverage around model-confidence and evidence-handling workflows.'],
               ].map(([date, log]) => (
-                <div key={date} className="grid grid-cols-[60px_1fr] gap-4"><span className="mono text-[8px] text-[#EF8354]">{date}</span><p className="mono text-[9px] leading-5 text-[#BFC0C0]">{log}</p></div>
+                <div key={date} className="grid grid-cols-[60px_1fr] gap-4"><span className="mono text-[8px] text-[#1DA1F2]">{date}</span><p className="mono text-[9px] leading-5 text-[#BFC0C0]">{log}</p></div>
               ))}
             </div>
           </div>
 
           <div id="principles" className="panel p-7 sm:p-9 scroll-mt-20">
-            <p className="mono text-[9px] uppercase tracking-[.1em] text-[#EF8354]">Open-source principles</p>
+            <p className="mono text-[9px] uppercase tracking-[.1em] text-[#1DA1F2]">Open-source principles</p>
             <h2 className="mt-4 text-2xl font-semibold tracking-[-.04em]">Build openly. Learn quickly. Share what compounds.</h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {principles.map((principle) => (
-                <div key={principle.title} className="border-t border-[#2D3142]/18 pt-4"><principle.icon className="h-5 w-5 text-[#EF8354]" /><p className="mt-4 text-[12px] leading-5 text-[#4F5D75]">{principle.title}</p></div>
+                <div key={principle.title} className="border-t border-[#2D3142]/18 pt-4"><principle.icon className="h-5 w-5 text-[#1DA1F2]" /><p className="mt-4 text-[12px] leading-5 text-[#4F5D75]">{principle.title}</p></div>
               ))}
             </div>
           </div>
