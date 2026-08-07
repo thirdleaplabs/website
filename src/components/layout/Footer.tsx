@@ -9,9 +9,9 @@ export const Footer = () => (
       </Link>
 
       <nav className="flex flex-wrap gap-x-7 gap-y-3 text-[11px] text-[#4F5D75]" aria-label="Footer navigation">
-        <Link to="/privacy-policy" className="transition hover:text-[#EF8354]">Privacy</Link>
-        <Link to="/security-notice" className="transition hover:text-[#EF8354]">Security</Link>
-        <Link to="/legal-disclaimer" className="transition hover:text-[#EF8354]">Legal</Link>
+        <Link to="/privacy-policy" className="transition hover:text-[#1DA1F2]">Privacy</Link>
+        <Link to="/security-notice" className="transition hover:text-[#1DA1F2]">Security</Link>
+        <Link to="/legal-disclaimer" className="transition hover:text-[#1DA1F2]">Legal</Link>
       </nav>
 
       <p className="mono text-[9px] uppercase tracking-[.08em] text-[#4F5D75]">© {new Date().getFullYear()} Third Leap Labs LLC. Applied Intelligence.</p>
