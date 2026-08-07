@@ -30,9 +30,9 @@ export const Navbar = () => {
           {links.map((link) => {
             const active = pathname === link.to || pathname.startsWith(`${link.to}/`);
             return (
-              <Link key={link.to} to={link.to} className={`relative flex items-center px-4 text-[11px] font-medium tracking-[.02em] transition ${active ? 'text-[#EF8354]' : 'text-[#2D3142] hover:text-[#EF8354]'}`}>
+              <Link key={link.to} to={link.to} className={`relative flex items-center px-4 text-[11px] font-medium tracking-[.02em] transition ${active ? 'text-[#1DA1F2]' : 'text-[#2D3142] hover:text-[#1DA1F2]'}`}>
                 {link.label}
-                {active && <span className="absolute inset-x-4 bottom-0 h-[2px] bg-[#EF8354]" />}
+                {active && <span className="absolute inset-x-4 bottom-0 h-[2px] bg-[#1DA1F2]" />}
               </Link>
             );
           })}
@@ -54,7 +54,7 @@ export const Navbar = () => {
               {links.map((link) => {
                 const active = pathname === link.to || pathname.startsWith(`${link.to}/`);
                 return (
-                  <Link key={link.to} to={link.to} className={`flex min-h-12 items-center justify-between border-b border-[#2D3142]/10 px-1 text-sm font-medium ${active ? 'text-[#EF8354]' : 'text-[#2D3142]'}`}>
+                  <Link key={link.to} to={link.to} className={`flex min-h-12 items-center justify-between border-b border-[#2D3142]/10 px-1 text-sm font-medium ${active ? 'text-[#1DA1F2]' : 'text-[#2D3142]'}`}>
                     {link.label}<ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 );

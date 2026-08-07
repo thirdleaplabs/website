@@ -1,9 +1,9 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Third Leap Labs</title>
-  <desc id="desc">Third Leap Labs 3L monogram in brand navy and orange.</desc>
+  <desc id="desc">Third Leap Labs 3L monogram in brand navy and Twitter blue.</desc>
   <path d="M120 180C120 146.863 146.863 120 180 120C213.137 120 240 146.863 240 180C240 213.137 213.137 240 180 240H120V180Z" fill="#2D3142"/>
   <path d="M120 240V332C120 365.137 146.863 392 180 392C213.137 392 240 365.137 240 332V240H120Z" fill="#2D3142"/>
   <path d="M272 120V332C272 365.137 298.863 392 332 392H392V332H332V120H272Z" fill="#2D3142"/>
-  <path d="M240 210L272 230L240 250V210Z" fill="#EF8354"/>
-  <rect x="230" y="225" width="50" height="10" rx="5" transform="rotate(-30 230 225)" fill="#EF8354"/>
+  <path d="M240 210L272 230L240 250V210Z" fill="#1DA1F2"/>
+  <rect x="230" y="225" width="50" height="10" rx="5" transform="rotate(-30 230 225)" fill="#1DA1F2"/>
 </svg>
