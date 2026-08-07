@@ -5,7 +5,7 @@ import { SEO } from '../components/layout/SEO';
 
 export const NotFound = () => (
   <Layout>
-    <SEO title="Page Not Found | Third Leap Labs" description="The requested page could not be found." path="/404" />
+    <SEO title="Page Not Found | Third Leap Labs" description="The requested page could not be found." path="/404" noindex />
     <main className="site-page pt-16">
       <section className="brand-grid border-b border-[#2D3142]/15">
         <div className="page-shell flex min-h-[620px] flex-col justify-center py-20">
