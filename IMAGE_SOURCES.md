@@ -1,17 +1,27 @@
 # Website image sources
 
-The grayscale photography used in the Stitch imagery pass is loaded from Unsplash and displayed with CSS grayscale/contrast treatment. The original photographs remain externally hosted so the site can swap imagery without changing layout geometry.
+The current website imagery is a coordinated Third Leap Labs / EyeWitX media set created for the site in Canva and stored locally under `public/media/`.
 
-All selected photographs were marked **Free to use under the Unsplash License** when selected on 2026-08-07.
+## Local media
 
-| Use | Photographer | Unsplash source |
-| --- | --- | --- |
-| Warehouse / visual operations | Arum Visuals | https://unsplash.com/photos/VnMbc9Szs-E |
-| Precision electronics / engineering | Louis Reed | https://unsplash.com/photos/wSTCaQpiLtc |
-| Data / industrial infrastructure | İsmail Enes Ayhan | https://unsplash.com/photos/lVZjvw-u9V8 |
-| Edge / technical hardware | Eric Stoynov | https://unsplash.com/photos/k27hkqXuveo |
-| Market intelligence workstation | Jakub Żerdzicki | https://unsplash.com/photos/j_hho1mE47s |
+| Use | Repository asset |
+| --- | --- |
+| Home hero poster | `public/media/home/hero-eyewitx-poster.webp` |
+| EyeWitX visual operations | `public/media/eyewitx/eyewitx-operations.webp` |
+| Capabilities infrastructure | `public/media/capabilities/capabilities-infrastructure.webp` |
+| WhaleScanner market intelligence | `public/media/whalescanner/whalescanner-product-overview.webp` |
+| Company engineering visual | `public/media/company/company-engineering.webp` |
+
+The supplied 1920×1080 JPG exports were converted to web-optimized WebP derivatives for repository delivery and faster page loads.
 
 ## Design treatment
 
-Images are intentionally rendered in grayscale with increased contrast and reduced brightness. Twitter blue (`#1DA1F2`) remains the only strong UI accent for detections, status, telemetry and interaction states.
+The images are intentionally grayscale/desaturated with controlled contrast. Twitter blue (`#1DA1F2`) remains the strong UI accent for detections, status, telemetry and interaction states.
+
+## Future hero video
+
+When an approved looping hero video is available, place it at:
+
+`public/media/home/hero-eyewitx.mp4`
+
+The existing `hero-eyewitx-poster.webp` should remain as the poster/fallback image.
