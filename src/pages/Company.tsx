@@ -12,7 +12,7 @@ const principles = [
   { title: 'Continuous Learning', copy: 'Iterative refinement of technological capabilities and organizational knowledge.', icon: BookOpen },
 ];
 
-const engineeringImage = 'https://images.unsplash.com/photo-1532186773960-85649e5cb70b?auto=format&fit=crop&w=1100&q=82';
+const engineeringImage = '/media/company/company-engineering.webp';
 
 export const Company = () => (
   <Layout>
