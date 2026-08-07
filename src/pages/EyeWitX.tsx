@@ -11,11 +11,13 @@ const productStats = [
 ];
 
 const cameraImages = [
-  'https://images.unsplash.com/photo-1672552226380-486fe900b322?auto=format&fit=crop&w=1000&q=82',
-  'https://images.unsplash.com/photo-1532186773960-85649e5cb70b?auto=format&fit=crop&w=1000&q=82',
-  'https://images.unsplash.com/photo-1584169417032-d34e8d805e8b?auto=format&fit=crop&w=1000&q=82',
-  'https://images.unsplash.com/photo-1775519520461-6b6e068d9250?auto=format&fit=crop&w=1000&q=82',
+  '/media/eyewitx/eyewitx-operations.webp',
+  '/media/eyewitx/eyewitx-operations.webp',
+  '/media/eyewitx/eyewitx-operations.webp',
+  '/media/eyewitx/eyewitx-operations.webp',
 ];
+
+const cameraPositions = ['left center', 'center center', 'right center', 'center 72%'];
 
 export function EyeWitX() {
   return (
@@ -55,8 +57,8 @@ export function EyeWitX() {
                           {cameraImages.map((src, index) => {
                             const camera = index + 1;
                             return (
-                              <div key={src} className="relative overflow-hidden border border-[#BFC0C0]/15 bg-[#171D25] p-3">
-                                <img src={src} alt="Industrial site camera feed" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.18] brightness-[.5]" />
+                              <div key={`${src}-${index}`} className="relative overflow-hidden border border-[#BFC0C0]/15 bg-[#171D25] p-3">
+                                <img src={src} alt="Industrial site camera feed" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.18] brightness-[.5]" style={{ objectPosition: cameraPositions[index] }} />
                                 <div className="absolute inset-0 bg-[#111827]/25" />
                                 <div className="relative flex h-full flex-col justify-between">
                                   <span className="mono text-[7px] uppercase text-white/80">CAM_{String(camera).padStart(2, '0')} / STREAMING</span>
