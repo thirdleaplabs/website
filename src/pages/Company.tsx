@@ -22,7 +22,7 @@ export const Company = () => (
     <main className="site-page pt-16">
       <section className="brand-grid border-b border-[#2D3142]/15">
         <div className="page-shell py-20 lg:py-24">
-          <span className="kicker-box"><span className="h-1.5 w-1.5 rounded-full bg-[#EF8354]" /> Company profile</span>
+          <span className="kicker-box"><span className="h-1.5 w-1.5 rounded-full bg-[#1DA1F2]" /> Company profile</span>
           <h1 className="page-display mt-8 max-w-[900px]">A product company built by an <span className="accent">engineer.</span></h1>
           <p className="copy-lg mt-7 max-w-[760px]">We bridge the gap between ambitious algorithmic concepts and robust, production-ready platforms—turning complex ideas into usable, scalable operational intelligence.</p>
 
@@ -40,7 +40,7 @@ export const Company = () => (
               <div className="flex flex-col">
                 <div className="border-b border-[#2D3142]/35 pb-5">
                   <h2 className="text-[28px] font-semibold tracking-[-.04em]">Gokul Kartha</h2>
-                  <p className="mono mt-2 text-[9px] uppercase tracking-[.08em] text-[#EF8354]">Founder &amp; CEO</p>
+                  <p className="mono mt-2 text-[9px] uppercase tracking-[.08em] text-[#1DA1F2]">Founder &amp; CEO</p>
                 </div>
                 <p className="copy-md mt-6">Software engineering and technology leader with experience spanning embedded systems, automotive software, platform architecture, cloud applications and product development. Through Third Leap Labs, he builds and commercialises applied-AI products including Cognisense Cloud and WhaleScanner.</p>
                 <div className="mt-auto flex flex-wrap gap-2 pt-8"><span className="tech-tag text-[#2D3142] bg-[#BFC0C0]/25">SYSTEMS ARCHITECTURE</span><span className="tech-tag text-[#2D3142] bg-[#BFC0C0]/25">PRODUCT STRATEGY</span></div>
@@ -62,8 +62,8 @@ export const Company = () => (
           </div>
 
           <section className="panel mt-4 p-7 md:p-8">
-            <p className="mono text-[9px] uppercase tracking-[.1em] text-[#EF8354]">Mission Directive</p>
-            <div className="mt-7 border-l-4 border-[#EF8354] py-2 pl-6">
+            <p className="mono text-[9px] uppercase tracking-[.1em] text-[#1DA1F2]">Mission Directive</p>
+            <div className="mt-7 border-l-4 border-[#1DA1F2] py-2 pl-6">
               <blockquote className="text-[clamp(1.55rem,3vw,2.55rem)] font-medium tracking-[-.04em]">“Make complex systems understandable and actionable.”</blockquote>
             </div>
           </section>
@@ -76,7 +76,7 @@ export const Company = () => (
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {principles.map((principle) => (
               <article key={principle.title} className="panel panel-hover min-h-[190px] p-6">
-                <principle.icon className="h-5 w-5 text-[#EF8354]" strokeWidth={1.7} />
+                <principle.icon className="h-5 w-5 text-[#1DA1F2]" strokeWidth={1.7} />
                 <h3 className="mt-6 text-[17px] font-medium tracking-[-.025em]">{principle.title}</h3>
                 <p className="mt-3 text-[12px] leading-5 text-[#4F5D75]">{principle.copy}</p>
               </article>
