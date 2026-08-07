@@ -8,13 +8,13 @@ export const Footer = () => (
         <span className="text-[16px] font-semibold tracking-[-.025em]">Third Leap Labs</span>
       </Link>
 
-      <nav className="flex flex-wrap gap-x-7 gap-y-3 text-[11px] text-[#4F5D75]" aria-label="Footer navigation">
+      <nav className="flex flex-wrap gap-x-7 gap-y-3 text-[12px] text-[#4F5D75]" aria-label="Footer navigation">
         <Link to="/privacy-policy" className="transition hover:text-[#1DA1F2]">Privacy</Link>
         <Link to="/security-notice" className="transition hover:text-[#1DA1F2]">Security</Link>
         <Link to="/legal-disclaimer" className="transition hover:text-[#1DA1F2]">Legal</Link>
       </nav>
 
-      <p className="mono text-[9px] uppercase tracking-[.08em] text-[#4F5D75]">© {new Date().getFullYear()} Third Leap Labs LLC. Applied Intelligence.</p>
+      <p className="mono text-[10px] uppercase tracking-[.06em] text-[#4F5D75]">© {new Date().getFullYear()} Third Leap Labs LLC. Applied Intelligence.</p>
     </div>
   </footer>
 );
