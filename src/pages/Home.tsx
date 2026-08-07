@@ -19,16 +19,16 @@ const cameraScenes = [
 ];
 
 const eyeWitXFeatures = [
-  { title: 'Hardware Agnostic', copy: 'Integrates with IP cameras and RTSP streams.', icon: Eye },
-  { title: 'Low-Latency Processing', copy: 'Edge inference patterns for responsive visual workflows.', icon: Gauge },
-  { title: 'Developer First', copy: 'APIs and webhooks for clean system integration.', icon: Network },
+  { title: 'Hardware-agnostic', copy: 'Integrates with IP cameras and RTSP streams.', icon: Eye },
+  { title: 'Low-latency processing', copy: 'Edge inference patterns for responsive visual workflows.', icon: Gauge },
+  { title: 'Developer-first', copy: 'APIs and webhooks for clean system integration.', icon: Network },
 ];
 
 const capabilityCards = [
   { id: '01', title: 'AI & Computer Vision', copy: 'Vision pipelines for detection, spatial analysis and event understanding in challenging environments.', icon: Eye, tags: ['YOLO', 'PyTorch', 'TensorRT'] },
   { id: '02', title: 'Cloud & Edge Platforms', copy: 'Distributed architectures that process data where it is generated while coordinating operations centrally.', icon: Cloud, tags: ['Edge', 'APIs', 'Cloud'] },
   { id: '03', title: 'Web3 Intelligence', copy: 'Market, wallet and community intelligence systems designed around transparent signals and explainable data.', icon: Boxes, tags: ['Indexing', 'Signals', 'Analytics'] },
-  { id: '04', title: 'Open Engineering & R&D', copy: 'Rapid experimentation, reusable engineering and public technical learning that compounds into products.', icon: Braces, tags: ['OSS', 'Research', 'Prototypes'] },
+  { id: '04', title: 'Open Engineering & R&D', copy: 'Rapid experimentation, reusable engineering and technical learning that compounds into better products.', icon: Braces, tags: ['OSS', 'Research', 'Prototypes'] },
 ];
 
 const HeroMedia = () => {
@@ -59,8 +59,8 @@ const HeroMedia = () => {
 export const Home = () => (
   <Layout>
     <SEO
-      title="Third Leap Labs | Applied AI, Computer Vision, Intelligent Platforms"
-      description="Third Leap Labs builds applied AI, computer-vision and data-intelligence products that turn complex signals into clear, real-time decisions."
+      title="Third Leap Labs | AI, Computer Vision & Web3 Product Engineering"
+      description="Third Leap Labs builds applied AI, computer-vision, cloud-edge and Web3 products that turn complex signals into usable operational intelligence."
       path="/"
     />
 
@@ -96,7 +96,7 @@ export const Home = () => (
 
       <section className="paper border-b border-[#2D3142]/15">
         <div className="page-shell py-20 lg:py-24">
-          <div className="mb-14"><p className="mono text-[10px] uppercase tracking-[.12em] text-[#1DA1F2]">Flagship Product</p><h2 className="mt-3 text-[clamp(2rem,3.4vw,3.4rem)] font-semibold tracking-[-.045em]">EyeWitX</h2><p className="mt-1 text-[13px] text-[#4F5D75]">Give every camera intelligence.</p></div>
+          <div className="mb-14"><p className="mono text-[10px] uppercase tracking-[.12em] text-[#1DA1F2]">Flagship Product</p><h2 className="mt-3 text-[clamp(2rem,3.4vw,3.4rem)] font-semibold tracking-[-.045em]">EyeWitX</h2><p className="mt-1 text-[13px] text-[#4F5D75]">Turn camera infrastructure into operational intelligence.</p></div>
 
           <div className="grid gap-12 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
             <div className="browser-frame">
@@ -119,13 +119,13 @@ export const Home = () => (
       <section className="brand-grid border-b border-[#2D3142]/15">
         <div className="page-shell py-20 lg:py-24">
           <p className="mono text-[10px] uppercase tracking-[.12em] text-[#1DA1F2]">Core Capabilities</p>
-          <h2 className="mt-3 section-display">Four areas of build.</h2>
+          <h2 className="mt-3 section-display">Four engineering domains.</h2>
           <div className="mt-12 grid gap-px border border-[#2D3142]/15 bg-[#2D3142]/15 md:grid-cols-2">{capabilityCards.map((item) => <article key={item.id} className="bg-white p-7 sm:p-9"><div className="flex items-center justify-between"><span className="mono text-[10px] uppercase tracking-[.06em] text-[#4F5D75]">Capability_{item.id}</span><item.icon className="h-4 w-4 text-[#1DA1F2]" strokeWidth={1.6} /></div><h3 className="mt-6 text-lg font-medium tracking-[-.02em]">{item.title}</h3><p className="mt-3 max-w-[520px] text-[13px] leading-6 text-[#4F5D75]">{item.copy}</p><div className="mt-8 flex flex-wrap gap-2">{item.tags.map((tag) => <span className="tech-tag" key={tag}>{tag}</span>)}</div></article>)}</div>
           <div className="mt-8 grid gap-6 border-t border-[#2D3142]/20 pt-7 md:grid-cols-[1fr_auto] md:items-start"><div className="flex items-start gap-3"><ShieldCheck className="mt-0.5 h-4 w-4 text-[#1DA1F2]" /><p className="max-w-2xl text-[12px] leading-5 text-[#4F5D75]">Engineering discipline across model, platform, interface, deployment and operations—not isolated prototypes.</p></div><div className="mono text-[10px] uppercase leading-5 tracking-[.06em] text-[#4F5D75]">Engineering scope<br /><span className="text-[#2D3142]">Model → Edge → Cloud → Product</span></div></div>
         </div>
       </section>
 
-      <section className="paper border-b border-[#2D3142]/15"><div className="page-shell flex min-h-[330px] flex-col items-center justify-center py-20 text-center"><h2 className="section-display max-w-[720px]">Ready to engineer your operational intelligence?</h2><p className="copy-md mt-5 max-w-[640px]">Partner with Third Leap Labs to build applied-AI products or integrate our platforms into your operational stack.</p><div className="mt-9 flex flex-wrap justify-center gap-3"><Link to="/contact" className="btn-primary">Start a Project <ArrowRight className="h-4 w-4" /></Link><Link to="/products" className="btn-secondary">View Products</Link></div></div></section>
+      <section className="paper border-b border-[#2D3142]/15"><div className="page-shell flex min-h-[330px] flex-col items-center justify-center py-20 text-center"><h2 className="section-display max-w-[720px]">Have a hard operational problem to solve?</h2><p className="copy-md mt-5 max-w-[640px]">Partner with Third Leap Labs to build applied-AI products or integrate our platforms into your operational stack.</p><div className="mt-9 flex flex-wrap justify-center gap-3"><Link to="/contact" className="btn-primary">Start a Project <ArrowRight className="h-4 w-4" /></Link><Link to="/products" className="btn-secondary">View Products</Link></div></div></section>
     </main>
   </Layout>
 );

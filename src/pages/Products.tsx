@@ -4,7 +4,7 @@ import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
 
 const eyeWitXCapabilities = [
-  { label: 'Live visual operations', icon: Camera },
+  { label: 'Visual operations', icon: Camera },
   { label: 'AI event detection', icon: Radar },
   { label: 'Incident workflows', icon: ShieldCheck },
   { label: 'Operational analytics', icon: BarChart3 },
@@ -16,7 +16,7 @@ export const Products = () => (
   <Layout>
     <SEO
       title="Products | Third Leap Labs"
-      description="Operational intelligence products from Third Leap Labs: EyeWitX for visual intelligence and WhaleScanner for Web3 market and wallet intelligence."
+      description="Third Leap Labs products include EyeWitX for operational visual intelligence and WhaleScanner for Web3 market and wallet intelligence."
       path="/products"
     />
     <main className="site-page pt-16">
@@ -24,14 +24,14 @@ export const Products = () => (
         <div className="page-shell py-20 sm:py-24 lg:py-28">
           <span className="kicker">Product Portfolio</span>
           <h1 className="page-display mt-7 max-w-[900px]">Intelligent platforms, built end to end.</h1>
-          <p className="copy-lg mt-7 max-w-[800px]">Our products combine domain understanding, software architecture, data systems and applied AI in operational platforms designed to be used—not simply demonstrated.</p>
+          <p className="copy-lg mt-7 max-w-[800px]">Our products combine domain understanding, software architecture, data systems and applied AI in platforms designed for real workflows—not just demonstrations.</p>
         </div>
       </section>
 
       <section className="paper border-b border-[#2D3142]/15 py-20 lg:py-24">
         <div className="page-shell grid gap-10 lg:grid-cols-[.88fr_1.12fr] lg:items-center">
           <div>
-            <p className="mono text-[10px] uppercase tracking-[.1em] text-[#1DA1F2]">Cloud Visual Intelligence / Product_01</p>
+            <p className="mono text-[10px] uppercase tracking-[.1em] text-[#1DA1F2]">Visual Intelligence / Product_01</p>
             <h2 className="section-display mt-5">EyeWitX</h2>
             <p className="copy-md mt-5 max-w-[560px]">Transform existing camera infrastructure into a connected operational layer for safety, security, incidents, evidence and analytics.</p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">{eyeWitXCapabilities.map((item) => <div key={item.label} className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[13px] text-[#2D3142]"><item.icon className="h-4 w-4 text-[#1DA1F2]" strokeWidth={1.7} />{item.label}</div>)}</div>
@@ -64,7 +64,7 @@ export const Products = () => (
           <div className="order-1 lg:order-2 lg:pl-5">
             <p className="mono text-[10px] uppercase tracking-[.1em] text-[#1DA1F2]">Web3 Intelligence / Product_02</p>
             <h2 className="section-display mt-5">WhaleScanner</h2>
-            <p className="copy-md mt-5 max-w-[560px]">Market intelligence, token and wallet insight, project discovery, signals and community workflows in one product focused on transparency and informed participation.</p>
+            <p className="copy-md mt-5 max-w-[560px]">Market, token and wallet intelligence with project discovery, signals and community workflows for crypto research and monitoring.</p>
             <div className="mt-8 space-y-4"><div className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[13px]"><Waves className="h-4 w-4 text-[#1DA1F2]" /> Real-time market signals</div><div className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[13px]"><Database className="h-4 w-4 text-[#1DA1F2]" /> Wallet &amp; token intelligence</div></div>
             <a href="https://whalescanner.com" target="_blank" rel="noreferrer" className="btn-secondary mt-9">Open WhaleScanner <ArrowRight className="h-4 w-4" /></a>
           </div>

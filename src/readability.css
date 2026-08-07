@@ -1,9 +1,20 @@
-/* Small-type readability pass without changing layout geometry. */
-.kicker { font-size: .72rem; }
-.kicker-box { font-size: .7rem; }
+/* Small-type readability and contrast pass without changing layout geometry. */
+:root { --brand-blue-text: #1479b8; }
+
+.kicker { font-size: .72rem; color: var(--brand-blue-text); }
+.kicker-box { font-size: .7rem; color: var(--brand-blue-text); }
 .btn-primary, .btn-secondary { font-size: .82rem; }
 .text-link { font-size: .82rem; }
 .metric-row { font-size: .69rem; }
-.tech-tag { font-size: .72rem; }
+.tech-tag { font-size: .72rem; color: var(--brand-blue-text); }
 .browser-bar { font-size: .69rem; }
 .form-control { font-size: .9rem; }
+
+/* #1DA1F2 remains the visual brand accent. Darker blue is used for small text. */
+.text-\[\#1DA1F2\] { color: var(--brand-blue-text) !important; }
+.text-link:hover { color: var(--brand-blue-text); }
+.accent { color: #168dd5; }
+
+/* Navy on Twitter blue passes normal-text contrast while retaining the brand fill. */
+.btn-primary { color: #2d3142; }
+.btn-primary:hover { background: #35adf3; color: #2d3142; }

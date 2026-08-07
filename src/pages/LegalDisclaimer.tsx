@@ -2,22 +2,22 @@ import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
 
 const sections = [
-  ['No financial advice', 'Nothing on this website should be interpreted as financial advice, investment advice, trading advice, legal advice, tax advice, or any recommendation to buy, sell, hold, or trade any asset.'],
-  ['Web3 tools', 'WhaleScanner is provided as a software and information tool for market, wallet, project and on-chain activity visibility. It does not provide guarantees or personalised investment recommendations.'],
+  ['Website information', 'This website provides general information about Third Leap Labs, its products and capabilities. It is not a contract, service commitment, professional advice or a guarantee that a specific feature or deployment model is available.'],
   ['Product scope', 'EyeWitX and WhaleScanner are software products whose features, integrations, availability and deployment scope may evolve. Pilot and commercial capabilities are subject to the terms agreed for a specific engagement.'],
-  ['User responsibility', 'Users are responsible for their own decisions, account and wallet security, compliance obligations, independent research and use of any Third Leap Labs product.'],
-  ['No guarantees', 'Third Leap Labs LLC does not guarantee uninterrupted service, error-free data, financial outcomes, business outcomes, or specific product availability.'],
+  ['Web3 information', 'WhaleScanner is provided as a software and information tool for market, wallet, project and on-chain activity visibility. Nothing on this website should be treated as investment, trading, tax or legal advice, or as a recommendation to buy, sell or hold an asset.'],
+  ['User responsibility', 'Users are responsible for their own decisions, account and wallet security, compliance obligations, independent research and appropriate use of any Third Leap Labs product.'],
+  ['No guarantees', 'Third Leap Labs LLC does not guarantee uninterrupted service, error-free data, financial outcomes, business outcomes, or specific product availability unless explicitly stated in an applicable written agreement.'],
 ];
 
 export const LegalDisclaimer = () => (
   <Layout>
-    <SEO title="Legal Disclaimer | Third Leap Labs LLC" description="Important legal information regarding Third Leap Labs LLC." path="/legal-disclaimer" />
+    <SEO title="Legal Disclaimer | Third Leap Labs LLC" description="Important legal information regarding Third Leap Labs LLC, EyeWitX and WhaleScanner." path="/legal-disclaimer" />
     <main className="site-page pt-16">
       <section className="border-b border-[#2D3142]/15 bg-[#F8F6F7]">
         <div className="page-shell py-14 sm:py-16">
           <span className="kicker">Legal</span>
           <h1 className="section-display mt-5">Legal disclaimer</h1>
-          <p className="copy-md mt-5 max-w-[760px]">Important information about the website, our products and the limits of the information we provide.</p>
+          <p className="copy-md mt-5 max-w-[760px]">Important information about this website, our products and the limits of the information we provide.</p>
         </div>
       </section>
 

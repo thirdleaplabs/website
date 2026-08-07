@@ -6,7 +6,7 @@ import { SEO } from '../components/layout/SEO';
 const capabilities = [
   { title: 'Computer Vision', icon: Eye, description: 'Real-time inference systems, object detection, tracking and spatial pipelines optimized for demanding environments.', tags: ['YOLO', 'OpenCV', 'TensorRT'] },
   { title: 'Applied AI', icon: BrainCircuit, description: 'Custom model integration, multimodal systems, decision-support workflows and context-aware intelligence.', tags: ['PyTorch', 'Transformers', 'MLOps'] },
-  { title: 'Cloud Platforms', icon: Cloud, description: 'Scalable services, event-driven processing, APIs and highly available infrastructure for intelligent products.', tags: ['Kubernetes', 'Azure', 'Terraform'] },
+  { title: 'Cloud Platforms', icon: Cloud, description: 'Scalable services, event-driven processing, APIs and resilient infrastructure for intelligent products.', tags: ['Kubernetes', 'Azure', 'Terraform'] },
   { title: 'Edge & Embedded', icon: Cpu, description: 'Deploying models to resource-constrained devices with low-latency, local processing and resilient connectivity.', tags: ['Linux', 'Jetson', 'ONNX'] },
   { title: 'Product Engineering', icon: Boxes, description: 'Full-stack product development translating complex data streams into clear, performant operational interfaces.', tags: ['React', 'TypeScript', 'WebSockets'] },
   { title: 'Web3 Systems', icon: Network, description: 'Blockchain data pipelines, wallet intelligence and distributed systems for transparent digital-market products.', tags: ['Indexers', 'Solana', 'APIs'] },
@@ -19,7 +19,7 @@ export const Capabilities = () => (
   <Layout>
     <SEO
       title="Capabilities | Third Leap Labs"
-      description="Third Leap Labs architects end-to-end intelligence systems from model and edge runtime to cloud platform and product experience."
+      description="Third Leap Labs engineers end-to-end systems from models and edge runtimes to cloud platforms and product interfaces."
       path="/capabilities"
     />
     <main className="site-page pt-16">
@@ -27,7 +27,7 @@ export const Capabilities = () => (
         <div className="page-shell py-20 sm:py-24 lg:py-28">
           <span className="kicker">Capabilities Overview</span>
           <h1 className="page-display mt-7 max-w-[820px]">From model to product.<br />From edge to cloud.</h1>
-          <p className="copy-lg mt-7 max-w-[820px]">We architect end-to-end intelligence systems, bridging advanced AI research and robust production deployments with the engineering required to operate at scale.</p>
+          <p className="copy-lg mt-7 max-w-[820px]">We engineer end-to-end intelligence systems, connecting applied model work with edge runtimes, cloud platforms and product experiences that can operate in real environments.</p>
           <div className="mt-10 flex flex-wrap gap-2 border-t border-[#2D3142]/20 pt-6">{technologyStack.map((technology) => <span key={technology} className="tech-tag">{technology}</span>)}</div>
         </div>
       </section>
@@ -48,9 +48,9 @@ export const Capabilities = () => (
       <section className="bg-white py-20 lg:py-24">
         <div className="page-shell panel grid gap-10 p-8 md:p-12 lg:grid-cols-[1fr_.9fr] lg:items-center">
           <div>
-            <p className="mono text-[10px] uppercase tracking-[.1em] text-[#1DA1F2]">Open Engineering & R&amp;D</p>
-            <h2 className="section-display mt-5 max-w-[640px]">Pushing the boundaries of intelligence.</h2>
-            <p className="copy-md mt-6 max-w-[620px]">We experiment openly, prototype unconventional architectures and contribute reusable engineering that informs the next generation of Third Leap Labs products.</p>
+            <p className="mono text-[10px] uppercase tracking-[.1em] text-[#1DA1F2]">Research &amp; Reusable Engineering</p>
+            <h2 className="section-display mt-5 max-w-[640px]">Test ideas early. Reuse what proves useful.</h2>
+            <p className="copy-md mt-6 max-w-[620px]">We prototype technical approaches, measure real constraints and turn the useful parts into reusable engineering for Third Leap Labs products.</p>
             <Link to="/open-source" className="btn-secondary mt-8">View Research &amp; Open Engineering <ArrowRight className="h-4 w-4" /></Link>
           </div>
           <div className="relative flex min-h-[260px] items-center justify-center overflow-hidden border border-[#2D3142]/15 bg-[#F2F1F2]">
