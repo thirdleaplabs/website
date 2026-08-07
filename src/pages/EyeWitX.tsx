@@ -73,7 +73,17 @@ export function EyeWitX() {
                   <div className="ui-card p-4 sm:p-5">
                     <div className="flex items-center justify-between"><p className="mono text-[9px] uppercase text-[#BFC0C0]">Platform profile</p><Gauge className="h-4 w-4 text-[#1DA1F2]" /></div>
                     <div className="mt-5 grid grid-cols-2 gap-px bg-[#BFC0C0]/15">{platformFacts.map((fact) => <div key={fact.label} className="bg-[#222B36] p-3"><p className="mono text-[8px] uppercase text-[#BFC0C0]">{fact.label}</p><p className="mt-2 text-[13px] font-semibold leading-5 text-white">{fact.value}</p></div>)}</div>
-                    <div className="mt-7"><p className="mono text-[9px] uppercase text-[#BFC0C0]">Operational flow</p><div className="mt-4 space-y-4">{['Camera input','Edge inference','Cloud workflow','Human response'].map((item, index)=><div key={item}><div className="flex items-center justify-between text-[10px]"><span className="text-[#BFC0C0]">{item}</span><span className="mono text-[8px] text-[#1DA1F2]">0{index + 1}</span></div><div className="ui-line slate mt-2"><div className="h-full bg-[#1DA1F2]" style={{width:`${52 + index * 11}%`}} /></div></div>)}</div>
+                    <div className="mt-7">
+                      <p className="mono text-[9px] uppercase text-[#BFC0C0]">Operational flow</p>
+                      <div className="mt-4 space-y-4">
+                        {['Camera input','Edge inference','Cloud workflow','Human response'].map((item, index) => (
+                          <div key={item}>
+                            <div className="flex items-center justify-between text-[10px]"><span className="text-[#BFC0C0]">{item}</span><span className="mono text-[8px] text-[#1DA1F2]">0{index + 1}</span></div>
+                            <div className="ui-line slate mt-2"><div className="h-full bg-[#1DA1F2]" style={{width:`${52 + index * 11}%`}} /></div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                     <div className="mt-8 border-t border-[#BFC0C0]/15 pt-5"><p className="mono text-[9px] uppercase text-[#BFC0C0]">Integration surfaces</p><div className="mt-4 space-y-3">{['Edge connector','Cloud workflow','Alert webhook'].map((item) => <div key={item} className="flex items-center justify-between text-[10px]"><span className="text-[#BFC0C0]">{item}</span><span className="text-[#1DA1F2]">SUPPORTED</span></div>)}</div></div>
                   </div>
                 </div>
