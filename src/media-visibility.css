@@ -1,35 +1,23 @@
-/*
- * Visibility tuning for the local Canva website media.
- * This file intentionally changes only image treatment; layout geometry stays untouched.
- */
+/* Homepage media treatment. Other image contrast/brightness is controlled in each component. */
 
-img[src="/media/home/hero-eyewitx-poster.webp"] {
-  opacity: 0.86 !important;
-  filter: grayscale(1) contrast(1.08) !important;
+.home-hero-media {
+  opacity: 0.86;
+  filter: grayscale(1) contrast(1.08);
 }
 
-img[src="/media/home/hero-eyewitx-poster.webp"] + div {
+.home-hero-overlay {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.98) 0%,
     rgba(255, 255, 255, 0.92) 32%,
     rgba(255, 255, 255, 0.65) 56%,
     rgba(255, 255, 255, 0.16) 100%
-  ) !important;
+  );
 }
 
-img[src="/media/eyewitx/eyewitx-operations.webp"] {
-  filter: grayscale(1) contrast(1.08) brightness(0.82) !important;
-}
-
-img[src="/media/capabilities/capabilities-infrastructure.webp"] {
-  filter: grayscale(1) contrast(1.08) brightness(0.72) !important;
-}
-
-img[src="/media/whalescanner/whalescanner-product-overview.webp"] {
-  filter: grayscale(1) contrast(1.12) brightness(0.62) !important;
-}
-
-img[src="/media/company/company-engineering.webp"] {
-  filter: grayscale(1) contrast(1.08) brightness(0.7) !important;
+@media (max-width: 900px) {
+  .home-hero-media { opacity: 0.58; }
+  .home-hero-overlay {
+    background: linear-gradient(90deg, rgba(255,255,255,.97), rgba(255,255,255,.78));
+  }
 }
