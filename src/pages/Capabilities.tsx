@@ -12,7 +12,7 @@ const capabilities = [
   { title: 'Web3 Systems', icon: Network, description: 'Blockchain data pipelines, wallet intelligence and distributed systems for transparent digital-market products.', tags: ['Indexers', 'Solana', 'APIs'] },
 ];
 
-const infrastructureImage = 'https://images.unsplash.com/photo-1584169417032-d34e8d805e8b?auto=format&fit=crop&w=1400&q=82';
+const infrastructureImage = '/media/capabilities/capabilities-infrastructure.webp';
 
 export const Capabilities = () => (
   <Layout>
