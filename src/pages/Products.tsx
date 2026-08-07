@@ -11,7 +11,6 @@ const eyeWitXCapabilities = [
 ];
 
 const warehouseImage = '/media/eyewitx/eyewitx-operations.webp';
-const marketImage = '/media/whalescanner/whalescanner-product-overview.webp';
 
 export const Products = () => (
   <Layout>
@@ -35,30 +34,30 @@ export const Products = () => (
             <p className="mono text-[10px] uppercase tracking-[.1em] text-[#1DA1F2]">Cloud Visual Intelligence / Product_01</p>
             <h2 className="section-display mt-5">EyeWitX</h2>
             <p className="copy-md mt-5 max-w-[560px]">Transform existing camera infrastructure into a connected operational layer for safety, security, incidents, evidence and analytics.</p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">{eyeWitXCapabilities.map((item) => <div key={item.label} className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[12px] text-[#2D3142]"><item.icon className="h-4 w-4 text-[#1DA1F2]" strokeWidth={1.7} />{item.label}</div>)}</div>
-            <a href="https://eyewitx.com" target="_blank" rel="noreferrer" className="btn-primary mt-9">Explore EyeWitX <ArrowRight className="h-4 w-4" /></a>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">{eyeWitXCapabilities.map((item) => <div key={item.label} className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[13px] text-[#2D3142]"><item.icon className="h-4 w-4 text-[#1DA1F2]" strokeWidth={1.7} />{item.label}</div>)}</div>
+            <Link to="/eyewitx" className="btn-primary mt-9">Explore EyeWitX <ArrowRight className="h-4 w-4" /></Link>
           </div>
 
           <div className="browser-frame">
-            <div className="browser-bar"><span className="text-[#1DA1F2]">EYEWITX</span><span>operational_view</span></div>
+            <div className="browser-bar"><span className="text-[#1DA1F2]">EYEWITX</span><span>INTERFACE ILLUSTRATION</span></div>
             <div className="cognisense-ui grid min-h-[420px] grid-cols-[1.55fr_.75fr] gap-2 p-3">
               <div className="grid grid-rows-[1.2fr_.8fr] gap-2">
-                <div className="ui-card relative overflow-hidden p-4"><img src={warehouseImage} alt="Warehouse operations" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.18] brightness-[.46]" /><div className="absolute inset-0 bg-[#111827]/30" /><div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between mono text-[8px] uppercase text-white/80"><span>Live facility view</span><span className="text-[#1DA1F2]">12 events</span></div><div className="grid grid-cols-3 gap-3">{[72, 45, 61].map((height, index) => <div key={`${height}-${index}`} className="flex h-24 items-end border border-white/15 bg-black/10 p-2"><span className="w-full bg-[#1DA1F2]/65" style={{ height: `${height}%` }} /></div>)}</div></div></div>
-                <div className="grid grid-cols-2 gap-2"><div className="ui-card p-4"><p className="mono text-[8px] uppercase text-[#BFC0C0]">Incidents</p><div className="mt-5 space-y-3">{[85,65,76].map((width) => <div key={width} className="ui-line blue" style={{width:`${width}%`}} />)}</div></div><div className="ui-card p-4"><p className="mono text-[8px] uppercase text-[#BFC0C0]">Analytics</p><div className="mt-5 space-y-3">{[64,88,52].map((width) => <div key={width} className="ui-line slate" style={{width:`${width}%`}} />)}</div></div></div>
+                <div className="ui-card relative overflow-hidden p-4"><img src={warehouseImage} alt="Warehouse operations environment" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.12] brightness-[.62]" /><div className="absolute inset-0 bg-[#111827]/24" /><div className="relative flex h-full flex-col justify-between"><div className="flex items-center justify-between mono text-[9px] uppercase text-white/80"><span>Example operational view</span><span className="text-[#1DA1F2]">AI workflow</span></div><div className="grid grid-cols-3 gap-3">{['Detect','Review','Respond'].map((item, index) => <div key={item} className="border border-white/15 bg-black/20 p-3"><p className="mono text-[8px] uppercase text-white/70">0{index + 1}</p><p className="mt-4 text-[11px] font-medium text-white">{item}</p></div>)}</div></div></div>
+                <div className="grid grid-cols-2 gap-2"><div className="ui-card p-4"><p className="mono text-[9px] uppercase text-[#BFC0C0]">Incidents</p><div className="mt-5 space-y-3">{[85,65,76].map((width) => <div key={width} className="ui-line blue" style={{width:`${width}%`}} />)}</div></div><div className="ui-card p-4"><p className="mono text-[9px] uppercase text-[#BFC0C0]">Analytics</p><div className="mt-5 space-y-3">{[64,88,52].map((width) => <div key={width} className="ui-line slate" style={{width:`${width}%`}} />)}</div></div></div>
               </div>
-              <div className="ui-card p-4"><p className="mono text-[8px] uppercase text-[#BFC0C0]">Event stream</p><div className="mt-5 space-y-4">{[1,2,3,4,5,6].map((item) => <div key={item} className="border-b border-[#BFC0C0]/10 pb-3"><div className="ui-line" style={{width:`${52 + (item % 3) * 12}%`}}/><div className="ui-line blue mt-2" style={{width:`${30 + (item % 2) * 18}%`}}/></div>)}</div></div>
+              <div className="ui-card p-4"><p className="mono text-[9px] uppercase text-[#BFC0C0]">Event workflow</p><div className="mt-5 space-y-4">{['Camera input','Visual event','Human review','Assignment','Evidence','Resolution'].map((item,index) => <div key={item} className="border-b border-[#BFC0C0]/10 pb-3"><p className="mono text-[8px] uppercase text-[#BFC0C0]">0{index + 1} / {item}</p><div className="ui-line blue mt-2" style={{width:`${42 + (index % 3) * 14}%`}}/></div>)}</div></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="whalescanner" className="brand-grid border-b border-[#2D3142]/15 py-20 lg:py-24 scroll-mt-20">
+      <section id="whalescanner" className="bg-white border-b border-[#2D3142]/15 py-20 lg:py-24 scroll-mt-20">
         <div className="page-shell grid gap-10 lg:grid-cols-[1.12fr_.88fr] lg:items-center">
           <div className="order-2 border border-[#2D3142]/35 bg-[#2D3142] p-5 text-white lg:order-1">
-            <div className="flex items-center justify-between border-b border-white/15 pb-4 mono text-[8px] uppercase tracking-[.08em] text-[#BFC0C0]"><span>WhaleScanner / Market Radar</span><span className="text-[#1DA1F2]">Live</span></div>
+            <div className="flex items-center justify-between border-b border-white/15 pb-4 mono text-[9px] uppercase tracking-[.06em] text-[#BFC0C0]"><span>WhaleScanner / Product interface</span><span className="text-[#1DA1F2]">Illustration</span></div>
             <div className="grid min-h-[390px] grid-cols-[1fr_170px] gap-4 pt-4">
-              <div className="relative overflow-hidden border border-white/10 bg-[#252B3A] p-5"><img src={marketImage} alt="Market analysis workstation" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.25] brightness-[.34]" /><div className="absolute inset-0 bg-[#111827]/45" /><div className="relative flex h-full flex-col justify-between"><div><p className="mono text-[8px] uppercase text-white/70">Signal intensity</p><p className="mt-2 text-3xl font-semibold tracking-[-.04em]">87.4<span className="text-[#1DA1F2]">%</span></p></div><div className="flex h-40 items-end gap-2">{[28,40,38,58,48,73,66,88,72,92,78,96].map((height,index)=><span key={`${height}-${index}`} className="flex-1 bg-[#1DA1F2]" style={{height:`${height}%`,opacity:.25 + index*.045}} />)}</div></div></div>
-              <div className="space-y-3">{['Wallet flow','Project discovery','Signals','Community'].map((item,index)=><div key={item} className="border border-white/10 bg-[#252B3A] p-4"><p className="mono text-[7px] uppercase text-[#BFC0C0]">0{index+1}</p><p className="mt-3 text-[11px]">{item}</p><div className="mt-4 h-1 bg-white/10"><div className="h-full bg-[#1DA1F2]" style={{width:`${58 + index*9}%`}} /></div></div>)}</div>
+              <div className="relative overflow-hidden border border-white/10 bg-[#252B3A] p-5"><div className="absolute inset-0 opacity-20 brand-grid" /><div className="relative flex h-full flex-col justify-between"><div><p className="mono text-[9px] uppercase text-white/70">Market intelligence</p><p className="mt-2 text-3xl font-semibold tracking-[-.04em]">Market <span className="text-[#1DA1F2]">Radar</span></p><p className="mt-3 max-w-[360px] text-[12px] leading-5 text-white/60">Token, wallet, project and market signals organised into one research workflow.</p></div><div className="flex h-40 items-end gap-2">{[28,40,38,58,48,73,66,88,72,92,78,96].map((height,index)=><span key={`${height}-${index}`} className="flex-1 bg-[#1DA1F2]" style={{height:`${height}%`,opacity:.25 + index*.045}} />)}</div></div></div>
+              <div className="space-y-3">{['Wallet flow','Project discovery','Signals','Community'].map((item,index)=><div key={item} className="border border-white/10 bg-[#252B3A] p-4"><p className="mono text-[8px] uppercase text-[#BFC0C0]">0{index+1}</p><p className="mt-3 text-[12px]">{item}</p><div className="mt-4 h-1 bg-white/10"><div className="h-full bg-[#1DA1F2]" style={{width:`${58 + index*9}%`}} /></div></div>)}</div>
             </div>
           </div>
 
@@ -66,8 +65,8 @@ export const Products = () => (
             <p className="mono text-[10px] uppercase tracking-[.1em] text-[#1DA1F2]">Web3 Intelligence / Product_02</p>
             <h2 className="section-display mt-5">WhaleScanner</h2>
             <p className="copy-md mt-5 max-w-[560px]">Market intelligence, token and wallet insight, project discovery, signals and community workflows in one product focused on transparency and informed participation.</p>
-            <div className="mt-8 space-y-4"><div className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[12px]"><Waves className="h-4 w-4 text-[#1DA1F2]" /> Real-time market signals</div><div className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[12px]"><Database className="h-4 w-4 text-[#1DA1F2]" /> Wallet &amp; token intelligence</div></div>
-            <a href="https://whalescanner.com" target="_blank" rel="noreferrer" className="text-link mt-9 text-[#1DA1F2]">Explore WhaleScanner <ArrowRight className="h-3.5 w-3.5" /></a>
+            <div className="mt-8 space-y-4"><div className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[13px]"><Waves className="h-4 w-4 text-[#1DA1F2]" /> Real-time market signals</div><div className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[13px]"><Database className="h-4 w-4 text-[#1DA1F2]" /> Wallet &amp; token intelligence</div></div>
+            <a href="https://whalescanner.com" target="_blank" rel="noreferrer" className="btn-secondary mt-9">Open WhaleScanner <ArrowRight className="h-4 w-4" /></a>
           </div>
         </div>
       </section>
