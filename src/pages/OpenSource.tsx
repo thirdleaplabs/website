@@ -19,7 +19,7 @@ export const OpenSource = () => (
   <Layout>
     <SEO
       title="Research & Open Engineering | Third Leap Labs"
-      description="Third Leap Labs experiments openly, contributes reusable engineering and turns technical research into working systems."
+      description="Third Leap Labs uses research, prototypes and reusable engineering to improve product architecture and publish selected work when it is ready for external use."
       path="/open-source"
     />
     <main className="site-page pt-16">
@@ -27,9 +27,9 @@ export const OpenSource = () => (
         <div className="page-shell py-20 lg:py-24">
           <span className="kicker">Research / Open Engineering</span>
           <h1 className="page-display mt-7 max-w-[900px]">Pushing the boundaries of intelligence.</h1>
-          <p className="copy-lg mt-7 max-w-[820px]">We use research, prototypes and open engineering to test ideas early, sharpen architecture decisions and contribute useful building blocks to the wider technology community.</p>
+          <p className="copy-lg mt-7 max-w-[820px]">We use research and prototypes to test ideas early, sharpen architecture decisions and turn the parts that prove useful into reusable engineering. Public work is linked only when it is ready for external use.</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="btn-primary">Explore GitHub <ArrowRight className="h-4 w-4" /></a>
+            <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="btn-primary">View Public GitHub <ArrowRight className="h-4 w-4" /></a>
             <a href="#principles" className="btn-secondary">Read Engineering Principles</a>
           </div>
         </div>
@@ -38,20 +38,23 @@ export const OpenSource = () => (
       <section className="paper border-b border-[#2D3142]/15 py-20 lg:py-24">
         <div className="page-shell">
           <div className="flex flex-col gap-4 border-b border-[#2D3142]/30 pb-5 sm:flex-row sm:items-end sm:justify-between">
-            <div><p className="mono text-[10px] uppercase tracking-[.08em] text-[#1DA1F2]">Open Engineering</p><h2 className="section-display mt-3">What we make reusable.</h2></div>
-            <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="text-link">View GitHub organization <ArrowRight className="h-3.5 w-3.5" /></a>
+            <div><p className="mono text-[10px] uppercase tracking-[.08em] text-[#1DA1F2]">Engineering Areas</p><h2 className="section-display mt-3">What we make reusable.</h2></div>
+            <a href="https://github.com/thirdleaplabs/website" target="_blank" rel="noreferrer" className="text-link">View this website repository <ArrowRight className="h-3.5 w-3.5" /></a>
           </div>
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             {engineeringAreas.map((area, index) => (
               <article key={area.title} className="panel panel-hover flex min-h-[250px] flex-col p-7">
-                <div className="flex items-center justify-between"><span className="mono text-[10px] uppercase tracking-[.06em] text-[#4F5D75]">Area_0{index + 1}</span><Github className="h-4 w-4 text-[#1DA1F2]" /></div>
+                <div className="flex items-center justify-between"><span className="mono text-[10px] uppercase tracking-[.06em] text-[#4F5D75]">Area_0{index + 1}</span><Code2 className="h-4 w-4 text-[#1DA1F2]" /></div>
                 <h3 className="mt-7 text-[20px] font-medium tracking-[-.03em]">{area.title}</h3>
                 <p className="mt-4 flex-1 text-[13px] leading-6 text-[#4F5D75]">{area.copy}</p>
                 <div className="mt-7"><span className="tech-tag">{area.tag}</span></div>
               </article>
             ))}
           </div>
-          <div className="mt-6 border-l-2 border-[#1DA1F2] bg-white p-5 text-[13px] leading-6 text-[#4F5D75]">Public repositories are linked from this page only when they are ready for external use. Experimental or private work is not presented as a public release.</div>
+          <div className="mt-6 grid gap-4 border-l-2 border-[#1DA1F2] bg-white p-5 sm:grid-cols-[auto_1fr] sm:items-center">
+            <Github className="h-5 w-5 text-[#1DA1F2]" />
+            <p className="text-[13px] leading-6 text-[#4F5D75]">The Third Leap Labs website repository is public today. Experimental, customer-specific or private product work is not presented as open source merely to make the portfolio look larger.</p>
+          </div>
         </div>
       </section>
 
@@ -72,7 +75,7 @@ export const OpenSource = () => (
 
           <div id="principles" className="panel p-7 sm:p-9 scroll-mt-20">
             <p className="mono text-[10px] uppercase tracking-[.08em] text-[#1DA1F2]">Open-source principles</p>
-            <h2 className="mt-4 text-2xl font-semibold tracking-[-.04em]">Build openly. Learn quickly. Share what compounds.</h2>
+            <h2 className="mt-4 text-2xl font-semibold tracking-[-.04em]">Build carefully. Learn quickly. Share what is useful.</h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {principles.map((principle) => (
                 <div key={principle.title} className="border-t border-[#2D3142]/18 pt-4"><principle.icon className="h-5 w-5 text-[#1DA1F2]" /><p className="mt-4 text-[13px] leading-5 text-[#4F5D75]">{principle.title}</p></div>
@@ -85,7 +88,7 @@ export const OpenSource = () => (
       <section className="paper">
         <div className="page-shell flex min-h-[280px] flex-col items-center justify-center py-20 text-center">
           <h2 className="section-display max-w-[720px]">Open engineering should strengthen the products around it.</h2>
-          <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="btn-secondary mt-8">View Third Leap Labs on GitHub <ArrowRight className="h-4 w-4" /></a>
+          <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="btn-secondary mt-8">View Public GitHub <ArrowRight className="h-4 w-4" /></a>
         </div>
       </section>
     </main>
