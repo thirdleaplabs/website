@@ -21,19 +21,19 @@ export function EyeWitX() {
   return (
     <Layout>
       <SEO
-        title="EyeWitX | Cloud Visual Intelligence Platform"
-        description="EyeWitX connects cameras, edge AI and cloud workflows in one platform for live operations, visual events, incidents, evidence and analytics."
+        title="EyeWitX | Operational Visual Intelligence Platform"
+        description="EyeWitX connects cameras, edge AI and cloud workflows for visual events, incident response, evidence and operational analytics."
         path="/eyewitx"
       />
       <main className="site-page pt-16">
         <section className="brand-grid border-b border-[#2D3142]/15">
           <div className="page-shell py-16 text-center sm:py-20 lg:py-24">
             <span className="kicker-box"><span className="h-1.5 w-1.5 rounded-full bg-[#1DA1F2]" /> Visual intelligence platform</span>
-            <h1 className="page-display mx-auto mt-7 max-w-[960px]">EyeWitX: Cloud visual intelligence for safer, smarter operations.</h1>
-            <p className="copy-lg mx-auto mt-6 max-w-[820px]">Connect cameras, edge AI and cloud workflows in one platform for live operations, visual events, incidents, evidence and analytics.</p>
+            <h1 className="page-display mx-auto mt-7 max-w-[960px]">EyeWitX: Operational visual intelligence for safer, smarter operations.</h1>
+            <p className="copy-lg mx-auto mt-6 max-w-[820px]">Connect cameras, edge AI and cloud workflows in one platform for visual events, incidents, evidence, response and analytics.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Link to="/contact" className="btn-primary">Request a Pilot <ArrowRight className="h-4 w-4" /></Link>
-              <a href="https://eyewitx.com" target="_blank" rel="noreferrer" className="btn-secondary">Visit eyewitx.com</a>
+              <a href="#architecture" className="btn-secondary">View Architecture</a>
             </div>
 
             <div className="browser-frame mx-auto mt-16 max-w-[1080px] text-left">
@@ -48,7 +48,7 @@ export function EyeWitX() {
                       <div className="absolute inset-0 opacity-10 brand-grid" />
                       <div className="relative flex h-full flex-col">
                         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#BFC0C0]/15 pb-4">
-                          <div><p className="mono text-[9px] uppercase tracking-[.06em] text-[#BFC0C0]">Example operational view</p><p className="mt-2 text-sm font-medium">Live visual operations</p></div>
+                          <div><p className="mono text-[9px] uppercase tracking-[.06em] text-[#BFC0C0]">Example operational view</p><p className="mt-2 text-sm font-medium">Visual operations</p></div>
                           <span className="border border-[#1DA1F2]/55 bg-[#1DA1F2]/10 px-2 py-1 mono text-[9px] uppercase text-[#1DA1F2]">Illustrative UI</span>
                         </div>
                         <div className="grid flex-1 grid-cols-2 gap-3 pt-4">
@@ -98,7 +98,7 @@ export function EyeWitX() {
             <h2 className="section-display mt-4 max-w-[760px]">From passive video to operational intelligence.</h2>
             <div className="mt-12 grid gap-px border border-[#2D3142]/15 bg-[#2D3142]/15 md:grid-cols-3">
               {[
-                { title: 'See', copy: 'Monitor cameras, facilities and sites from a clear cloud command centre.', icon: Camera },
+                { title: 'See', copy: 'Monitor cameras, facilities and sites from one operational view.', icon: Camera },
                 { title: 'Understand', copy: 'Surface visual events using configurable AI rules, context and evidence.', icon: Search },
                 { title: 'Respond', copy: 'Verify, assign, escalate and resolve incidents through traceable workflows.', icon: FileCheck2 },
               ].map((item) => (
@@ -112,7 +112,7 @@ export function EyeWitX() {
           </div>
         </section>
 
-        <section className="bg-white border-b border-[#2D3142]/15 py-20 lg:py-24">
+        <section id="architecture" className="bg-white border-b border-[#2D3142]/15 py-20 lg:py-24 scroll-mt-20">
           <div className="page-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
             <div>
               <span className="kicker">Architecture</span>
@@ -135,7 +135,7 @@ export function EyeWitX() {
         <section className="paper">
           <div className="page-shell flex min-h-[320px] flex-col items-center justify-center py-20 text-center">
             <h2 className="section-display max-w-[720px]">Discuss an EyeWitX pilot for your environment.</h2>
-            <div className="mt-8 flex flex-wrap justify-center gap-3"><Link to="/contact" className="btn-primary">Request a Pilot <ArrowRight className="h-4 w-4" /></Link><a href="https://eyewitx.com" target="_blank" rel="noreferrer" className="btn-secondary">Visit eyewitx.com</a></div>
+            <div className="mt-8 flex flex-wrap justify-center gap-3"><Link to="/contact" className="btn-primary">Request a Pilot <ArrowRight className="h-4 w-4" /></Link><Link to="/capabilities" className="btn-secondary">View Capabilities</Link></div>
           </div>
         </section>
       </main>
