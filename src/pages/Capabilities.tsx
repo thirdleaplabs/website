@@ -1,147 +1,62 @@
-import { ArrowRight, BrainCircuit, Box, Eye, Cpu, Braces, Cloud } from 'lucide-react';
-import type { ReactNode } from 'react';
+import { ArrowRight, Boxes, BrainCircuit, Cloud, Cpu, Eye, Network } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
 
-const SectionLabel = ({ children }: { children: ReactNode }) => (
-  <p className="eyebrow">{children}</p>
+const capabilities = [
+  { title: 'Computer Vision', icon: Eye, description: 'Real-time inference systems, object detection, tracking and spatial pipelines optimized for demanding environments.', tags: ['YOLO', 'OpenCV', 'TensorRT'] },
+  { title: 'Applied AI', icon: BrainCircuit, description: 'Custom model integration, multimodal systems, decision-support workflows and context-aware intelligence.', tags: ['PyTorch', 'Transformers', 'MLOps'] },
+  { title: 'Cloud Platforms', icon: Cloud, description: 'Scalable services, event-driven processing, APIs and highly available infrastructure for intelligent products.', tags: ['Kubernetes', 'Azure', 'Terraform'] },
+  { title: 'Edge & Embedded', icon: Cpu, description: 'Deploying models to resource-constrained devices with low-latency, local processing and resilient connectivity.', tags: ['Linux', 'Jetson', 'ONNX'] },
+  { title: 'Product Engineering', icon: Boxes, description: 'Full-stack product development translating complex data streams into clear, performant operational interfaces.', tags: ['React', 'TypeScript', 'WebSockets'] },
+  { title: 'Web3 Systems', icon: Network, description: 'Blockchain data pipelines, wallet intelligence and distributed systems for transparent digital-market products.', tags: ['Indexers', 'Solana', 'APIs'] },
+];
+
+export const Capabilities = () => (
+  <Layout>
+    <SEO
+      title="Capabilities | Third Leap Labs"
+      description="Third Leap Labs architects end-to-end intelligence systems from model and edge runtime to cloud platform and product experience."
+      path="/capabilities"
+    />
+    <main className="site-page pt-16">
+      <section className="brand-grid border-b border-[#2D3142]/15">
+        <div className="page-shell py-20 sm:py-24 lg:py-28">
+          <span className="kicker">Capabilities Overview</span>
+          <h1 className="page-display mt-7 max-w-[820px]">From model to product.<br />From edge to cloud.</h1>
+          <p className="copy-lg mt-7 max-w-[820px]">We architect end-to-end intelligence systems, bridging advanced AI research and robust production deployments with the engineering required to operate at scale.</p>
+        </div>
+      </section>
+
+      <section className="brand-grid-soft border-b border-[#2D3142]/15 py-20 lg:py-24">
+        <div className="page-shell grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {capabilities.map((capability) => (
+            <article key={capability.title} className="panel panel-hover flex min-h-[300px] flex-col p-8">
+              <capability.icon className="h-7 w-7 text-[#EF8354]" strokeWidth={1.7} />
+              <h2 className="mt-8 text-[19px] font-medium tracking-[-.025em]">{capability.title}</h2>
+              <p className="mt-4 flex-1 text-[13px] leading-6 text-[#4F5D75]">{capability.description}</p>
+              <div className="mt-7 flex flex-wrap gap-2">{capability.tags.map((tag) => <span className="tech-tag" key={tag}>{tag}</span>)}</div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="brand-grid py-20 lg:py-24">
+        <div className="page-shell panel grid gap-10 p-8 md:p-12 lg:grid-cols-[1fr_.9fr] lg:items-center">
+          <div>
+            <p className="mono text-[10px] uppercase tracking-[.1em] text-[#EF8354]">Open Engineering & R&amp;D</p>
+            <h2 className="section-display mt-5 max-w-[640px]">Pushing the boundaries of intelligence.</h2>
+            <p className="copy-md mt-6 max-w-[620px]">We experiment openly, prototype unconventional architectures and contribute reusable engineering that informs the next generation of Third Leap Labs products.</p>
+            <Link to="/open-source" className="btn-secondary mt-8">View Research &amp; Open Engineering <ArrowRight className="h-4 w-4" /></Link>
+          </div>
+          <div className="flex min-h-[260px] items-center justify-center border border-[#2D3142]/15 bg-[#F2F1F2]">
+            <div className="text-center text-[#BFC0C0]">
+              <Cpu className="mx-auto h-10 w-10" strokeWidth={1.2} />
+              <p className="mono mt-5 text-[10px] tracking-[.06em]">&gt; initializing_lab_environment...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </Layout>
 );
-
-export const Capabilities = () => {
-  return (
-    <Layout>
-      <SEO 
-        title="Capabilities | Third Leap Labs" 
-        description="Third Leap Labs builds the complete system around applied intelligence: data ingestion, models, distributed runtime, APIs, workflows, interfaces, deployment and monitoring." 
-        path="/capabilities"
-      />
-      <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
-        
-        {/* Hero */}
-        <section className="page-shell py-20 sm:py-28 lg:py-36 text-center">
-          <div className="mx-auto max-w-3xl">
-            <SectionLabel>ENGINEERING CAPABILITIES</SectionLabel>
-            <h1 className="mt-5 page-title">From model to product. From edge to cloud.</h1>
-            <p className="mt-6 text-[17px] leading-8 text-[#5e6b7d]">
-              Third Leap Labs builds the complete system around applied intelligence: data ingestion, models, distributed runtime, APIs, workflows, interfaces, deployment and monitoring.
-            </p>
-          </div>
-        </section>
-
-        {/* Capabilities Grid */}
-        <section className="bg-[#fbfcfe] border-y border-[#e6ebf1] py-24 sm:py-32">
-          <div className="page-shell">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  title: 'Computer Vision',
-                  icon: Eye,
-                  items: [
-                    'Object and event detection',
-                    'Tracking and zone-based logic',
-                    'Video-processing pipelines',
-                    'Model evaluation and tuning',
-                    'Human-in-the-loop review',
-                    'Edge inference integration'
-                  ]
-                },
-                {
-                  title: 'Applied AI',
-                  icon: BrainCircuit,
-                  items: [
-                    'Multimodal systems',
-                    'Decision-support workflows',
-                    'Retrieval and contextual intelligence',
-                    'AI agents and automation',
-                    'Explainable outputs and evidence',
-                    'Model/provider integration'
-                  ]
-                },
-                {
-                  title: 'Cloud Platforms',
-                  icon: Cloud,
-                  items: [
-                    'Multi-tenant SaaS architecture',
-                    'Event-driven services',
-                    'APIs and integrations',
-                    'Authentication and role-based access',
-                    'Observability and operational tooling',
-                    'Scalable data processing'
-                  ]
-                },
-                {
-                  title: 'Edge & Embedded',
-                  icon: Cpu,
-                  items: [
-                    'Edge services and device connectivity',
-                    'Local inference',
-                    'Linux-based deployment',
-                    'Camera and sensor integration',
-                    'Offline and intermittent-connectivity strategies',
-                    'Secure update and monitoring patterns'
-                  ]
-                },
-                {
-                  title: 'Product Engineering',
-                  icon: Box,
-                  items: [
-                    'Product architecture',
-                    'Web and mobile interfaces',
-                    'Operational dashboards',
-                    'Workflow design',
-                    'DevOps and CI/CD',
-                    'Rapid MVP-to-platform execution'
-                  ]
-                },
-                {
-                  title: 'Open Source & R&D',
-                  icon: Braces,
-                  items: [
-                    'Technical prototypes',
-                    'Reusable engineering components',
-                    'Architecture experiments',
-                    'Public technical learning',
-                    'Collaboration with developers and research communities'
-                  ]
-                }
-              ].map((cap) => (
-                <div key={cap.title} className="surface-card flex flex-col rounded-2xl p-8">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#edf7ff] text-[#0078d4]">
-                    <cap.icon className="h-6 w-6" />
-                  </div>
-                  <h2 className="mt-6 text-xl font-semibold">{cap.title}</h2>
-                  <ul className="mt-6 flex-1 space-y-3">
-                    {cap.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-[14px] leading-6 text-[#5e6b7d]">
-                        <div className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#0078d4]" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Closing CTA */}
-        <section className="page-shell py-24 sm:py-32">
-          <div className="dark-panel relative overflow-hidden rounded-[2rem] px-8 py-16 text-center sm:px-16 sm:py-24">
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.05] tracking-[-.04em] text-white">
-                Need a complete applied-AI platform—not another isolated prototype?
-              </h2>
-              <div className="mt-10">
-                <Link to="/contact" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#0078d4] px-8 text-sm font-semibold text-white transition hover:bg-[#006cbe]">
-                  Talk to Third Leap Labs <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </main>
-    </Layout>
-  );
-};

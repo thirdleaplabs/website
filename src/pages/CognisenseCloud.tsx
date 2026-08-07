@@ -1,145 +1,124 @@
-import { ArrowRight, Eye, PlaySquare, FileCheck2 } from 'lucide-react';
+import { ArrowRight, Camera, Cloud, FileCheck2, Gauge, Search, ShieldCheck } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
+
+const productStats = [
+  { label: 'Active feeds', value: '342' },
+  { label: 'Event latency', value: '14ms' },
+  { label: 'Asset uptime', value: '99.1%' },
+  { label: 'Detection confidence', value: '94.8%' },
+];
 
 export function CognisenseCloud() {
   return (
     <Layout>
-      <SEO 
-        title="Cognisense Cloud | Cloud Visual Intelligence Platform" 
-        description="Connect existing cameras, edge AI and cloud workflows in one browser-based platform for live operations and visual event detection." 
+      <SEO
+        title="Cognisense Cloud | Cloud Visual Intelligence Platform"
+        description="Connect cameras, edge AI and cloud workflows in one platform for live operations, visual events, incidents, evidence and analytics."
         path="/cognisense"
       />
-      <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
-        
-        {/* Hero */}
-        <section className="page-shell py-20 sm:py-28 text-center">
-          <p className="eyebrow">FLAGSHIP PRODUCT</p>
-          <h1 className="mt-5 display">Cognisense Cloud</h1>
-          <p className="mt-6 text-2xl font-medium tracking-tight text-[#1a1a1a]">
-            Cloud visual intelligence for safer, smarter operations.
-          </p>
-          <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-8 text-[#5e6b7d]">
-            Connect existing cameras, edge AI and cloud workflows in one browser-based platform for live operations, visual event detection, incidents, evidence and analytics.
-          </p>
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#0078d4] px-7 text-sm font-semibold text-white transition hover:bg-[#006cbe]">
-              Visit Cognisense Cloud <ArrowRight className="h-4 w-4" />
-            </a>
-            <a href="https://cognisense.cam/contact" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-lg border border-[#cfd7e2] bg-white px-7 text-sm font-semibold text-[#1a1a1a] transition hover:border-[#0078d4] hover:text-[#0078d4]">
-              Request a Pilot
-            </a>
-          </div>
-          <div className="mx-auto mt-16 max-w-5xl overflow-hidden rounded-2xl border border-[#e1e7ee] bg-[#f8fafc] shadow-[0_12px_45px_rgba(31,55,82,.08)]">
-            <div className="h-10 border-b border-[#e1e7ee] bg-white flex items-center px-4">
-              <div className="flex gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#dfe5ec]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#dfe5ec]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#dfe5ec]" />
+      <main className="site-page pt-16">
+        <section className="brand-grid border-b border-[#2D3142]/15">
+          <div className="page-shell py-16 text-center sm:py-20 lg:py-24">
+            <span className="kicker-box"><span className="h-1.5 w-1.5 rounded-full bg-[#EF8354]" /> Live system active</span>
+            <h1 className="page-display mx-auto mt-7 max-w-[960px]">Cognisense Cloud: Cloud visual intelligence for safer, smarter operations.</h1>
+            <p className="copy-lg mx-auto mt-6 max-w-[820px]">Connect cameras, edge AI and cloud workflows in one platform for live operations, visual events, incidents, evidence and analytics.</p>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="btn-primary">Visit Cognisense Cloud <ArrowRight className="h-4 w-4" /></a>
+              <a href="https://cognisense.cam/contact" target="_blank" rel="noreferrer" className="btn-secondary">Request a Pilot</a>
+            </div>
+
+            <div className="browser-frame mx-auto mt-16 max-w-[1080px] text-left">
+              <div className="browser-bar">
+                <span className="browser-dot" /><span className="browser-dot" /><span className="browser-dot" />
+                <span className="ml-3">system_overview.exe</span>
+              </div>
+              <div className="cognisense-ui p-3 sm:p-4">
+                <div className="grid min-h-[520px] gap-3 lg:grid-cols-[1.3fr_.75fr]">
+                  <div className="grid gap-3 lg:grid-rows-[1.2fr_.8fr]">
+                    <div className="ui-card relative overflow-hidden p-4 sm:p-5">
+                      <div className="absolute inset-0 opacity-10 brand-grid" />
+                      <div className="relative flex h-full flex-col">
+                        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#BFC0C0]/15 pb-4">
+                          <div><p className="mono text-[8px] uppercase tracking-[.08em] text-[#BFC0C0]">Facility Alpha / Production Line B</p><p className="mt-2 text-sm font-medium">Live visual operations</p></div>
+                          <span className="border border-[#EF8354]/55 bg-[#EF8354]/10 px-2 py-1 mono text-[8px] uppercase text-[#EF8354]">AI Normal</span>
+                        </div>
+                        <div className="grid flex-1 grid-cols-2 gap-3 pt-4">
+                          {[1, 2, 3, 4].map((camera) => (
+                            <div key={camera} className="relative overflow-hidden border border-[#BFC0C0]/15 bg-[#171D25] p-3">
+                              <div className="absolute inset-0 opacity-15 brand-grid" />
+                              <div className="relative flex h-full flex-col justify-between">
+                                <span className="mono text-[7px] uppercase text-[#BFC0C0]">CAM_{String(camera).padStart(2, '0')} / STREAMING</span>
+                                {camera === 2 && <span className="self-start border border-[#EF8354]/60 bg-[#EF8354]/12 px-2 py-1 mono text-[7px] uppercase text-[#EF8354]">person detected</span>}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <div className="ui-card p-4"><p className="mono text-[8px] uppercase text-[#BFC0C0]">Incident queue</p><div className="mt-5 space-y-4">{[82, 64, 74, 48].map((width, index) => <div key={`${width}-${index}`}><div className="ui-line" style={{ width: `${width}%` }} /><div className="ui-line orange mt-2" style={{ width: `${Math.max(24, width - 32)}%` }} /></div>)}</div></div>
+                      <div className="ui-card p-4"><p className="mono text-[8px] uppercase text-[#BFC0C0]">Critical incidents heatmap</p><div className="mt-6 grid h-28 grid-cols-5 items-end gap-2">{[36, 62, 48, 78, 55].map((height, index) => <span key={`${height}-${index}`} className="bg-[#EF8354]" style={{height:`${height}%`,opacity:.25 + index*.12}} />)}</div></div>
+                    </div>
+                  </div>
+                  <div className="ui-card p-4 sm:p-5">
+                    <div className="flex items-center justify-between"><p className="mono text-[8px] uppercase text-[#BFC0C0]">KPI panel</p><Gauge className="h-4 w-4 text-[#EF8354]" /></div>
+                    <div className="mt-5 grid grid-cols-2 gap-px bg-[#BFC0C0]/15">{productStats.map((stat) => <div key={stat.label} className="bg-[#222B36] p-3"><p className="mono text-[7px] uppercase text-[#BFC0C0]">{stat.label}</p><p className="mt-2 text-lg font-semibold text-white">{stat.value}</p></div>)}</div>
+                    <div className="mt-7"><p className="mono text-[8px] uppercase text-[#BFC0C0]">System load</p><div className="mt-4 flex h-28 items-end gap-2">{[31,45,42,59,52,71,67,82,74,89].map((height,index)=><span key={`${height}-${index}`} className="flex-1 bg-[#4F5D75]" style={{height:`${height}%`,opacity:.35+index*.055}} />)}</div></div>
+                    <div className="mt-8 border-t border-[#BFC0C0]/15 pt-5"><p className="mono text-[8px] uppercase text-[#BFC0C0]">Network status</p><div className="mt-4 space-y-3">{['Edge connected','Cloud sync','Alert pipeline'].map((item) => <div key={item} className="flex items-center justify-between text-[9px]"><span className="text-[#BFC0C0]">{item}</span><span className="text-[#EF8354]">ACTIVE</span></div>)}</div></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="h-[400px] w-full light-grid bg-[#f8fafc] md:h-[500px]" />
           </div>
         </section>
 
-        {/* Product story */}
-        <section className="bg-[#fbfcfe] border-y border-[#e6ebf1] py-24 sm:py-32">
+        <section className="paper border-b border-[#2D3142]/15 py-20 lg:py-24">
           <div className="page-shell">
-            <h2 className="section-title text-center">From passive video to operational intelligence.</h2>
-            <div className="mt-16 grid gap-8 md:grid-cols-3">
-              <div className="surface-card rounded-2xl p-8">
-                <div className="grid h-12 w-12 place-items-center rounded-full bg-[#edf7ff] text-[#0078d4]">
-                  <Eye className="h-6 w-6" />
-                </div>
-                <h3 className="mt-6 text-xl font-semibold">See</h3>
-                <p className="mt-3 text-[15px] leading-7 text-[#5e6b7d]">
-                  Monitor cameras and sites from a clear cloud command centre.
-                </p>
-              </div>
-              <div className="surface-card rounded-2xl p-8">
-                <div className="grid h-12 w-12 place-items-center rounded-full bg-[#edf7ff] text-[#0078d4]">
-                  <PlaySquare className="h-6 w-6" />
-                </div>
-                <h3 className="mt-6 text-xl font-semibold">Understand</h3>
-                <p className="mt-3 text-[15px] leading-7 text-[#5e6b7d]">
-                  Surface visual events using configurable AI rules and evidence.
-                </p>
-              </div>
-              <div className="surface-card rounded-2xl p-8">
-                <div className="grid h-12 w-12 place-items-center rounded-full bg-[#edf7ff] text-[#0078d4]">
-                  <FileCheck2 className="h-6 w-6" />
-                </div>
-                <h3 className="mt-6 text-xl font-semibold">Respond</h3>
-                <p className="mt-3 text-[15px] leading-7 text-[#5e6b7d]">
-                  Verify, assign, escalate and resolve incidents through traceable workflows.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Architecture preview */}
-        <section className="page-shell py-24 sm:py-32">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-center">
-            <div>
-              <p className="eyebrow">ARCHITECTURE</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Flexible by design.</h2>
-              <p className="mt-6 text-[15px] leading-7 text-[#5e6b7d]">
-                Cognisense supports flexible cloud, edge and hybrid deployment patterns so organisations can balance central visibility with local processing, bandwidth and data-handling requirements.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-[#e1e7ee] bg-white p-6 shadow-sm sm:p-10">
-              <div className="flex flex-col gap-4 text-sm font-medium text-[#1a1a1a] sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex h-14 items-center justify-center rounded-lg border border-[#e1e7ee] bg-[#fbfcfe] px-6 text-center sm:w-40">Cameras</div>
-                <ArrowRight className="hidden h-5 w-5 text-[#8490a1] sm:block" />
-                <div className="flex h-14 items-center justify-center rounded-lg border border-[#0078d4]/30 bg-[#edf7ff] px-6 text-center text-[#0078d4] sm:w-40">Edge Connector / Local AI</div>
-                <ArrowRight className="hidden h-5 w-5 text-[#8490a1] sm:block" />
-                <div className="flex h-14 items-center justify-center rounded-lg border border-[#e1e7ee] bg-[#fbfcfe] px-6 text-center sm:w-40">Cognisense Cloud</div>
-              </div>
-              <div className="mt-8 border-t border-[#e1e7ee] pt-6 text-center text-[13px] font-medium text-[#5e6b7d]">
-                Users, Workflows, Analytics and Integrations
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use-case preview */}
-        <section className="bg-[#fbfcfe] border-y border-[#e6ebf1] py-24 sm:py-32">
-          <div className="page-shell">
-            <h2 className="section-title text-center">Built for physical operations.</h2>
-            <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <p className="mono text-[10px] uppercase tracking-[.1em] text-[#EF8354]">Operational Loop</p>
+            <h2 className="section-display mt-4 max-w-[760px]">From passive video to operational intelligence.</h2>
+            <div className="mt-12 grid gap-px border border-[#2D3142]/15 bg-[#2D3142]/15 md:grid-cols-3">
               {[
-                'Industrial safety',
-                'Logistics and warehouses',
-                'Critical infrastructure',
-                'Commercial facilities',
-                'Construction',
-                'Transport environments'
-              ].map((useCase) => (
-                <div key={useCase} className="flex h-20 items-center justify-center rounded-xl border border-[#e1e7ee] bg-white px-6 text-center text-[15px] font-semibold text-[#1a1a1a] shadow-sm">
-                  {useCase}
-                </div>
+                { title: 'See', copy: 'Monitor cameras, facilities and sites from a clear cloud command centre.', icon: Camera },
+                { title: 'Understand', copy: 'Surface visual events using configurable AI rules, context and evidence.', icon: Search },
+                { title: 'Respond', copy: 'Verify, assign, escalate and resolve incidents through traceable workflows.', icon: FileCheck2 },
+              ].map((item) => (
+                <article key={item.title} className="bg-white p-8">
+                  <item.icon className="h-6 w-6 text-[#EF8354]" strokeWidth={1.7} />
+                  <h3 className="mt-7 text-xl font-medium tracking-[-.025em]">{item.title}</h3>
+                  <p className="mt-3 text-[13px] leading-6 text-[#4F5D75]">{item.copy}</p>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Closing CTA */}
-        <section className="page-shell py-24 sm:py-32">
-          <div className="dark-panel relative overflow-hidden rounded-[2rem] px-8 py-16 text-center sm:px-16 sm:py-24">
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.05] tracking-[-.04em] text-white">
-                Explore the complete Cognisense platform.
-              </h2>
-              <div className="mt-10">
-                <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#0078d4] px-8 text-sm font-semibold text-white transition hover:bg-[#006cbe]">
-                  Visit cognisense.cam <ArrowRight className="h-4 w-4" />
-                </a>
+        <section className="brand-grid border-b border-[#2D3142]/15 py-20 lg:py-24">
+          <div className="page-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+            <div>
+              <span className="kicker">Architecture</span>
+              <h2 className="section-display mt-5">Flexible by design.</h2>
+              <p className="copy-md mt-5 max-w-[520px]">Cloud, edge and hybrid deployment patterns balance central visibility with local inference, bandwidth constraints and data-handling requirements.</p>
+            </div>
+            <div className="panel p-6 sm:p-8">
+              <div className="grid gap-3 sm:grid-cols-[1fr_auto_1.2fr_auto_1fr] sm:items-center">
+                <div className="border border-[#2D3142]/18 bg-white px-4 py-5 text-center text-[12px]"><Camera className="mx-auto mb-3 h-5 w-5 text-[#EF8354]" />Cameras</div>
+                <ArrowRight className="mx-auto hidden h-4 w-4 text-[#4F5D75] sm:block" />
+                <div className="border border-[#EF8354]/40 bg-[#EF8354]/6 px-4 py-5 text-center text-[12px]"><ShieldCheck className="mx-auto mb-3 h-5 w-5 text-[#EF8354]" />Edge Connector / Local AI</div>
+                <ArrowRight className="mx-auto hidden h-4 w-4 text-[#4F5D75] sm:block" />
+                <div className="border border-[#2D3142]/18 bg-white px-4 py-5 text-center text-[12px]"><Cloud className="mx-auto mb-3 h-5 w-5 text-[#EF8354]" />Cognisense Cloud</div>
               </div>
+              <div className="mt-6 border-t border-[#2D3142]/15 pt-5 text-center mono text-[9px] uppercase tracking-[.07em] text-[#4F5D75]">Users / Workflows / Analytics / Integrations</div>
             </div>
           </div>
         </section>
 
+        <section className="paper">
+          <div className="page-shell flex min-h-[320px] flex-col items-center justify-center py-20 text-center">
+            <h2 className="section-display max-w-[720px]">Explore the complete Cognisense platform.</h2>
+            <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="btn-primary mt-8">Visit cognisense.cam <ArrowRight className="h-4 w-4" /></a>
+          </div>
+        </section>
       </main>
     </Layout>
   );
