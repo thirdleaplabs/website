@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
-import { CognisenseCloud } from './pages/CognisenseCloud';
+import { EyeWitX } from './pages/EyeWitX';
 import { Capabilities } from './pages/Capabilities';
 import { OpenSource } from './pages/OpenSource';
 import { Company } from './pages/Company';
@@ -14,13 +14,13 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/cognisense" element={<CognisenseCloud />} />
+      <Route path="/eyewitx" element={<EyeWitX />} />
       <Route path="/products" element={<Products />} />
       <Route path="/capabilities" element={<Capabilities />} />
       <Route path="/open-source" element={<OpenSource />} />
       <Route path="/company" element={<Company />} />
       <Route path="/contact" element={<Contact />} />
-      
+
       <Route path="/legal-disclaimer" element={<LegalDisclaimer />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/security-notice" element={<SecurityNotice />} />
@@ -28,18 +28,22 @@ function App() {
       {/* Legacy Redirects */}
       <Route path="/work" element={<Navigate to="/products" replace />} />
 
-      <Route path="/work/cognisense" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/work/cognisense-cloud" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/work/visionx" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/work/flametrax" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/products/cognisense" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/products/cognisense-cloud" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/products/visionx" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/products/flametrax" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/labs/cognisense" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/labs/cognisense-cloud" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/labs/visionx" element={<Navigate to="/cognisense" replace />} />
-      <Route path="/labs/flametrax" element={<Navigate to="/cognisense" replace />} />
+      <Route path="/cognisense" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/work/eyewitx" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/products/eyewitx" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/labs/eyewitx" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/work/cognisense" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/work/cognisense-cloud" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/work/visionx" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/work/flametrax" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/products/cognisense" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/products/cognisense-cloud" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/products/visionx" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/products/flametrax" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/labs/cognisense" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/labs/cognisense-cloud" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/labs/visionx" element={<Navigate to="/eyewitx" replace />} />
+      <Route path="/labs/flametrax" element={<Navigate to="/eyewitx" replace />} />
 
       <Route path="/labs/whalescanner" element={<Navigate to="/products#whalescanner" replace />} />
       <Route path="/work/whalescanner" element={<Navigate to="/products#whalescanner" replace />} />

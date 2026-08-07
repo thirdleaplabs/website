@@ -1,4 +1,5 @@
 import { ArrowRight, Camera, Cloud, FileCheck2, Gauge, Search, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
 
@@ -16,23 +17,23 @@ const cameraImages = [
   'https://images.unsplash.com/photo-1775519520461-6b6e068d9250?auto=format&fit=crop&w=1000&q=82',
 ];
 
-export function CognisenseCloud() {
+export function EyeWitX() {
   return (
     <Layout>
       <SEO
-        title="Cognisense Cloud | Cloud Visual Intelligence Platform"
-        description="Connect cameras, edge AI and cloud workflows in one platform for live operations, visual events, incidents, evidence and analytics."
-        path="/cognisense"
+        title="EyeWitX | Cloud Visual Intelligence Platform"
+        description="EyeWitX connects cameras, edge AI and cloud workflows in one platform for live operations, visual events, incidents, evidence and analytics."
+        path="/eyewitx"
       />
       <main className="site-page pt-16">
         <section className="brand-grid border-b border-[#2D3142]/15">
           <div className="page-shell py-16 text-center sm:py-20 lg:py-24">
             <span className="kicker-box"><span className="h-1.5 w-1.5 rounded-full bg-[#1DA1F2]" /> Live system active</span>
-            <h1 className="page-display mx-auto mt-7 max-w-[960px]">Cognisense Cloud: Cloud visual intelligence for safer, smarter operations.</h1>
+            <h1 className="page-display mx-auto mt-7 max-w-[960px]">EyeWitX: Cloud visual intelligence for safer, smarter operations.</h1>
             <p className="copy-lg mx-auto mt-6 max-w-[820px]">Connect cameras, edge AI and cloud workflows in one platform for live operations, visual events, incidents, evidence and analytics.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="btn-primary">Visit Cognisense Cloud <ArrowRight className="h-4 w-4" /></a>
-              <a href="https://cognisense.cam/contact" target="_blank" rel="noreferrer" className="btn-secondary">Request a Pilot</a>
+              <a href="https://eyewitx.com" target="_blank" rel="noreferrer" className="btn-primary">Visit EyeWitX <ArrowRight className="h-4 w-4" /></a>
+              <Link to="/contact" className="btn-secondary">Request a Pilot</Link>
             </div>
 
             <div className="browser-frame mx-auto mt-16 max-w-[1080px] text-left">
@@ -117,7 +118,7 @@ export function CognisenseCloud() {
                 <ArrowRight className="mx-auto hidden h-4 w-4 text-[#4F5D75] sm:block" />
                 <div className="border border-[#1DA1F2]/40 bg-[#1DA1F2]/6 px-4 py-5 text-center text-[12px]"><ShieldCheck className="mx-auto mb-3 h-5 w-5 text-[#1DA1F2]" />Edge Connector / Local AI</div>
                 <ArrowRight className="mx-auto hidden h-4 w-4 text-[#4F5D75] sm:block" />
-                <div className="border border-[#2D3142]/18 bg-white px-4 py-5 text-center text-[12px]"><Cloud className="mx-auto mb-3 h-5 w-5 text-[#1DA1F2]" />Cognisense Cloud</div>
+                <div className="border border-[#2D3142]/18 bg-white px-4 py-5 text-center text-[12px]"><Cloud className="mx-auto mb-3 h-5 w-5 text-[#1DA1F2]" />EyeWitX</div>
               </div>
               <div className="mt-6 border-t border-[#2D3142]/15 pt-5 text-center mono text-[9px] uppercase tracking-[.07em] text-[#4F5D75]">Users / Workflows / Analytics / Integrations</div>
             </div>
@@ -126,8 +127,8 @@ export function CognisenseCloud() {
 
         <section className="paper">
           <div className="page-shell flex min-h-[320px] flex-col items-center justify-center py-20 text-center">
-            <h2 className="section-display max-w-[720px]">Explore the complete Cognisense platform.</h2>
-            <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="btn-primary mt-8">Visit cognisense.cam <ArrowRight className="h-4 w-4" /></a>
+            <h2 className="section-display max-w-[720px]">Explore the complete EyeWitX platform.</h2>
+            <a href="https://eyewitx.com" target="_blank" rel="noreferrer" className="btn-primary mt-8">Visit eyewitx.com <ArrowRight className="h-4 w-4" /></a>
           </div>
         </section>
       </main>

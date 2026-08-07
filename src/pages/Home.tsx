@@ -12,7 +12,7 @@ const operationalImages = [
   'https://images.unsplash.com/photo-1775519520461-6b6e068d9250?auto=format&fit=crop&w=1000&q=82',
 ];
 
-const cognisenseFeatures = [
+const eyeWitXFeatures = [
   { title: 'Hardware Agnostic', copy: 'Integrates with IP cameras and RTSP streams.', icon: Eye },
   { title: 'Ultra-Low Latency', copy: 'Optimized inference engines for responsive processing.', icon: Gauge },
   { title: 'Developer First', copy: 'APIs and webhooks for clean system integration.', icon: Network },
@@ -41,7 +41,7 @@ export const Home = () => (
             <h1 className="display-xl mt-7">Engineering intelligence for the <span className="accent">physical and digital</span> world.</h1>
             <p className="copy-lg mt-7 max-w-[720px]">Third Leap Labs builds applied AI, computer-vision and data-intelligence products that transform complex signals into clear, actionable decisions.</p>
             <div className="mt-9 flex flex-wrap gap-x-7 gap-y-4">
-              <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="text-link">Explore Cognisense Cloud <ArrowRight className="h-3.5 w-3.5" /></a>
+              <a href="https://eyewitx.com" target="_blank" rel="noreferrer" className="text-link">Explore EyeWitX <ArrowRight className="h-3.5 w-3.5" /></a>
               <Link to="/products" className="text-link">View Our Products <ArrowRight className="h-3.5 w-3.5" /></Link>
             </div>
           </div>
@@ -57,7 +57,7 @@ export const Home = () => (
 
       <section className="paper border-b border-[#2D3142]/15">
         <div className="page-shell py-20 lg:py-24">
-          <div className="mb-14"><p className="mono text-[9px] uppercase tracking-[.12em] text-[#1DA1F2]">Flagship Product</p><h2 className="mt-3 text-[clamp(2rem,3.4vw,3.4rem)] font-semibold tracking-[-.045em]">Cognisense Cloud</h2><p className="mt-1 text-[13px] text-[#4F5D75]">Give every camera intelligence.</p></div>
+          <div className="mb-14"><p className="mono text-[9px] uppercase tracking-[.12em] text-[#1DA1F2]">Flagship Product</p><h2 className="mt-3 text-[clamp(2rem,3.4vw,3.4rem)] font-semibold tracking-[-.045em]">EyeWitX</h2><p className="mt-1 text-[13px] text-[#4F5D75]">Give every camera intelligence.</p></div>
 
           <div className="grid gap-12 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
             <div className="browser-frame">
@@ -70,8 +70,8 @@ export const Home = () => (
 
             <div className="lg:pl-4">
               <p className="copy-md max-w-[560px]">Deploy computer-vision models to existing camera infrastructure, combine edge inference with cloud workflows, and turn video into structured operational data in real time.</p>
-              <div className="mt-8 space-y-6">{cognisenseFeatures.map((feature) => <div key={feature.title} className="grid grid-cols-[22px_1fr] gap-3"><feature.icon className="mt-0.5 h-4 w-4 text-[#1DA1F2]" strokeWidth={1.7} /><div><p className="text-[12px] font-medium">{feature.title}</p><p className="mt-1 text-[11px] leading-5 text-[#4F5D75]">{feature.copy}</p></div></div>)}</div>
-              <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="text-link mt-9 text-[#1DA1F2]">Explore the platform <ArrowRight className="h-3.5 w-3.5" /></a>
+              <div className="mt-8 space-y-6">{eyeWitXFeatures.map((feature) => <div key={feature.title} className="grid grid-cols-[22px_1fr] gap-3"><feature.icon className="mt-0.5 h-4 w-4 text-[#1DA1F2]" strokeWidth={1.7} /><div><p className="text-[12px] font-medium">{feature.title}</p><p className="mt-1 text-[11px] leading-5 text-[#4F5D75]">{feature.copy}</p></div></div>)}</div>
+              <a href="https://eyewitx.com" target="_blank" rel="noreferrer" className="text-link mt-9 text-[#1DA1F2]">Explore the platform <ArrowRight className="h-3.5 w-3.5" /></a>
             </div>
           </div>
         </div>

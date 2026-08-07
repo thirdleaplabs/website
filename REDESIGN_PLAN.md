@@ -32,7 +32,7 @@ The design should feel current, technically credible and human—not like a stoc
 ## Information architecture
 
 - `/` — Home
-- `/cognisense` — Cognisense Cloud product overview and canonical corporate-site route
+- `/eyewitx` — EyeWitX product overview and canonical corporate-site route
 - `/products` — Product and engineering portfolio
 - `/capabilities` — AI, computer vision, Web3 and open-source capabilities
 - `/open-source` — Open-source philosophy and contribution model
@@ -40,7 +40,7 @@ The design should feel current, technically credible and human—not like a stoc
 - `/contact` — Enquiry form and contact information
 - Existing legal routes remain available
 
-Legacy Cognisense, VisionX and FlameTrax routes redirect explicitly to `/cognisense`. Legacy WhaleScanner detail routes redirect to `/products#whalescanner`.
+Legacy EyeWitX predecessor routes—including Cognisense, VisionX and FlameTrax variants—redirect explicitly to `/eyewitx`. Legacy WhaleScanner detail routes redirect to `/products#whalescanner`.
 
 ## Portfolio structure
 
@@ -51,13 +51,14 @@ Legacy Cognisense, VisionX and FlameTrax routes redirect explicitly to `/cognise
 
 ### AI and computer vision
 
-- **Cognisense Cloud by Third Leap Labs** — Cloud and edge visual-intelligence platform for monitoring, AI events, incidents, evidence and operational response
+- **EyeWitX by Third Leap Labs** — Cloud and edge visual-intelligence platform for monitoring, AI events, incidents, evidence and operational response
+- Product domain: **https://eyewitx.com**
 
 ### Open source
 
 - **Open-source engineering** — Reusable engines, APIs, plugins and developer tools
 
-Cognisense Cloud by Third Leap Labs is the current public visual-intelligence product name.
+EyeWitX is the current public visual-intelligence product name. Cognisense Cloud is a retired predecessor name and should appear only where legacy redirect compatibility or migration history requires it.
 
 ## UX principles
 

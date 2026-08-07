@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const links = [
-  { label: 'Cognisense Cloud', to: '/cognisense' },
+  { label: 'EyeWitX', to: '/eyewitx' },
   { label: 'Products', to: '/products' },
   { label: 'Capabilities', to: '/capabilities' },
   { label: 'Research', to: '/open-source' },

@@ -46,7 +46,7 @@ export const Company = () => (
                   <h2 className="text-[28px] font-semibold tracking-[-.04em]">Gokul Kartha</h2>
                   <p className="mono mt-2 text-[9px] uppercase tracking-[.08em] text-[#1DA1F2]">Founder &amp; CEO</p>
                 </div>
-                <p className="copy-md mt-6">Software engineering and technology leader with experience spanning embedded systems, automotive software, platform architecture, cloud applications and product development. Through Third Leap Labs, he builds and commercialises applied-AI products including Cognisense Cloud and WhaleScanner.</p>
+                <p className="copy-md mt-6">Software engineering and technology leader with experience spanning embedded systems, automotive software, platform architecture, cloud applications and product development. Through Third Leap Labs, he builds and commercialises applied-AI products including EyeWitX and WhaleScanner.</p>
                 <div className="mt-auto flex flex-wrap gap-2 pt-8"><span className="tech-tag text-[#2D3142] bg-[#BFC0C0]/25">SYSTEMS ARCHITECTURE</span><span className="tech-tag text-[#2D3142] bg-[#BFC0C0]/25">PRODUCT STRATEGY</span></div>
               </div>
             </section>
