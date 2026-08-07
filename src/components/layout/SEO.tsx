@@ -5,6 +5,7 @@ interface SEOProps {
   description: string;
   path?: string;
   image?: string;
+  noindex?: boolean;
 }
 
 export const SEO = ({
@@ -12,6 +13,7 @@ export const SEO = ({
   description,
   path = '/',
   image = 'https://thirdleaplabs.com/logo.svg',
+  noindex = false,
 }: SEOProps) => {
   const canonical = `https://thirdleaplabs.com${path}`;
 
@@ -19,6 +21,7 @@ export const SEO = ({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={canonical} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Third Leap Labs" />
