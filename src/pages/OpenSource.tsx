@@ -1,101 +1,92 @@
-import { ArrowRight, Code2, ShieldCheck, FileText, CheckCircle2 } from 'lucide-react';
-import type { ReactNode } from 'react';
+import { ArrowRight, CheckCircle2, Code2, FileText, Github, ShieldCheck, TerminalSquare } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
 
-const SectionLabel = ({ children }: { children: ReactNode }) => (
-  <p className="eyebrow">{children}</p>
-);
+const repositories = [
+  { name: 'vision-edge-connector', purpose: 'Secure, low-latency edge services for connecting camera infrastructure to cloud intelligence.', tech: 'Rust' },
+  { name: 'react-timeline-scrubber', purpose: 'Accessible, high-performance video timeline components for operational review workflows.', tech: 'TypeScript' },
+  { name: 'web3-wallet-signals', purpose: 'Extensible pipelines for converting on-chain wallet activity into structured intelligence events.', tech: 'Python' },
+];
 
-export const OpenSource = () => {
-  return (
-    <Layout>
-      <SEO 
-        title="Open Source | Third Leap Labs" 
-        description="Build openly. Learn quickly. Share what compounds. Third Leap Labs contributes to the wider technology community." 
-        path="/open-source"
-      />
-      <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
-        
-        {/* Hero */}
-        <section className="page-shell py-20 sm:py-28 lg:py-36 text-center">
-          <div className="mx-auto max-w-3xl">
-            <SectionLabel>OPEN ENGINEERING</SectionLabel>
-            <h1 className="mt-5 page-title">Build openly. Learn quickly. Share what compounds.</h1>
-            <p className="mt-6 text-[17px] leading-8 text-[#5e6b7d]">
-              Open-source work helps us test ideas, improve engineering quality and contribute useful building blocks to the wider technology community.
-            </p>
+const principles = [
+  { title: 'Share reusable engineering', icon: Code2 },
+  { title: 'Protect customer data', icon: ShieldCheck },
+  { title: 'Document clearly', icon: FileText },
+  { title: 'State status honestly', icon: CheckCircle2 },
+];
+
+export const OpenSource = () => (
+  <Layout>
+    <SEO
+      title="Research & Open Engineering | Third Leap Labs"
+      description="Third Leap Labs experiments openly, contributes reusable engineering and turns technical research into working systems."
+      path="/open-source"
+    />
+    <main className="site-page pt-16">
+      <section className="brand-grid border-b border-[#2D3142]/15">
+        <div className="page-shell py-20 lg:py-24">
+          <span className="kicker">Research / Open Engineering</span>
+          <h1 className="page-display mt-7 max-w-[900px]">Pushing the boundaries of intelligence.</h1>
+          <p className="copy-lg mt-7 max-w-[820px]">We use research, prototypes and open engineering to test ideas early, sharpen architecture decisions and contribute useful building blocks to the wider technology community.</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="btn-primary">Explore GitHub <ArrowRight className="h-4 w-4" /></a>
+            <a href="#principles" className="btn-secondary">Read Engineering Principles</a>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Repositories */}
-        <section className="bg-[#fbfcfe] border-y border-[#e6ebf1] py-24 sm:py-32">
-          <div className="page-shell">
-            <h2 className="section-title">Selected Repositories</h2>
-            <div className="mt-16 grid gap-6 md:grid-cols-2">
+      <section className="brand-grid-soft border-b border-[#2D3142]/15 py-20 lg:py-24">
+        <div className="page-shell">
+          <div className="flex flex-col gap-4 border-b border-[#2D3142]/30 pb-5 sm:flex-row sm:items-end sm:justify-between">
+            <div><p className="mono text-[9px] uppercase tracking-[.1em] text-[#EF8354]">Featured Engineering</p><h2 className="section-display mt-3">Selected repositories.</h2></div>
+            <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="text-link">View archive <ArrowRight className="h-3.5 w-3.5" /></a>
+          </div>
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            {repositories.map((repo, index) => (
+              <article key={repo.name} className="panel panel-hover flex min-h-[280px] flex-col p-7">
+                <div className="flex items-center justify-between"><span className="mono text-[9px] uppercase tracking-[.08em] text-[#4F5D75]">Repo_0{index + 1}</span><Github className="h-4 w-4 text-[#EF8354]" /></div>
+                <h3 className="mt-7 break-words text-[20px] font-medium tracking-[-.03em]">{repo.name}</h3>
+                <p className="mt-4 flex-1 text-[13px] leading-6 text-[#4F5D75]">{repo.purpose}</p>
+                <div className="mt-7 flex items-center justify-between"><span className="tech-tag">{repo.tech}</span><a href={`https://github.com/thirdleaplabs/${repo.name}`} target="_blank" rel="noreferrer" className="text-link">Open <ArrowRight className="h-3 w-3" /></a></div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="brand-grid border-b border-[#2D3142]/15 py-20 lg:py-24">
+        <div className="page-shell grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
+          <div className="panel bg-[#2D3142] p-7 text-white sm:p-9">
+            <div className="flex items-center justify-between border-b border-white/15 pb-4"><div className="flex items-center gap-2"><TerminalSquare className="h-4 w-4 text-[#EF8354]" /><p className="mono text-[9px] uppercase tracking-[.08em]">Engineering Logs</p></div><span className="mono text-[8px] uppercase text-[#BFC0C0]">live</span></div>
+            <div className="mt-7 space-y-7">
               {[
-                { name: 'vision-edge-connector', purpose: 'A secure, low-latency edge agent for streaming IP cameras to cloud infrastructure.', tech: 'Rust', status: 'Active' },
-                { name: 'react-timeline-scrubber', purpose: 'Accessible, high-performance video timeline component for incident review.', tech: 'TypeScript', status: 'Active' },
-                { name: 'web3-wallet-signals', purpose: 'Extensible pipelines for parsing on-chain wallet activity into structured events.', tech: 'Python', status: 'Active' },
-              ].map((repo) => (
-                <div key={repo.name} className="surface-card flex flex-col justify-between rounded-2xl p-8">
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-semibold tracking-tight">{repo.name}</h3>
-                      <span className="rounded-full bg-[#edf7ff] px-3 py-1 text-[11px] font-bold uppercase tracking-[.1em] text-[#0078d4]">{repo.tech}</span>
-                    </div>
-                    <p className="mt-4 text-[15px] leading-7 text-[#5e6b7d]">{repo.purpose}</p>
-                  </div>
-                  <div className="mt-8 flex items-center justify-between">
-                    <span className="flex items-center gap-1.5 text-[12px] font-medium text-[#107c10]">
-                      <span className="h-2 w-2 rounded-full bg-[#107c10]" /> {repo.status}
-                    </span>
-                    <a href={`https://github.com/thirdleaplabs/${repo.name}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0078d4] transition hover:gap-3 hover:text-[#005ea6]">
-                      View on GitHub <ArrowRight className="h-3.5 w-3.5" />
-                    </a>
-                  </div>
-                </div>
+                ['08.06', 'Optimized tensor allocation routines and reduced inference latency in constrained edge pipelines.'],
+                ['08.04', 'Refined lock-free event ingestion architecture for higher-frequency operational streams.'],
+                ['08.01', 'Expanded validation coverage around model-confidence and evidence-handling workflows.'],
+              ].map(([date, log]) => (
+                <div key={date} className="grid grid-cols-[60px_1fr] gap-4"><span className="mono text-[8px] text-[#EF8354]">{date}</span><p className="mono text-[9px] leading-5 text-[#BFC0C0]">{log}</p></div>
               ))}
             </div>
           </div>
-        </section>
 
-        {/* Principles */}
-        <section className="page-shell py-24 sm:py-32">
-          <SectionLabel>OUR PRINCIPLES</SectionLabel>
-          <h2 className="mt-4 section-title">How we approach open source.</h2>
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { title: 'Share reusable engineering rather than customer-specific logic.', icon: Code2 },
-              { title: 'Protect private customer data and proprietary deployment details.', icon: ShieldCheck },
-              { title: 'Document projects clearly.', icon: FileText },
-              { title: 'State maintenance status honestly.', icon: CheckCircle2 },
-            ].map((principle) => (
-              <div key={principle.title} className="border-t border-[#e6ebf1] pt-6">
-                <principle.icon className="h-6 w-6 text-[#0078d4]" />
-                <p className="mt-5 text-[15px] leading-7 text-[#1a1a1a]">{principle.title}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Closing CTA */}
-        <section className="page-shell pb-24 sm:pb-32">
-          <div className="dark-panel relative overflow-hidden rounded-[2rem] px-8 py-16 text-center sm:px-16 sm:py-24">
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.05] tracking-[-.04em] text-white">
-                Explore our work on GitHub.
-              </h2>
-              <div className="mt-10">
-                <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-white px-8 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#f0f4f8]">
-                  View Third Leap Labs on GitHub <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
+          <div id="principles" className="panel p-7 sm:p-9 scroll-mt-20">
+            <p className="mono text-[9px] uppercase tracking-[.1em] text-[#EF8354]">Open-source principles</p>
+            <h2 className="mt-4 text-2xl font-semibold tracking-[-.04em]">Build openly. Learn quickly. Share what compounds.</h2>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2">
+              {principles.map((principle) => (
+                <div key={principle.title} className="border-t border-[#2D3142]/18 pt-4"><principle.icon className="h-5 w-5 text-[#EF8354]" /><p className="mt-4 text-[12px] leading-5 text-[#4F5D75]">{principle.title}</p></div>
+              ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-      </main>
-    </Layout>
-  );
-};
+      <section className="paper">
+        <div className="page-shell flex min-h-[300px] flex-col items-center justify-center py-20 text-center">
+          <h2 className="section-display max-w-[720px]">Open engineering should strengthen the products around it.</h2>
+          <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="text-link mt-8">View Third Leap Labs on GitHub <ArrowRight className="h-3.5 w-3.5" /></a>
+        </div>
+      </section>
+    </main>
+  </Layout>
+);
