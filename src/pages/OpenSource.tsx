@@ -2,10 +2,10 @@ import { ArrowRight, CheckCircle2, Code2, FileText, Github, ShieldCheck, Termina
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
 
-const repositories = [
-  { name: 'vision-edge-connector', purpose: 'Secure, low-latency edge services for connecting camera infrastructure to cloud intelligence.', tech: 'Rust' },
-  { name: 'react-timeline-scrubber', purpose: 'Accessible, high-performance video timeline components for operational review workflows.', tech: 'TypeScript' },
-  { name: 'web3-wallet-signals', purpose: 'Extensible pipelines for converting on-chain wallet activity into structured intelligence events.', tech: 'Python' },
+const engineeringAreas = [
+  { title: 'Edge integration', copy: 'Reusable patterns for connecting cameras, devices and constrained runtimes to larger platforms.', tag: 'EDGE' },
+  { title: 'Product interfaces', copy: 'UI patterns for timelines, operational review, data-rich workflows and real-time product experiences.', tag: 'UI' },
+  { title: 'Data intelligence', copy: 'Structured pipelines for turning event streams, market data and system signals into usable product context.', tag: 'DATA' },
 ];
 
 const principles = [
@@ -35,46 +35,47 @@ export const OpenSource = () => (
         </div>
       </section>
 
-      <section className="brand-grid-soft border-b border-[#2D3142]/15 py-20 lg:py-24">
+      <section className="paper border-b border-[#2D3142]/15 py-20 lg:py-24">
         <div className="page-shell">
           <div className="flex flex-col gap-4 border-b border-[#2D3142]/30 pb-5 sm:flex-row sm:items-end sm:justify-between">
-            <div><p className="mono text-[9px] uppercase tracking-[.1em] text-[#1DA1F2]">Featured Engineering</p><h2 className="section-display mt-3">Selected repositories.</h2></div>
-            <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="text-link">View archive <ArrowRight className="h-3.5 w-3.5" /></a>
+            <div><p className="mono text-[10px] uppercase tracking-[.08em] text-[#1DA1F2]">Open Engineering</p><h2 className="section-display mt-3">What we make reusable.</h2></div>
+            <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="text-link">View GitHub organization <ArrowRight className="h-3.5 w-3.5" /></a>
           </div>
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
-            {repositories.map((repo, index) => (
-              <article key={repo.name} className="panel panel-hover flex min-h-[280px] flex-col p-7">
-                <div className="flex items-center justify-between"><span className="mono text-[9px] uppercase tracking-[.08em] text-[#4F5D75]">Repo_0{index + 1}</span><Github className="h-4 w-4 text-[#1DA1F2]" /></div>
-                <h3 className="mt-7 break-words text-[20px] font-medium tracking-[-.03em]">{repo.name}</h3>
-                <p className="mt-4 flex-1 text-[13px] leading-6 text-[#4F5D75]">{repo.purpose}</p>
-                <div className="mt-7 flex items-center justify-between"><span className="tech-tag">{repo.tech}</span><a href={`https://github.com/thirdleaplabs/${repo.name}`} target="_blank" rel="noreferrer" className="text-link">Open <ArrowRight className="h-3 w-3" /></a></div>
+            {engineeringAreas.map((area, index) => (
+              <article key={area.title} className="panel panel-hover flex min-h-[250px] flex-col p-7">
+                <div className="flex items-center justify-between"><span className="mono text-[10px] uppercase tracking-[.06em] text-[#4F5D75]">Area_0{index + 1}</span><Github className="h-4 w-4 text-[#1DA1F2]" /></div>
+                <h3 className="mt-7 text-[20px] font-medium tracking-[-.03em]">{area.title}</h3>
+                <p className="mt-4 flex-1 text-[13px] leading-6 text-[#4F5D75]">{area.copy}</p>
+                <div className="mt-7"><span className="tech-tag">{area.tag}</span></div>
               </article>
             ))}
           </div>
+          <div className="mt-6 border-l-2 border-[#1DA1F2] bg-white p-5 text-[13px] leading-6 text-[#4F5D75]">Public repositories are linked from this page only when they are ready for external use. Experimental or private work is not presented as a public release.</div>
         </div>
       </section>
 
-      <section className="brand-grid border-b border-[#2D3142]/15 py-20 lg:py-24">
+      <section className="bg-white border-b border-[#2D3142]/15 py-20 lg:py-24">
         <div className="page-shell grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
           <div className="panel bg-[#2D3142] p-7 text-white sm:p-9">
-            <div className="flex items-center justify-between border-b border-white/15 pb-4"><div className="flex items-center gap-2"><TerminalSquare className="h-4 w-4 text-[#1DA1F2]" /><p className="mono text-[9px] uppercase tracking-[.08em]">Engineering Logs</p></div><span className="mono text-[8px] uppercase text-[#BFC0C0]">live</span></div>
+            <div className="flex items-center justify-between border-b border-white/15 pb-4"><div className="flex items-center gap-2"><TerminalSquare className="h-4 w-4 text-[#1DA1F2]" /><p className="mono text-[10px] uppercase tracking-[.07em]">Research workflow</p></div><span className="mono text-[9px] uppercase text-[#BFC0C0]">R&amp;D</span></div>
             <div className="mt-7 space-y-7">
               {[
-                ['08.06', 'Optimized tensor allocation routines and reduced inference latency in constrained edge pipelines.'],
-                ['08.04', 'Refined lock-free event ingestion architecture for higher-frequency operational streams.'],
-                ['08.01', 'Expanded validation coverage around model-confidence and evidence-handling workflows.'],
-              ].map(([date, log]) => (
-                <div key={date} className="grid grid-cols-[60px_1fr] gap-4"><span className="mono text-[8px] text-[#1DA1F2]">{date}</span><p className="mono text-[9px] leading-5 text-[#BFC0C0]">{log}</p></div>
+                ['01', 'Prototype a focused technical idea against a real product or systems problem.'],
+                ['02', 'Measure constraints, integration cost and operational behaviour before scaling the approach.'],
+                ['03', 'Turn the parts that compound into documented, reusable engineering.'],
+              ].map(([step, copy]) => (
+                <div key={step} className="grid grid-cols-[44px_1fr] gap-4"><span className="mono text-[9px] text-[#1DA1F2]">{step}</span><p className="text-[13px] leading-6 text-[#BFC0C0]">{copy}</p></div>
               ))}
             </div>
           </div>
 
           <div id="principles" className="panel p-7 sm:p-9 scroll-mt-20">
-            <p className="mono text-[9px] uppercase tracking-[.1em] text-[#1DA1F2]">Open-source principles</p>
+            <p className="mono text-[10px] uppercase tracking-[.08em] text-[#1DA1F2]">Open-source principles</p>
             <h2 className="mt-4 text-2xl font-semibold tracking-[-.04em]">Build openly. Learn quickly. Share what compounds.</h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {principles.map((principle) => (
-                <div key={principle.title} className="border-t border-[#2D3142]/18 pt-4"><principle.icon className="h-5 w-5 text-[#1DA1F2]" /><p className="mt-4 text-[12px] leading-5 text-[#4F5D75]">{principle.title}</p></div>
+                <div key={principle.title} className="border-t border-[#2D3142]/18 pt-4"><principle.icon className="h-5 w-5 text-[#1DA1F2]" /><p className="mt-4 text-[13px] leading-5 text-[#4F5D75]">{principle.title}</p></div>
               ))}
             </div>
           </div>
@@ -82,9 +83,9 @@ export const OpenSource = () => (
       </section>
 
       <section className="paper">
-        <div className="page-shell flex min-h-[300px] flex-col items-center justify-center py-20 text-center">
+        <div className="page-shell flex min-h-[280px] flex-col items-center justify-center py-20 text-center">
           <h2 className="section-display max-w-[720px]">Open engineering should strengthen the products around it.</h2>
-          <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="text-link mt-8">View Third Leap Labs on GitHub <ArrowRight className="h-3.5 w-3.5" /></a>
+          <a href="https://github.com/thirdleaplabs" target="_blank" rel="noreferrer" className="btn-secondary mt-8">View Third Leap Labs on GitHub <ArrowRight className="h-4 w-4" /></a>
         </div>
       </section>
     </main>

@@ -30,7 +30,7 @@ export const Navbar = () => {
           {links.map((link) => {
             const active = pathname === link.to || pathname.startsWith(`${link.to}/`);
             return (
-              <Link key={link.to} to={link.to} className={`relative flex items-center px-4 text-[11px] font-medium tracking-[.02em] transition ${active ? 'text-[#1DA1F2]' : 'text-[#2D3142] hover:text-[#1DA1F2]'}`}>
+              <Link key={link.to} to={link.to} className={`relative flex items-center px-4 text-[12px] font-medium tracking-[.01em] transition ${active ? 'text-[#1DA1F2]' : 'text-[#2D3142] hover:text-[#1DA1F2]'}`}>
                 {link.label}
                 {active && <span className="absolute inset-x-4 bottom-0 h-[2px] bg-[#1DA1F2]" />}
               </Link>
@@ -39,7 +39,7 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <Link to="/contact" className="btn-primary min-h-9 px-5 py-2 text-[11px]">Get Started</Link>
+          <Link to="/contact" className="btn-primary min-h-9 px-5 py-2 text-[12px]">Start a Project</Link>
         </div>
 
         <button type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} className="grid h-10 w-10 place-items-center border border-[#2D3142]/25 bg-white text-[#2D3142] lg:hidden">
@@ -59,7 +59,7 @@ export const Navbar = () => {
                   </Link>
                 );
               })}
-              <Link to="/contact" className="btn-primary mt-4 w-full">Get Started <ArrowRight className="h-4 w-4" /></Link>
+              <Link to="/contact" className="btn-primary mt-4 w-full">Start a Project <ArrowRight className="h-4 w-4" /></Link>
             </div>
           </motion.div>
         )}

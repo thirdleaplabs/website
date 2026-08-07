@@ -1,0 +1,9 @@
+/* Small-type readability pass without changing layout geometry. */
+.kicker { font-size: .72rem; }
+.kicker-box { font-size: .7rem; }
+.btn-primary, .btn-secondary { font-size: .82rem; }
+.text-link { font-size: .82rem; }
+.metric-row { font-size: .69rem; }
+.tech-tag { font-size: .72rem; }
+.browser-bar { font-size: .69rem; }
+.form-control { font-size: .9rem; }
