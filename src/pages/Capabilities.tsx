@@ -32,7 +32,7 @@ export const Capabilities = () => (
         <div className="page-shell grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((capability) => (
             <article key={capability.title} className="panel panel-hover flex min-h-[300px] flex-col p-8">
-              <capability.icon className="h-7 w-7 text-[#EF8354]" strokeWidth={1.7} />
+              <capability.icon className="h-7 w-7 text-[#1DA1F2]" strokeWidth={1.7} />
               <h2 className="mt-8 text-[19px] font-medium tracking-[-.025em]">{capability.title}</h2>
               <p className="mt-4 flex-1 text-[13px] leading-6 text-[#4F5D75]">{capability.description}</p>
               <div className="mt-7 flex flex-wrap gap-2">{capability.tags.map((tag) => <span className="tech-tag" key={tag}>{tag}</span>)}</div>
@@ -44,7 +44,7 @@ export const Capabilities = () => (
       <section className="brand-grid py-20 lg:py-24">
         <div className="page-shell panel grid gap-10 p-8 md:p-12 lg:grid-cols-[1fr_.9fr] lg:items-center">
           <div>
-            <p className="mono text-[10px] uppercase tracking-[.1em] text-[#EF8354]">Open Engineering & R&amp;D</p>
+            <p className="mono text-[10px] uppercase tracking-[.1em] text-[#1DA1F2]">Open Engineering & R&amp;D</p>
             <h2 className="section-display mt-5 max-w-[640px]">Pushing the boundaries of intelligence.</h2>
             <p className="copy-md mt-6 max-w-[620px]">We experiment openly, prototype unconventional architectures and contribute reusable engineering that informs the next generation of Third Leap Labs products.</p>
             <Link to="/open-source" className="btn-secondary mt-8">View Research &amp; Open Engineering <ArrowRight className="h-4 w-4" /></Link>
