@@ -12,6 +12,8 @@ const capabilities = [
   { title: 'Web3 Systems', icon: Network, description: 'Blockchain data pipelines, wallet intelligence and distributed systems for transparent digital-market products.', tags: ['Indexers', 'Solana', 'APIs'] },
 ];
 
+const infrastructureImage = 'https://images.unsplash.com/photo-1584169417032-d34e8d805e8b?auto=format&fit=crop&w=1400&q=82';
+
 export const Capabilities = () => (
   <Layout>
     <SEO
@@ -49,10 +51,12 @@ export const Capabilities = () => (
             <p className="copy-md mt-6 max-w-[620px]">We experiment openly, prototype unconventional architectures and contribute reusable engineering that informs the next generation of Third Leap Labs products.</p>
             <Link to="/open-source" className="btn-secondary mt-8">View Research &amp; Open Engineering <ArrowRight className="h-4 w-4" /></Link>
           </div>
-          <div className="flex min-h-[260px] items-center justify-center border border-[#2D3142]/15 bg-[#F2F1F2]">
-            <div className="text-center text-[#BFC0C0]">
+          <div className="relative flex min-h-[260px] items-center justify-center overflow-hidden border border-[#2D3142]/15 bg-[#F2F1F2]">
+            <img src={infrastructureImage} alt="Data infrastructure and edge systems" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.18] brightness-[.56]" />
+            <div className="absolute inset-0 bg-[#111827]/30" />
+            <div className="relative text-center text-white/90">
               <Cpu className="mx-auto h-10 w-10" strokeWidth={1.2} />
-              <p className="mono mt-5 text-[10px] tracking-[.06em]">&gt; initializing_lab_environment...</p>
+              <p className="mono mt-5 text-[10px] tracking-[.06em]">&gt; infrastructure_online...</p>
             </div>
           </div>
         </div>
