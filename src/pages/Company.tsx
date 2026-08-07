@@ -12,8 +12,6 @@ const principles = [
   { title: 'Continuous Learning', copy: 'Iterative refinement of technical capabilities, product quality and engineering practice.', icon: BookOpen },
 ];
 
-const engineeringImage = '/media/company/company-engineering.webp';
-
 export const Company = () => (
   <Layout>
     <SEO
@@ -32,12 +30,14 @@ export const Company = () => (
 
           <div className="grid gap-4 lg:grid-cols-[1.35fr_.65fr]">
             <section className="panel grid gap-7 p-7 md:grid-cols-[190px_1fr] md:p-8">
-              <div className="relative flex min-h-[260px] items-end overflow-hidden bg-[#2D3142] p-5 text-white">
-                <img src={engineeringImage} alt="Illustrative precision engineering environment" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.15] brightness-[.5]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/92 via-[#111827]/35 to-transparent" />
-                <div className="relative">
-                  <p className="mono text-[9px] uppercase tracking-[.08em] text-[#1DA1F2]">Illustrative environment</p>
-                  <p className="mono mt-3 text-[10px] uppercase leading-5 tracking-[.07em] text-white/75">Engineering systems<br />Edge · cloud · data</p>
+              <div className="flex min-h-[260px] flex-col justify-between border border-[#2D3142]/15 bg-[#2D3142] p-5 text-white">
+                <div>
+                  <p className="mono text-[9px] uppercase tracking-[.08em] text-[#1DA1F2]">Founder profile</p>
+                  <p className="mt-6 text-[58px] font-semibold leading-none tracking-[-.08em]">GK</p>
+                </div>
+                <div>
+                  <div className="h-px bg-white/15" />
+                  <p className="mono mt-5 text-[10px] uppercase leading-5 tracking-[.07em] text-white/70">Systems architecture<br />Product engineering<br />Technology strategy</p>
                 </div>
               </div>
               <div className="flex flex-col">
