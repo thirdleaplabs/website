@@ -6,7 +6,7 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --color-brand-ink: #2d3142;
   --color-brand-silver: #bfc0c0;
-  --color-brand-orange: #ef8354;
+  --color-brand-blue: #1da1f2;
   --color-brand-slate: #4f5d75;
 }
 
@@ -16,7 +16,7 @@
   text-rendering: optimizeLegibility;
   --brand-ink: #2d3142;
   --brand-silver: #bfc0c0;
-  --brand-orange: #ef8354;
+  --brand-blue: #1da1f2;
   --brand-slate: #4f5d75;
   --brand-white: #ffffff;
   --brand-paper: #f8f6f7;
@@ -38,11 +38,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-::selection { background: rgba(239, 131, 84, .22); color: var(--brand-ink); }
+::selection { background: rgba(29, 161, 242, .22); color: var(--brand-ink); }
 a { color: inherit; text-decoration: none; }
 button, input, textarea, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
-:focus-visible { outline: 2px solid var(--brand-orange); outline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--brand-blue); outline-offset: 3px; }
 
 .page-shell { width: min(var(--page-width), calc(100% - (var(--page-x) * 2))); margin-inline: auto; }
 .site-page { background: #fff; color: var(--brand-ink); }
@@ -66,7 +66,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   display: inline-flex;
   align-items: center;
   gap: .55rem;
-  color: var(--brand-orange);
+  color: var(--brand-blue);
   font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: .68rem;
   font-weight: 500;
@@ -77,17 +77,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
   content: "";
   width: .38rem;
   height: .38rem;
-  background: var(--brand-orange);
+  background: var(--brand-blue);
   border-radius: 999px;
 }
 .kicker-box {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-  border: 1px solid rgba(239,131,84,.32);
-  background: rgba(239,131,84,.065);
+  border: 1px solid rgba(29,161,242,.32);
+  background: rgba(29,161,242,.065);
   padding: .32rem .55rem;
-  color: var(--brand-orange);
+  color: var(--brand-blue);
   font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: .66rem;
   letter-spacing: .07em;
@@ -113,7 +113,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .copy-lg { font-size: clamp(.98rem, 1.35vw, 1.08rem); line-height: 1.8; color: var(--brand-slate); }
 .copy-md { font-size: .9rem; line-height: 1.75; color: var(--brand-slate); }
-.accent { color: var(--brand-orange); }
+.accent { color: var(--brand-blue); }
 
 .rule { border-color: var(--brand-line); }
 .paper { background: var(--brand-paper); }
@@ -122,7 +122,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background: rgba(255,255,255,.94);
 }
 .panel-hover { transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
-.panel-hover:hover { border-color: rgba(239,131,84,.65); transform: translateY(-2px); box-shadow: 0 14px 32px rgba(45,49,66,.06); }
+.panel-hover:hover { border-color: rgba(29,161,242,.65); transform: translateY(-2px); box-shadow: 0 14px 32px rgba(45,49,66,.06); }
 
 .btn-primary {
   display: inline-flex;
@@ -130,15 +130,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
   align-items: center;
   justify-content: center;
   gap: .65rem;
-  background: var(--brand-orange);
+  background: var(--brand-blue);
   color: #fff;
   padding: .7rem 1.35rem;
-  border: 1px solid var(--brand-orange);
+  border: 1px solid var(--brand-blue);
   font-size: .78rem;
   font-weight: 600;
   transition: background .2s ease, transform .2s ease;
 }
-.btn-primary:hover { background: #e87849; transform: translateY(-1px); }
+.btn-primary:hover { background: #0d8bd9; transform: translateY(-1px); }
 .btn-secondary {
   display: inline-flex;
   min-height: 44px;
@@ -153,7 +153,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-weight: 600;
   transition: border-color .2s ease, color .2s ease, transform .2s ease;
 }
-.btn-secondary:hover { border-color: var(--brand-orange); color: var(--brand-orange); transform: translateY(-1px); }
+.btn-secondary:hover { border-color: var(--brand-blue); color: var(--brand-blue); transform: translateY(-1px); }
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -163,7 +163,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-weight: 500;
   transition: color .2s ease, gap .2s ease;
 }
-.text-link:hover { color: var(--brand-orange); gap: .65rem; }
+.text-link:hover { color: var(--brand-blue); gap: .65rem; }
 
 .metric-row {
   display: grid;
@@ -183,8 +183,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   align-items: center;
   min-height: 24px;
   padding: .18rem .5rem;
-  background: rgba(239,131,84,.09);
-  color: var(--brand-orange);
+  background: rgba(29,161,242,.09);
+  color: var(--brand-blue);
   font-size: .68rem;
   font-weight: 500;
 }
@@ -212,7 +212,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .cognisense-ui { background: #19202a; color: #eef0f2; }
 .cognisense-ui .ui-card { border: 1px solid rgba(191,192,192,.22); background: #222b36; }
 .ui-line { height: 5px; border-radius: 999px; background: rgba(191,192,192,.22); }
-.ui-line.orange { background: rgba(239,131,84,.72); }
+.ui-line.blue { background: rgba(29,161,242,.72); }
 .ui-line.slate { background: rgba(79,93,117,.95); }
 
 .form-control {
@@ -226,7 +226,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   outline: none;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
-.form-control:focus { border-color: var(--brand-orange); box-shadow: 0 0 0 2px rgba(239,131,84,.10); }
+.form-control:focus { border-color: var(--brand-blue); box-shadow: 0 0 0 2px rgba(29,161,242,.10); }
 
 @media (max-width: 900px) {
   :root { --page-x: 1.1rem; }
