@@ -6,7 +6,7 @@ Maintain and improve the public website for **Third Leap Labs** while preserving
 
 The corporate story is:
 
-> Third Leap Labs builds applied AI, computer-vision, Web3 and open-engineering products. Its flagship visual-intelligence product is **Cognisense Cloud by Third Leap Labs**.
+> Third Leap Labs builds applied AI, computer-vision, Web3 and open-engineering products. Its flagship visual-intelligence product is **EyeWitX by Third Leap Labs**.
 
 ## Confirmed public naming
 
@@ -14,12 +14,12 @@ Use consistently:
 
 - Company: **Third Leap Labs**
 - Legal entity when relevant: **Third Leap Labs LLC**
-- Computer-vision product: **Cognisense Cloud**
-- Brand signature: **Cognisense Cloud by Third Leap Labs**
-- Product domain: **https://cognisense.cam**
+- Computer-vision product: **EyeWitX**
+- Brand signature: **EyeWitX by Third Leap Labs**
+- Product domain: **https://eyewitx.com**
 - Product category: **Cloud Visual Intelligence Platform**
 
-**Cognisense Cloud by Third Leap Labs** is the only current public name for the visual-intelligence product. Legacy product names may appear only when documenting redirect compatibility to `/cognisense`.
+**EyeWitX by Third Leap Labs** is the only current public name for the visual-intelligence product. **Cognisense Cloud** is a retired predecessor name and may appear only when documenting redirect compatibility or migration history to `/eyewitx`.
 
 ## Existing technology stack
 
@@ -85,7 +85,9 @@ The detailed business and content specifications are maintained in the private r
 
 `thirdleaplabs/business-docs`
 
-Relevant paths:
+Some existing private-repository paths may still contain the retired Cognisense naming until that repository is migrated. Treat those path names as legacy storage locations, not current public branding. **EyeWitX** is the naming source of truth for this website.
+
+Relevant legacy paths may include:
 
 - `website-redesign/02-THIRD-LEAP-LABS-PAGE-BY-PAGE.md`
 - `website-redesign/03-COGNISENSE-CLOUD-PAGE-BY-PAGE.md`
@@ -95,7 +97,7 @@ Relevant paths:
 - `products/cognisense-cloud/02-ARCHITECTURE-OVERVIEW.md`
 - `products/cognisense-cloud/03-USE-CASES.md`
 
-When those files are available in the current workspace, read them before implementing content. If they are not available, follow `docs/CODEX-WEBSITE-MASTER-PROMPT.md` and request only genuinely missing factual inputs.
+When those files are available in the current workspace, read them for product capability facts, but translate retired Cognisense naming to EyeWitX. If they are not available, follow `docs/CODEX-WEBSITE-MASTER-PROMPT.md` and request only genuinely missing factual inputs.
 
 ## Corporate website information architecture
 
@@ -107,15 +109,17 @@ Maintain or implement these principal routes:
 - `/open-source` — Open-engineering philosophy and work
 - `/company` — Company and founder story
 - `/contact` — Contact and partnership enquiry
-- `/cognisense` — Cognisense Cloud product overview and canonical corporate-site route
+- `/eyewitx` — EyeWitX product overview and canonical corporate-site route
 - Existing legal pages
 
 Required redirects:
 
 - `/work` → `/products`
-- `/work/cognisense`, `/work/cognisense-cloud`, `/work/visionx`, `/work/flametrax` → `/cognisense`
-- `/products/cognisense`, `/products/cognisense-cloud`, `/products/visionx`, `/products/flametrax` → `/cognisense`
-- `/labs/cognisense`, `/labs/cognisense-cloud`, `/labs/visionx`, `/labs/flametrax` → `/cognisense`
+- `/cognisense` → `/eyewitx`
+- `/work/eyewitx`, `/products/eyewitx`, `/labs/eyewitx` → `/eyewitx`
+- `/work/cognisense`, `/work/cognisense-cloud`, `/work/visionx`, `/work/flametrax` → `/eyewitx`
+- `/products/cognisense`, `/products/cognisense-cloud`, `/products/visionx`, `/products/flametrax` → `/eyewitx`
+- `/labs/cognisense`, `/labs/cognisense-cloud`, `/labs/visionx`, `/labs/flametrax` → `/eyewitx`
 - `/labs/whalescanner`, `/work/whalescanner`, `/products/whalescanner` → `/products#whalescanner`
 
 Do not leave duplicate public product pages; preserve legacy names only in the explicit redirect paths above.
@@ -125,18 +129,18 @@ Do not leave duplicate public product pages; preserve legacy names only in the e
 The homepage should establish, in this order:
 
 1. Third Leap Labs is a credible applied-technology company.
-2. Cognisense Cloud is the flagship AI/computer-vision product.
+2. EyeWitX is the flagship AI/computer-vision product.
 3. WhaleScanner demonstrates Web3 product execution.
 4. Open engineering is a supporting capability and philosophy.
-5. Visitors can request a Cognisense pilot or start a company conversation.
+5. Visitors can request an EyeWitX pilot or start a company conversation.
 
 AI and computer vision should receive approximately 60–70% of the visual and narrative emphasis. Web3 remains visible but secondary.
 
-## Cognisense Cloud positioning
+## EyeWitX positioning
 
 Approved short description:
 
-> Cognisense Cloud is a cloud and edge visual-intelligence platform that connects compatible camera infrastructure with AI events, incident workflows, evidence and operational analytics.
+> EyeWitX is a cloud and edge visual-intelligence platform that connects compatible camera infrastructure with AI events, incident workflows, evidence and operational analytics.
 
 Approved supporting line:
 
