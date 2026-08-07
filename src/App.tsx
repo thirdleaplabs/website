@@ -9,6 +9,7 @@ import { Contact } from './pages/Contact';
 import { LegalDisclaimer } from './pages/LegalDisclaimer';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { SecurityNotice } from './pages/SecurityNotice';
+import { NotFound } from './pages/NotFound';
 
 function App() {
   return (
@@ -52,7 +53,7 @@ function App() {
       <Route path="/solutions" element={<Navigate to="/capabilities" replace />} />
       <Route path="/about" element={<Navigate to="/company" replace />} />
       <Route path="/services" element={<Navigate to="/capabilities" replace />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
