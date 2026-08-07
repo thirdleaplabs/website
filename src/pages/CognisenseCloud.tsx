@@ -9,6 +9,13 @@ const productStats = [
   { label: 'Detection confidence', value: '94.8%' },
 ];
 
+const cameraImages = [
+  'https://images.unsplash.com/photo-1672552226380-486fe900b322?auto=format&fit=crop&w=1000&q=82',
+  'https://images.unsplash.com/photo-1532186773960-85649e5cb70b?auto=format&fit=crop&w=1000&q=82',
+  'https://images.unsplash.com/photo-1584169417032-d34e8d805e8b?auto=format&fit=crop&w=1000&q=82',
+  'https://images.unsplash.com/photo-1775519520461-6b6e068d9250?auto=format&fit=crop&w=1000&q=82',
+];
+
 export function CognisenseCloud() {
   return (
     <Layout>
@@ -44,15 +51,19 @@ export function CognisenseCloud() {
                           <span className="border border-[#1DA1F2]/55 bg-[#1DA1F2]/10 px-2 py-1 mono text-[8px] uppercase text-[#1DA1F2]">AI Normal</span>
                         </div>
                         <div className="grid flex-1 grid-cols-2 gap-3 pt-4">
-                          {[1, 2, 3, 4].map((camera) => (
-                            <div key={camera} className="relative overflow-hidden border border-[#BFC0C0]/15 bg-[#171D25] p-3">
-                              <div className="absolute inset-0 opacity-15 brand-grid" />
-                              <div className="relative flex h-full flex-col justify-between">
-                                <span className="mono text-[7px] uppercase text-[#BFC0C0]">CAM_{String(camera).padStart(2, '0')} / STREAMING</span>
-                                {camera === 2 && <span className="self-start border border-[#1DA1F2]/60 bg-[#1DA1F2]/12 px-2 py-1 mono text-[7px] uppercase text-[#1DA1F2]">person detected</span>}
+                          {cameraImages.map((src, index) => {
+                            const camera = index + 1;
+                            return (
+                              <div key={src} className="relative overflow-hidden border border-[#BFC0C0]/15 bg-[#171D25] p-3">
+                                <img src={src} alt="Industrial site camera feed" loading="lazy" className="absolute inset-0 h-full w-full object-cover grayscale contrast-[1.18] brightness-[.5]" />
+                                <div className="absolute inset-0 bg-[#111827]/25" />
+                                <div className="relative flex h-full flex-col justify-between">
+                                  <span className="mono text-[7px] uppercase text-white/80">CAM_{String(camera).padStart(2, '0')} / STREAMING</span>
+                                  {camera === 2 && <span className="self-start border border-[#1DA1F2]/60 bg-[#0B1720]/70 px-2 py-1 mono text-[7px] uppercase text-[#1DA1F2]">person detected</span>}
+                                </div>
                               </div>
-                            </div>
-                          ))}
+                            );
+                          })}
                         </div>
                       </div>
                     </div>
