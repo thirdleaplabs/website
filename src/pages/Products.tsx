@@ -1,140 +1,105 @@
-import { ArrowRight } from 'lucide-react';
-import type { ReactNode } from 'react';
+import { ArrowRight, BarChart3, Camera, Database, Radar, ShieldCheck, Waves } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { SEO } from '../components/layout/SEO';
 
-const SectionLabel = ({ children }: { children: ReactNode }) => (
-  <p className="eyebrow">{children}</p>
-);
+export const Products = () => (
+  <Layout>
+    <SEO
+      title="Products | Third Leap Labs"
+      description="Operational intelligence products from Third Leap Labs: Cognisense Cloud for visual intelligence and WhaleScanner for Web3 market and wallet intelligence."
+      path="/products"
+    />
+    <main className="site-page pt-16">
+      <section className="brand-grid border-b border-[#2D3142]/15">
+        <div className="page-shell py-20 sm:py-24 lg:py-28">
+          <span className="kicker">Product Portfolio</span>
+          <h1 className="page-display mt-7 max-w-[900px]">Intelligent platforms, built end to end.</h1>
+          <p className="copy-lg mt-7 max-w-[800px]">Our products combine domain understanding, software architecture, data systems and applied AI in operational platforms designed to be used—not simply demonstrated.</p>
+        </div>
+      </section>
 
-const ArrowLink = ({ to, children, external }: { to: string; children: ReactNode; external?: boolean }) => {
-  const className = "inline-flex items-center gap-2 text-[13px] font-semibold text-[#0078d4] transition hover:gap-3 hover:text-[#005ea6]";
-  if (external) {
-    return (
-      <a href={to} target="_blank" rel="noopener noreferrer" className={className}>
-        {children} <ArrowRight className="h-3.5 w-3.5" />
-      </a>
-    );
-  }
-  return (
-    <Link to={to} className={className}>
-      {children} <ArrowRight className="h-3.5 w-3.5" />
-    </Link>
-  );
-};
-
-export const Products = () => {
-  return (
-    <Layout>
-      <SEO 
-        title="Products | Third Leap Labs" 
-        description="Our products combine domain understanding, software architecture, data systems and applied AI in operational platforms designed to be used—not simply demonstrated." 
-        path="/products"
-      />
-      <main className="bg-white pt-[74px] text-[#1a1a1a] sm:pt-[82px]">
-        
-        {/* Hero */}
-        <section className="hero-wash relative overflow-hidden border-b border-[#e6ebf1]">
-          <div className="page-shell py-20 sm:py-28 lg:py-36 text-center">
-            <div className="mx-auto max-w-3xl">
-              <SectionLabel>PRODUCT PORTFOLIO</SectionLabel>
-              <h1 className="mt-5 page-title">Intelligent platforms, built end to end.</h1>
-              <p className="mt-6 text-[17px] leading-8 text-[#5e6b7d]">
-                Our products combine domain understanding, software architecture, data systems and applied AI in operational platforms designed to be used—not simply demonstrated.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Product 1 — Cognisense Cloud */}
-        <section className="page-shell py-24 sm:py-32">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-[.15em] text-[#0078d4]">Cloud Visual Intelligence</span>
-              <h2 className="mt-4 section-title">Visual intelligence for physical operations.</h2>
-              <p className="mt-6 text-[17px] leading-8 text-[#5e6b7d]">
-                Cognisense Cloud transforms existing camera infrastructure into a connected operational layer for safety, security, incidents, evidence and analytics.
-              </p>
-              
-              <ul className="mt-10 grid gap-x-4 gap-y-4 sm:grid-cols-2 text-[14px] font-medium text-[#1a1a1a]">
-                <li className="flex items-center gap-2"><div className="h-1.5 w-1.5 rounded-full bg-[#0078d4]" /> Cloud command centre</li>
-                <li className="flex items-center gap-2"><div className="h-1.5 w-1.5 rounded-full bg-[#0078d4]" /> Visual event detection</li>
-                <li className="flex items-center gap-2"><div className="h-1.5 w-1.5 rounded-full bg-[#0078d4]" /> Incident management</li>
-                <li className="flex items-center gap-2"><div className="h-1.5 w-1.5 rounded-full bg-[#0078d4]" /> Search and evidence</li>
-                <li className="flex items-center gap-2"><div className="h-1.5 w-1.5 rounded-full bg-[#0078d4]" /> Multi-site analytics</li>
-                <li className="flex items-center gap-2"><div className="h-1.5 w-1.5 rounded-full bg-[#0078d4]" /> Edge and hybrid deployment</li>
-              </ul>
-              
-              <div className="mt-10">
-                <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-[#0078d4] px-6 text-sm font-semibold text-white transition hover:bg-[#006cbe]">
-                  Explore Cognisense Cloud <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-[#e1e7ee] bg-[#f8fafc] h-[400px] lg:h-[500px] shadow-[0_12px_45px_rgba(31,55,82,.08)]">
-              <div className="h-10 border-b border-[#e1e7ee] bg-white flex items-center px-4">
-                <div className="flex gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#dfe5ec]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#dfe5ec]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#dfe5ec]" />
+      <section className="paper border-b border-[#2D3142]/15 py-20 lg:py-24">
+        <div className="page-shell grid gap-10 lg:grid-cols-[.88fr_1.12fr] lg:items-center">
+          <div>
+            <p className="mono text-[10px] uppercase tracking-[.1em] text-[#EF8354]">Cloud Visual Intelligence / Product_01</p>
+            <h2 className="section-display mt-5">Cognisense Cloud</h2>
+            <p className="copy-md mt-5 max-w-[560px]">Transform existing camera infrastructure into a connected operational layer for safety, security, incidents, evidence and analytics.</p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {[
+                [Camera, 'Live visual operations'],
+                [Radar, 'AI event detection'],
+                [ShieldCheck, 'Incident workflows'],
+                [BarChart3, 'Operational analytics'],
+              ].map(([Icon, label]) => (
+                <div key={String(label)} className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[12px] text-[#2D3142]">
+                  <Icon className="h-4 w-4 text-[#EF8354]" strokeWidth={1.7} />{String(label)}
                 </div>
-              </div>
-              {/* Product Visual Placeholder */}
-              <div className="light-grid h-full w-full" />
+              ))}
             </div>
+            <a href="https://cognisense.cam" target="_blank" rel="noreferrer" className="btn-primary mt-9">Explore Cognisense Cloud <ArrowRight className="h-4 w-4" /></a>
           </div>
-        </section>
 
-        {/* Product 2 — WhaleScanner */}
-        <section id="whalescanner" className="bg-[#fbfcfe] border-y border-[#e6ebf1] py-24 sm:py-32">
-          <div className="page-shell">
-            <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-              <div className="order-2 overflow-hidden rounded-2xl border border-[#e1e7ee] bg-[#f8fafc] h-[400px] lg:h-[500px] shadow-[0_12px_45px_rgba(31,55,82,.08)] lg:order-1">
-                <div className="h-10 border-b border-[#e1e7ee] bg-white flex items-center px-4">
-                  <div className="flex gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#dfe5ec]" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#dfe5ec]" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#dfe5ec]" />
+          <div className="browser-frame">
+            <div className="browser-bar"><span className="text-[#EF8354]">COGNISENSE</span><span>operational_view</span></div>
+            <div className="cognisense-ui grid min-h-[420px] grid-cols-[1.55fr_.75fr] gap-2 p-3">
+              <div className="grid grid-rows-[1.2fr_.8fr] gap-2">
+                <div className="ui-card relative overflow-hidden p-4">
+                  <div className="absolute inset-0 opacity-15 brand-grid" />
+                  <div className="relative flex h-full flex-col justify-between">
+                    <div className="flex items-center justify-between mono text-[8px] uppercase text-[#BFC0C0]"><span>Live facility view</span><span className="text-[#EF8354]">12 events</span></div>
+                    <div className="grid grid-cols-3 gap-3">
+                      {[72, 45, 61].map((height, index) => <div key={height} className="flex h-24 items-end border border-[#BFC0C0]/10 p-2"><span className="w-full bg-[#EF8354]/40" style={{ height: `${height}%` }} /><span className="sr-only">Metric {index + 1}</span></div>)}
+                    </div>
                   </div>
                 </div>
-                {/* Product Visual Placeholder */}
-                <div className="tech-grid h-full w-full bg-[#0a0f14]" />
-              </div>
-              <div className="order-1 lg:order-2 lg:pl-10">
-                <span className="text-[11px] font-bold uppercase tracking-[.15em] text-[#0078d4]">Web3 Intelligence & Community</span>
-                <h2 className="mt-4 section-title">Intelligence and community for Web3.</h2>
-                <p className="mt-6 text-[17px] leading-8 text-[#5e6b7d]">
-                  WhaleScanner brings market intelligence, token and wallet insight, project discovery, signals and community workflows into one platform designed to improve transparency and informed participation.
-                </p>
-                <div className="mt-10">
-                  <ArrowLink to="https://whalescanner.com" external>Explore WhaleScanner</ArrowLink>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="ui-card p-4"><p className="mono text-[8px] uppercase text-[#BFC0C0]">Incidents</p><div className="mt-5 space-y-3">{[85,65,76].map((width) => <div key={width} className="ui-line orange" style={{width:`${width}%`}} />)}</div></div>
+                  <div className="ui-card p-4"><p className="mono text-[8px] uppercase text-[#BFC0C0]">Analytics</p><div className="mt-5 space-y-3">{[64,88,52].map((width) => <div key={width} className="ui-line slate" style={{width:`${width}%`}} />)}</div></div>
                 </div>
               </div>
+              <div className="ui-card p-4"><p className="mono text-[8px] uppercase text-[#BFC0C0]">Event stream</p><div className="mt-5 space-y-4">{[1,2,3,4,5,6].map((item) => <div key={item} className="border-b border-[#BFC0C0]/10 pb-3"><div className="ui-line" style={{width:`${52 + (item % 3) * 12}%`}}/><div className="ui-line orange mt-2" style={{width:`${30 + (item % 2) * 18}%`}}/></div>)}</div></div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Portfolio principle */}
-        <section className="page-shell py-24 sm:py-32">
-          <div className="dark-panel relative overflow-hidden rounded-[2rem] px-8 py-16 text-center sm:px-16 sm:py-24">
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.05] tracking-[-.04em] text-white">
-                Different markets. The same engineering discipline.
-              </h2>
-              <p className="mt-6 text-[17px] leading-8 text-[#9ba8bb]">
-                Whether interpreting live video or complex market data, we focus on turning fragmented signals into structured, explainable and actionable product experiences.
-              </p>
-              <div className="mt-10">
-                <Link to="/capabilities" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-white px-7 text-sm font-semibold text-[#1a1a1a] transition hover:bg-[#f0f4f8]">
-                  View Our Capabilities <ArrowRight className="h-4 w-4" />
-                </Link>
+      <section id="whalescanner" className="brand-grid border-b border-[#2D3142]/15 py-20 lg:py-24 scroll-mt-20">
+        <div className="page-shell grid gap-10 lg:grid-cols-[1.12fr_.88fr] lg:items-center">
+          <div className="order-2 border border-[#2D3142]/35 bg-[#2D3142] p-5 text-white lg:order-1">
+            <div className="flex items-center justify-between border-b border-white/15 pb-4 mono text-[8px] uppercase tracking-[.08em] text-[#BFC0C0]"><span>WhaleScanner / Market Radar</span><span className="text-[#EF8354]">Live</span></div>
+            <div className="grid min-h-[390px] grid-cols-[1fr_170px] gap-4 pt-4">
+              <div className="relative overflow-hidden border border-white/10 bg-[#252B3A] p-5">
+                <div className="absolute inset-0 opacity-10 brand-grid" />
+                <div className="relative flex h-full flex-col justify-between">
+                  <div><p className="mono text-[8px] uppercase text-[#BFC0C0]">Signal intensity</p><p className="mt-2 text-3xl font-semibold tracking-[-.04em]">87.4<span className="text-[#EF8354]">%</span></p></div>
+                  <div className="flex h-40 items-end gap-2">{[28,40,38,58,48,73,66,88,72,92,78,96].map((height,index)=><span key={`${height}-${index}`} className="flex-1 bg-[#EF8354]" style={{height:`${height}%`,opacity:.25 + index*.045}} />)}</div>
+                </div>
               </div>
+              <div className="space-y-3">{['Wallet flow','Project discovery','Signals','Community'].map((item,index)=><div key={item} className="border border-white/10 bg-[#252B3A] p-4"><p className="mono text-[7px] uppercase text-[#BFC0C0]">0{index+1}</p><p className="mt-3 text-[11px]">{item}</p><div className="mt-4 h-1 bg-white/10"><div className="h-full bg-[#EF8354]" style={{width:`${58 + index*9}%`}} /></div></div>)}</div>
             </div>
           </div>
-        </section>
 
-      </main>
-    </Layout>
-  );
-};
+          <div className="order-1 lg:order-2 lg:pl-5">
+            <p className="mono text-[10px] uppercase tracking-[.1em] text-[#EF8354]">Web3 Intelligence / Product_02</p>
+            <h2 className="section-display mt-5">WhaleScanner</h2>
+            <p className="copy-md mt-5 max-w-[560px]">Market intelligence, token and wallet insight, project discovery, signals and community workflows in one product focused on transparency and informed participation.</p>
+            <div className="mt-8 space-y-4">
+              <div className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[12px]"><Waves className="h-4 w-4 text-[#EF8354]" /> Real-time market signals</div>
+              <div className="flex items-center gap-3 border-t border-[#2D3142]/15 pt-3 text-[12px]"><Database className="h-4 w-4 text-[#EF8354]" /> Wallet &amp; token intelligence</div>
+            </div>
+            <a href="https://whalescanner.com" target="_blank" rel="noreferrer" className="text-link mt-9 text-[#EF8354]">Explore WhaleScanner <ArrowRight className="h-3.5 w-3.5" /></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="paper">
+        <div className="page-shell flex min-h-[310px] flex-col items-center justify-center py-20 text-center">
+          <h2 className="section-display max-w-[760px]">Different markets. The same engineering discipline.</h2>
+          <p className="copy-md mt-5 max-w-[680px]">We turn fragmented signals into structured, explainable and actionable product experiences.</p>
+          <Link to="/capabilities" className="text-link mt-8">View Our Capabilities <ArrowRight className="h-3.5 w-3.5" /></Link>
+        </div>
+      </section>
+    </main>
+  </Layout>
+);
